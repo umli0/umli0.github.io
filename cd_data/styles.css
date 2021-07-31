@@ -1,0 +1,18 @@
+body {
+  background: url("https://c-ssl.duitang.com/uploads/item/202001/13/20200113182343_xP4cF.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+.content-wrap {
+  opacity: 0.85;
+}
+.sidebar {
+  opacity: 0.85;
+}
+.header-inner {
+  background: rgba(255,255,255,0.85);
+}
+.popup {
+  opacity: 0.85;
+}
