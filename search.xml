@@ -1,113 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>java学习</title>
-    <url>/2021/08/02/java/</url>
-    <content><![CDATA[<span id="more"></span>
-]]></content>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客后续配置</title>
-    <url>/2021/08/02/hexo%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>黑猫的博客</title>
-    <url>/2021/08/01/index/</url>
-    <content><![CDATA[<p><img src="https://c-ssl.duitang.com/uploads/item/201707/11/20170711232740_uVhCt.jpeg"></p>
-<p>魔女身边总有一只黑猫</p>
-]]></content>
-      <tags>
-        <tag>闲扯</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建博客教程</title>
-    <url>/2021/08/01/%E6%90%AD%E5%BB%BA%E7%AE%80%E7%95%A5%E7%89%88%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p><strong>搭建博客教程</strong></p>
-<span id="more"></span> 
-<h1 id="1-创建github账户，创建github仓库"><a href="#1-创建github账户，创建github仓库" class="headerlink" title="1.创建github账户，创建github仓库"></a>1.创建github账户，创建github仓库</h1><h1 id="2-建立连接，本地与github"><a href="#2-建立连接，本地与github" class="headerlink" title="2.建立连接，本地与github"></a>2.建立连接，本地与github</h1><h2 id="2-1安装git"><a href="#2-1安装git" class="headerlink" title="2.1安装git"></a>2.1安装git</h2><p>下载，安装git之后</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">打开cmd就可以</span><br><span class="line">git config --global user.name &quot;firstname lastname&quot;</span><br><span class="line">git config --global user.email &quot;youemail@gmail.com&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="2-2本地创建密钥"><a href="#2-2本地创建密钥" class="headerlink" title="2.2本地创建密钥"></a>2.2本地创建密钥</h2><p>创建密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail@gmail.com ``</span><br></pre></td></tr></table></figure>
-<p>最后这个密钥会保存在某个文件下!<br>c盘/用户/用户名/.ssh/id_rsa下</p>
-<h2 id="2-3粘贴该密钥至github"><a href="#2-3粘贴该密钥至github" class="headerlink" title="2.3粘贴该密钥至github"></a>2.3粘贴该密钥至github</h2><pre>
-库---setting---ssh与GPG keys下，输入密钥名称（自己造一个）和之前那个密钥文件下的所有内容
-注是加那个.pub的
-然后git bash下，ssh -T git@github.com
-</pre>
-
-<h1 id="3-先去官网下载安装包，安装node-js，再安装npm"><a href="#3-先去官网下载安装包，安装node-js，再安装npm" class="headerlink" title="3. 先去官网下载安装包，安装node.js，再安装npm"></a>3. 先去官网下载安装包，安装node.js，再安装npm</h1><p>然后用命令行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v  //查看是否安装好了node.js</span><br><span class="line">npm -v  //查看是否安装好了npm</span><br></pre></td></tr></table></figure>
-<h1 id="4-安装hexo-和本地预览博客"><a href="#4-安装hexo-和本地预览博客" class="headerlink" title="4.安装hexo 和本地预览博客"></a>4.安装hexo 和本地预览博客</h1><p>创建一个文件夹作为博客的目录，右键 git bash</p>
-<p><code>npm install -g hexo-cli  //安装hexo</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">OpenSSL SSL_read: Connection was reset, errno 10054）</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify &quot;false&quot;）```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`hexo init //初始化该文件夹`</span><br><span class="line">  </span><br><span class="line">`hexo new xxxx //创建一个新页面`</span><br><span class="line"></span><br><span class="line">`hexo g  `</span><br><span class="line"></span><br><span class="line">`hexo s`</span><br></pre></td></tr></table></figure>
-<p>然后可以打开浏览器<br>localhost:4000 //在本地上预览博客</p>
-<p>ctrl+c可退出</p>
-<h2 id="网页预览博客"><a href="#网页预览博客" class="headerlink" title="网页预览博客"></a>网页预览博客</h2><p>根目录下的_config.yml是站点配置文件<br> themes中的_config.yml是主题配置文件</p>
-<p>为了让hexo和github关联起来，站点配置文件<br>ctrl+f 搜索deploy</p>
-<p>配置</p>
-<pre>
-deploy:
-type: git
-repo: 仓库的路径 （是咋写的忘了）git@github.com:umli0/umli0.github.io.git
-有个说要写成上面那样
-很多就是直接仓库地址
-branch: master
-</pre>
-
-<p>然后保存<br>然后安装插件</p>
-<pre>
-npm install hexo-deployer-git --save
-
-hexo clean 
-
-hexo g 
-
-hexo d  //部署网站（这一步需要输之前ssh的密码）
-也可以直接写成
-hexo clean && hexo g && hexo d
-
-</pre>
-<p>然后就可以打开网站了xxx.github.io</p>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>克隆主题至目录下themes下的next文件夹下<br>然后是配置主题文件</p>
-<p>看别人写的吧 <a href="https://juejin.cn/post/6844903780056563726#heading-5">配置方法</a>.</p>
-<pre>
-博客的本地目录下---git bash--用命令 git clone https://github.com/theme-next/hexo-theme-next themes/next   将想要下载的主题下载下来（这个是旋律NexT主题）
-先下载好主题再换，如果先更改了主题，你会发现好像主题下不下来
-更改站点的
-theme: landscape
-改为你新下的主题,theme下是啥，你就写啥
-</pre>
-<p>连接的时候报错了<br>fatal: unable to access ‘<a href="https://github.com/theme-next/hexo-theme-next/&#39;">https://github.com/theme-next/hexo-theme-next/&#39;</a>: Failed to connect to github.com port 443: Timed out</p>
-<p>是说超时了吗，可以再重新输入一次命令</p>
-<p>成功后</p>
-<pre>
-进入站点配置文件，配置theme: next
-
-回到根目录 git bash 
-hexo s --debug
-然后本地预览查看是否无误
-
-然后输入生成和发布命令，在网站上预览结果
-好像是空白
-但是按ctrl+f5多几次就可以运行了
-ok完结
-</pre>
-
-
-<hr>
-<p>莫名其妙的一段笔记，不重要</p>
-<p>git branch  –查看分支<br>git branch -a –查看所有分支<br>git branch 分支名 –创建新的分支<br>git checkout 分支名 –切换分支</p>
-<hr>
-<p>后面还有对博客的主题进行配置的，一直没弄好，所以放放先，以后再整吧</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>java2</title>
+      <link href="/2021/08/02/java2/"/>
+      <url>/2021/08/02/java2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo博客后续配置</title>
+      <link href="/2021/08/02/hexo%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE/"/>
+      <url>/2021/08/02/hexo%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="增加阅读全文按钮"><a href="#增加阅读全文按钮" class="headerlink" title="增加阅读全文按钮"></a>增加阅读全文按钮</h1><p>在主题配置文件中添加<br>auto_excerpt:<br>  enable: true<br>  length: 150</p><hr><p>注：</p><pre>---title: date: tags: ---</pre><p>这一部分不要写错，不然增加了阅读全文按钮后，点击打不开文章。<br>可以用在根目录+git bash输入<code>hexo new &#39;文章名&#39;</code>自动生成文件和前面的头部</p><h1 id="侧栏的tags标签页-和分类标签页"><a href="#侧栏的tags标签页-和分类标签页" class="headerlink" title="侧栏的tags标签页,和分类标签页"></a>侧栏的tags标签页,和分类标签页</h1><h2 id="配置tag是标签"><a href="#配置tag是标签" class="headerlink" title="配置tag是标签"></a>配置tag是标签</h2><p>###1.主题配置</p><pre>menu:  home: / || fa fa-home  about: /about/ || fa fa-user  tags: /tags/ || fa fa-tags  categories: /categories/ || fa fa-th  archives: /archives/ || fa fa-archive  #schedule: /schedule/ || fa fa-calendar  #sitemap: /sitemap.xml || fa fa-sitemap  #commonweal: /404/ || fa fa-heartbeat</pre><p>取消<code>tags: /tags/ || fa fa-tags</code>前面的注释</p><h3 id="增加某个文件在根sourc下"><a href="#增加某个文件在根sourc下" class="headerlink" title="增加某个文件在根sourc下"></a>增加某个文件在根sourc下</h3><p>根目录+<code>git bash</code> + <code>hexo new page tags</code><br>在指定目录下自动生成了文件</p><pre>---title: tagsdate: 2021-08-02 14:58:39---</pre><p>增加得</p><pre>---title: tagsdate: 2021-08-02 14:58:39type: "tags"---</pre><h3 id="然后在要加入标签的文章头部加标签"><a href="#然后在要加入标签的文章头部加标签" class="headerlink" title="然后在要加入标签的文章头部加标签"></a>然后在要加入标签的文章头部加标签</h3><pre>---title: 搭建博客教程date: 2021-08-01 08:58:34tags: hexo //就是在这里增加categorise: 技术---</pre><p>#设置部分博文不对外开放<br>文章保密，不对外开放，买的课内容不外传</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java学习</title>
+      <link href="/2021/08/02/java/"/>
+      <url>/2021/08/02/java/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="b1ea674b1ab4763c777f6f8be54463ad5b0c2db9fbdc32b13f262c5c0e3b9067">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ff173bf20ced37c17e2346e8dd8c98314b3f7346a1c861af4a6d2bff6b87f39fc01bf8386206052ca791fbb469b0bc6e70057a5553f139246061f15f552d52a1978753b77e3d99c53e86c464991b2c00bc9a13e516044b456db1eb4c17ffed64ae0aafb5ea371c167bb718e46223c4138c8970a0f1e0da62afd57756728639d6c2c84b4b3974a979dcc962f5e0c1f72e04a751ce675f3b8b326920aaaf90c478840592dfe488d3cdbd1abf8f77cfae06b2fb0ca3e9042d4d914826d544f56c5532bc329eecc196d56c1b5cfe7e9409c0c80209fd1978b541ab4c805068177618e77364b655bb1bc39bd2e62b7c3c4581c385b5c4e389393aeb1a22e1b1761316697372e1923e6f514d746a1fe660606b59e14d584dfc6d4480a0484f0e86ee579dc30df7bc5138cbe17c7a554357b813650b9d5b4db7ac5ffc3694d7f1b22af47690c4632a2b28827fb7cbcbf7b8df03a93b9f3910e26762f51c481dd59d9ea65781be7b7628d4f080cbf4db1938bcb8f8a1214b9c1ba006ef7cbe1d3ca66abb2cc9b4e3d2b307c29a4d5a715e61b3f4e270f4ebcf68198b5c7dc4aee57be645daf86807505a4db736358f29ea91d7a06226b0ffecd9548eda965ed90acd5e3a47f85817c08277c0430e9e132ca359f443cab19793831d4634f78f80a696ddbda4824490f1f00e11e9a190a074689848bfe11b26af6576a239e89ea7c7074df5bc6860c6d942fed85443234be599482872cf682ecd78b7315ccbaf905e5eda9b6d346add4276f94535550b90008fae6ff5f8dd6fcb27540c874bdeb5649c55fe92a9aa524c815cd1d42fb4380edcb9085bc9308f5b7f1b857a624c812f86800abd803cfdf166f4059827b6400d9c9214e77ad213453499554373ac85ad3b5c5231af9f27199018614a91b317596c51c7b2e6a2d1b19e754b3c02a66065c72cbc89bb6544eaedd0bb8ea67c8f30d74b3aefee9071fd3ec198c1f29d8c6bce5c4143b8623e6a73979cacc0c99d13f997775d8138a5a6b53cc1583765c9681184c9ed173abd42d11e800861f2c76af4c42f164a72e434f46122fcf63f089e294e613af087dfa13107a66d8c4f49d207a0d06e438b294949e6196b2a015679f80f30d0012c7af206cf361b688693b9c84bf95ea5169a6c22e1f3d7f441b801d295edb8f1e74f4bdfa8e2d33b0d7f5daa45daffaa4b6315c7e766b4187dfe9ae15b4758c0427125f65a6b4829cf1e3743f29f32d15ea803c673ba2d6462ff780eeb463f7d1b723dbee27c48015c6d611df04a7c39463e55f656eb32442077253841744032244c4ba293ac255f7f7503b03d65d8c200a3ef9d48dae4a16fc6f4e6bb8aa313bc3072669876dbb3dea9a9d1e5af9bb0597595505c4638b3e77885277211e90587b96bf05cb8f3e78f1c4c2125161ed390a6d419aebdfc902ceb0929263ee59568de3a8bb4545ec4a4c74ff14325309a8ca3cfcc333b34664271da2efa8f59003ca34b7cbbdc8397aafa20ded2b072e2f195acb7307a7658acfb646a7fe37519ac8345a8292b2ec87dfe4ec56539ea25db83c3c34404b2b422498df06c6eae48d168bd91fe44c185ae461db9445b6706d19df08fcb58019570eef1aba339a1e89f09dac54bde8a30f98264f48e273e2fa91e42701d7be474eddc7f088fb5b2157f06cd3cd35b4bf6af977bca0678e0e7fb8242520baccc2c2490001944ae69418ef89a9959f3ae00fc884a5897f481711719270fb0ff8d6d0a3a1f007cc6534c32a68fd91a26cabbf3436986b38ab51da25254f1c01e956f3b8c9b2e974be451a8ab11400b87b8f2358df127b8c9219450e46309ca37a9620e6076bec8eaf89877090264686c88b5d345683aeeba764ce8ad355a8294f46728763a8fc25b9fff6d8ca88426cf40d9c5f5733b1f87b4521183235e167fb562d60d9f58fe263443d7933aa5887a94d1074f1659ff4a23b8361b93d59c6c4d8af0d5f0c9ca5b79a4d309d002e3b55d168536a8d887207d2b980aad51688c9d79d2039e066425a25feb1f45080c2f14c7ccaf29fcfb0288073190427d061d0310a520d7b6a39a59678b0f900840de0c744e32bcef74adb74a7f3b6d2b86254a727980418ed444faad6551750a888ff7f72e397e616630849341c96be6a9d3b1d3755812f6d349fdbe4e312d0e419ce1cfb3979ad548f2908a121fbbc3d944b6444450f7affe02ce0689996248a5c3cfa8eb581ca1160eee24c4ba71f51d3c8dd239d2e30d2628ed985e61203883e307e71fb5b96b8eb7d0b6e0440fa82ad2792103ed0c875806667bf1f84bdaa74e434cf741fd44504b66803d99158aebf6a47e3b5e34c05d41917233240db07d1a9cb6ef6c6d74835d8460ebadabebafc4bada7ba96d698759f8f5019f109c014829b7fabf8c21ef1e0bcbe25269c7e567467e20db0fe550b0cc0c9648165e46792ac38d393b9bfcd1eb4e25d792648332bac066c9fba656ddd5ec224b3f059cc98e1d729267337353f244fb85387c09d60fda3a3737ac3fa74854791a7d1214727931f5c3a915a869d86401ad7911f27e678197f316bccd529f159092eb934469546257f2e1bef9eac2319ebd5b9e31ca75d062b9dd4577f46e8b31a90df5310afe4d02ad317b99d4987869965b1c14f6b95e95c30ad53d0ebed4f2215a1254ab525324d6c430e2a4243bad4f08ced199377fcbe1ecc9241c10e575b810917a4d140c218470b9114d69ffa92bb68a52d0c5e1cb12b862094b37ae1cba438be05c2b0996eb944a305c4b0ccd315b060ed24a975dc6a7641d6b78a0827040b9d71651bf80463a735070f71e26fca79f56fa7bd3f5e8150a1575e86832cece7232139dc354ca136f2c9e4131e7a5624f2894f769e8cab46914affdd2b9d15323feb45ffe105fd3de7438c0d3d7c381d733aeffc6d150bcd968a857835d91b18645173c03730f7528405faeddf65fea9e125b2a02711e0ce7238e5517aa72ae4c94595810d3b2d7ba464b545adaa191b4c6a990614c056855e8e8e55798eb05836637ee9699808a009664b4db8b876e2f4f1f35034cd15339c9e68d9f8ca012aa18624547e26527f7b0b6ca3c1b22a3b1bdf0a2d134e768d5f1463f7441600cf33627b9bed02380fffcde1621a4ebc0c17444aa7eea052bfc9f8298ad843b232dae243d1f31ad0999a21d057fca1b05de8e950ada1c5d9ae3a65853d8331a59b1d8cfef65f3a7f3a56e55d46cfa23824f6d458a38d7747842db8c6552a1ac0734e2810d0008de5a8542457c5f0914946011fe693154d5dd4d00e96a8f512053faf7b32030279446994f3a574afb8ce945ec35eed5dfc59b0c2d4198e225791d59a0502a47a062b9dcdb06637dc20e3abf9d5310109357f6c1bebd0ea08a10905e45d57b964a5fc9ffeafc33d57dda4066a565ec9abee181619168516672c891587b19377e45f6de0c0da041bf31b2be3b95385999101432fca2615ae50227549e51559cbc0fd4716d244f6552a23386faa9cad6cdfd8c24cbbf7e895e99b9301bb4e2e1c4e56a5f112cc95613f72173bb0e32581fc320b06b090a2825336e6779363dcb110a91b830e23d050a4fb63d2760960b0aa77b6cbc7949d5b7573aa4c8922c32923dc68b5aa24ebfcdb6a1727aba838ac6b43cf39723b33e8dd40886f2afb453cdd4aa143976ce5884d77f40dac6238258ec1467fac52a9bb7c7f956bfca559614da22f6d7d172a8403c59ca8f33494a2e4fa248a6483a8dbdc7c365068b505ef987825bb3d1204705c326d3a7b3d5d04698d8828f82e8815514a3559c34bf57ea87694e3dee1a1be7d3d56ee82a348040795821c25db62bfbbec5de663b90f90c5dd44e483f57389b7c00144d9bb1655656afc1b1d74821d4ed9451775c2c65ec2cbff542bfef8543d0f56a88a2c6d56124d83f3ba75f690c4b10fbe6b9cac2ccc940202c5b3a13ef00cf57123b56092ba278b62e8c0a92ab70d8422b26641f0f81c9c8b33ce2f8c27c14db5d82d9548cfaf7c3a22d828eb2225f5b828f7af6a89b88c78979cbcd16c2e44818ca42a0044eb68785bf05398c6959043f61742c3c83d25b2b6bc29755fde2a9a4785a2f6600d36376171b21d2b3678fefd44e05aebed08864225e2a500abb400313c940ae33714a68b86e9c9cc57d3b13b36d71dab9c47bec883135353b77091928c8479c4f696cdb86ad8aa24d4f5949658ad263c14c41c79313f18e27e773c1de8a13674eea9f4284a33a0a5b20cfa888f7156b77b53edcae71f94bf296e0d080e72312bb96e8c2f922afeb22eca3b30a3ad748d335d685155b8df9106b98b579413a0b73910b79e67a36a7cc988d837d18e370ebf7a1fedb8ee412c84414e24c792dd1fd57d8de622a82d78baeb267044ba18e0bbc4353fa7fe14117ade51d4c1f104a3a66c9761bb33d2fa6ca780bb532aa000330561f9f575d8d437b09e124c42c5b303860356314180f96755e7640662ab59928155b04c425e4f15ae1c055354c62634b908a152cba830eae679e9486892b6d59adc57e919f91f4655f80feb38f93989c5290aeefe420c796edff23119d2ba683b28726c1fb33d23e49863db3cfb16812663fe47848ee1c1acc5fa439433fc798386d2f8998bbcccbd789d7519122aa747ec5c7518834592bc482d2592b86b38b156a3a5127e9b27afc5efbf6f02f23daa733119f5b661369610435ad855ac60687cde88d682d942663d946766e58d074cadda79f611555aaa382ef7bb9d764efb8cdd4cab9bc573cec75fba3710422d8b096c531e631a56a33717239d87fca34348bc332ebc281e1ee1259f531c3c9b27b864176a662fa73b45f3966e16c4b326b0e17f51f6d92ae2c12c8199181b86126affe25bde10f869aaab9d93b506334ca31c9abe6b19009ae020fa5c2210e4a1321913dbc74bc446290297bddfc96cc498016bc623357c293854725fabfd931be6be081a799472a2e6130291d38b6db03c15b04b62758c5e1b0a1cea120808627e224c9cd612097faf6306128748fac2e4267eb9b7990e57c6841282b90e5e5b03d62297afd2ed1fff3f2bee022031dc84dd5d3e70a299e9cd5581b29c9480e55ecf59d095778e89b5be8516d801a3b3abba9c7d3d37194c2889450bf0f8f735d135ae522ee17de84ff98180c34e72bde532f06202a903ec75b662bca3b8ffd6ad57acc2c79f20c4e2639a2718da07f77f2cfa04f31ca9ec68f8d922c51fccc0262bf51ef500214c3c3e2d9b56443b3c10073f453a3dbf6e92468f9d2c2065022a1de072f51765debfa67caf4644b570573da06479c95ba6414069ab0f8070602d62edf4e3facf76558e899012bd966da8a81ca03f20aade1406406b40cb08e566f4b3243580582db3491b9ebb446a00721e2dc7dd2602ee02f8025b926c6665326c384af90da47efecc5c1c9ec740f88994f83604522b92aa0032affcff0d8442b39743caa1a2e899db31acb65b069d253fffa32635d36ac155e9f17ebab588066c653faa1fb4826d32b9d38505f448fd908b7b423b08f056be1c4c5df2f8f7fff408312e13f60a72e8c557bf3e2df8ae19f0b593cfbe92491108755b76f7f8f63846215879a7038b33d2b418b4f320f3c9d0ffbd1898c708fa2339fb6d72e981c3fb5f17e91c245b42997e56fd868c89a3a664afb08f5e3ed00cd629770841c239fcb19b8559fdb44a1397ce5fdae99d5c47a9b6388828b55682dba468169de0fa907a52b8cc27895c834d3a79c9a7c209ebd317f5cf5d699f86b4ca0a3bd52703fcaccde8efc7b40fda502c5dbe4a7cf28d3e81e3fd658de79727cc9669693613c0d04972312093280511369716cefa74354ec62010d170e10924290fdacd8a4c6445007ae77f4068234b572bf52c4f0f13c9abc95f0ad8d44651b6b196bb79563540a0802015b7197fd5396b4bc3fe1847bbe49c5786227d0672a716352b0ef0cbfd05befbcfb9d6e2ef6b969608b6e70756c9bdac07e61ab5d9f374255090fad5f4e2284ab4eba9d440b5053685ed61d9e57d370c24cc2de52e1686bd7620b1d7abbb4a00bab0963448ffcdc780e85eb5c22bba06fb1490573cbd8e9908e436de6c972bc1c80f996b6fb1cc3e8c6edb6442f12543b6649d693277bbbdcdaf497046d8b37ac5396d26d20253e3017eda7585ada4031e541e898dc19fe715bec0900b313deb35309658fe5fc12f0621fc2839f4ddab9538c7464739c9ccdba84ddcb7057010338a816c88c0fe796ca2a3a96ce44e67b3e43236330b86bbb07356ecb5ed836b34314885b548cd1021899f5937254140aa8c99b436293ef27d7f33e314223f2f440b70f164dcb0a4cdc1c6096ead481606d999301ce507f60d8ae7e764d40b87b9215efa0ce15b994543d13a046b91accce90eae205c0971a8798843e1803a7d5f58fb3177e767444b4c1cb73783e4b76066767c5cd1791830b9f165a65c16377bdcd8988c4081b7da4971a07d81fa686fd999d03d1549a8fda9522cce33ad4f7c5951bf31eeb376fa8c3c866c36c7de281c72d9c56637988dee7551195137b60198ea28f3859cfd1baecc87a47b85756f4b7b97af84d67fd4107de3f7c18fb09a6daecfac7a84c07bc8de8278eefe47f6fc5b43082246b95b1c628c6ae312d40e6b99e8d43b2409892f98b72447610c66646097d2517c469a918f6466e69106897ebb77dc8d1c442c837ae8c9ad8f1b056b078d3f74405f0b1db189d0178c25547305202b80da4b8696b02d05cc718f9bbd281322b60d3807fb4c2e312bc14f72b67eb4487c21cf2275524d707b3f45db056d9e4c1976e1626831cd85b32f74d85948860c18aee3803eb98cc5464e601f80c8a3366e45944683556e9fb4f33c092594b8fae12cf378398eff8833d8836b5b43354015e5374630a2b2590f1e0b8705a4545e1804303750e86393620d5dbc04550250bc47bc72967313c74cdc1181a503622acdb4a54067326fadf4d9e50d6afc8e6ab94901c373e0e99c14f9d97d58b67b309224e80366ba8491f264227ad9ce748fccf564f705b955dbf78beb32564d874306e942b92d5f7bb07003a6e5181875dca00572477daeaaee552c4dc28ff3a804e7592f0434d17368002ced3d88f24fa123c157d2a4980acfa72e231d09a91fd87efa7226fd9ac959281e08690d3dec2e0f73149f54ed0f0075b87ad748a468b0772a472e2c54f17a133dd6f3b9a7fd6a56cefe7b46d1af5c7ae04306a8704092cbb2fd17ec867ceee5a043a9f0393dae266d68062f5e69db214d423c6a4a95a8d8681337a166b699396bbf8bf539120b6755f696c6202c2cb93c444e10e6df65ed6c4cbc5016e1200ee9a766940cf52fa16e0be949f78e9ca6fb2604a32d5b293fc23a02a52512de5c4fd52125153a8991ce3b68300783ed4</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑猫的博客</title>
+      <link href="/2021/08/01/index/"/>
+      <url>/2021/08/01/index/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://c-ssl.duitang.com/uploads/item/201707/11/20170711232740_uVhCt.jpeg"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> me </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搭建博客教程</title>
+      <link href="/2021/08/01/%E6%90%AD%E5%BB%BA%E7%AE%80%E7%95%A5%E7%89%88%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2021/08/01/%E6%90%AD%E5%BB%BA%E7%AE%80%E7%95%A5%E7%89%88%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p><strong>搭建博客教程</strong></p><h1 id="1-创建github账户，创建github仓库"><a href="#1-创建github账户，创建github仓库" class="headerlink" title="1.创建github账户，创建github仓库"></a>1.创建github账户，创建github仓库</h1><h1 id="2-建立连接，本地与github"><a href="#2-建立连接，本地与github" class="headerlink" title="2.建立连接，本地与github"></a>2.建立连接，本地与github</h1><h2 id="2-1安装git"><a href="#2-1安装git" class="headerlink" title="2.1安装git"></a>2.1安装git</h2><p>下载，安装git之后</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打开cmd就可以</span><br><span class="line">git config --global user.name &quot;firstname lastname&quot;</span><br><span class="line">git config --global user.email &quot;youemail@gmail.com&quot;</span><br></pre></td></tr></table></figure><h2 id="2-2本地创建密钥"><a href="#2-2本地创建密钥" class="headerlink" title="2.2本地创建密钥"></a>2.2本地创建密钥</h2><p>创建密钥</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail@gmail.com ``</span><br></pre></td></tr></table></figure><p>最后这个密钥会保存在某个文件下!<br>c盘/用户/用户名/.ssh/id_rsa下</p><h2 id="2-3粘贴该密钥至github"><a href="#2-3粘贴该密钥至github" class="headerlink" title="2.3粘贴该密钥至github"></a>2.3粘贴该密钥至github</h2><pre>库---setting---ssh与GPG keys下，输入密钥名称（自己造一个）和之前那个密钥文件下的所有内容注是加那个.pub的然后git bash下，ssh -T git@github.com</pre><h1 id="3-先去官网下载安装包，安装node-js，再安装npm"><a href="#3-先去官网下载安装包，安装node-js，再安装npm" class="headerlink" title="3. 先去官网下载安装包，安装node.js，再安装npm"></a>3. 先去官网下载安装包，安装node.js，再安装npm</h1><p>然后用命令行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  //查看是否安装好了node.js</span><br><span class="line">npm -v  //查看是否安装好了npm</span><br></pre></td></tr></table></figure><h1 id="4-安装hexo-和本地预览博客"><a href="#4-安装hexo-和本地预览博客" class="headerlink" title="4.安装hexo 和本地预览博客"></a>4.安装hexo 和本地预览博客</h1><p>创建一个文件夹作为博客的目录，右键 git bash</p><p><code>npm install -g hexo-cli  //安装hexo</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OpenSSL SSL_read: Connection was reset, errno 10054）</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify &quot;false&quot;）```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`hexo init //初始化该文件夹`</span><br><span class="line">  </span><br><span class="line">`hexo new xxxx //创建一个新页面`</span><br><span class="line"></span><br><span class="line">`hexo g  `</span><br><span class="line"></span><br><span class="line">`hexo s`</span><br></pre></td></tr></table></figure><p>然后可以打开浏览器<br>localhost:4000 //在本地上预览博客</p><p>ctrl+c可退出</p><h2 id="网页预览博客"><a href="#网页预览博客" class="headerlink" title="网页预览博客"></a>网页预览博客</h2><p>根目录下的_config.yml是站点配置文件<br> themes中的_config.yml是主题配置文件</p><p>为了让hexo和github关联起来，站点配置文件<br>ctrl+f 搜索deploy</p><p>配置</p><pre>deploy:type: gitrepo: 仓库的路径 （是咋写的忘了）git@github.com:umli0/umli0.github.io.git有个说要写成上面那样很多就是直接仓库地址branch: master</pre><p>然后保存<br>然后安装插件</p><pre>npm install hexo-deployer-git --savehexo clean hexo g hexo d  //部署网站（这一步需要输之前ssh的密码）也可以直接写成hexo clean && hexo g && hexo d</pre><p>然后就可以打开网站了xxx.github.io</p><h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>克隆主题至目录下themes下的next文件夹下<br>然后是配置主题文件</p><p>看别人写的吧 <a href="https://juejin.cn/post/6844903780056563726#heading-5">配置方法</a>.</p><pre>博客的本地目录下---git bash--用命令 git clone https://github.com/theme-next/hexo-theme-next themes/next   将想要下载的主题下载下来（这个是旋律NexT主题）先下载好主题再换，如果先更改了主题，你会发现好像主题下不下来更改站点的theme: landscape改为你新下的主题,theme下是啥，你就写啥</pre><p>连接的时候报错了<br>fatal: unable to access ‘<a href="https://github.com/theme-next/hexo-theme-next/&#39;">https://github.com/theme-next/hexo-theme-next/&#39;</a>: Failed to connect to github.com port 443: Timed out</p><p>是说超时了吗，可以再重新输入一次命令</p><p>成功后</p><pre>进入站点配置文件，配置theme: next回到根目录 git bash hexo s --debug然后本地预览查看是否无误然后输入生成和发布命令，在网站上预览结果好像是空白但是按ctrl+f5多几次就可以运行了ok完结</pre><hr><p>莫名其妙的一段笔记，不重要</p><p>git branch  –查看分支<br>git branch -a –查看所有分支<br>git branch 分支名 –创建新的分支<br>git checkout 分支名 –切换分支</p><hr><p>后面还有对博客的主题进行配置的，一直没弄好，所以放放先，以后再整吧</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
