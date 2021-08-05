@@ -24,16 +24,17 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL注入之SQL简要注入">
 <meta property="og:url" content="https://umli0.github.io/2021/08/03/SQL%E6%B3%A8%E5%85%A5%E4%B9%8BSQL%E7%AE%80%E8%A6%81%E6%B3%A8%E5%85%A5/index.html">
-<meta property="og:site_name" content="黑猫的博客">
+<meta property="og:site_name" content="黒猫的博客">
 <meta property="og:description" content="小迪安全学习|WEB漏洞|SQL注入之SQL简要注入">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/d53d65100b2d4021bc37277f6a08e15f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/9b141cbe017c48358ab53048719abc00.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/6e9675a6f3164949bbc6440d9bfd0d91.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/fd7317fae1ee49ab86a39876bfa0f699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0010589e659f4c1e861109c14b6512c5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-08-03T08:20:57.000Z">
-<meta property="article:modified_time" content="2021-08-04T10:31:23.834Z">
-<meta property="article:author" content="黑猫">
+<meta property="article:modified_time" content="2021-08-05T08:39:14.042Z">
+<meta property="article:author" content="黒猫">
 <meta property="article:tag" content="SQL注入">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/d53d65100b2d4021bc37277f6a08e15f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70">
@@ -51,7 +52,7 @@
   };
 </script>
 
-  <title>SQL注入之SQL简要注入 | 黑猫的博客</title>
+  <title>SQL注入之SQL简要注入 | 黒猫的博客</title>
   
 
 
@@ -102,7 +103,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">黑猫的博客</h1>
+      <h1 class="site-title">黒猫的博客</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
@@ -204,12 +205,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/1.jpeg">
-      <meta itemprop="name" content="黑猫">
+      <meta itemprop="name" content="黒猫">
       <meta itemprop="description" content="记笔记和崩溃的学习记录">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="黑猫的博客">
+      <meta itemprop="name" content="黒猫的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -230,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-04 18:31:23" itemprop="dateModified" datetime="2021-08-04T18:31:23+08:00">2021-08-04</time>
+                <time title="修改时间：2021-08-05 16:39:14" itemprop="dateModified" datetime="2021-08-05T16:39:14+08:00">2021-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,7 +258,8 @@
         <h1 id="忍者安全系统"><a href="#忍者安全系统" class="headerlink" title="忍者安全系统"></a>忍者安全系统</h1><p>自己搭一下<br>里面涉及到后续需要的工具都有，就不需要自己去下载了</p>
 <h1 id="SQL注入安全测试中的危害"><a href="#SQL注入安全测试中的危害" class="headerlink" title="SQL注入安全测试中的危害"></a>SQL注入安全测试中的危害</h1><p>1.危害到数据库中的数据</p>
 <p>2.危害到网站的权限</p>
-<h1 id="SQL注入产生的原理"><a href="#SQL注入产生的原理" class="headerlink" title="SQL注入产生的原理"></a>SQL注入产生的原理</h1><h1 id="安装sqli-labs"><a href="#安装sqli-labs" class="headerlink" title="安装sqli-labs"></a>安装sqli-labs</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>去这里下载<br><a target="_blank" rel="noopener" href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p>
+<h1 id="SQL注入产生的原理"><a href="#SQL注入产生的原理" class="headerlink" title="SQL注入产生的原理"></a>SQL注入产生的原理</h1><p>SQL语句若没有定义变量就不能SQL注入<br>存在可控变量 带入数据库查询 变量为存在过滤或过滤不严谨</p>
+<h1 id="安装sqli-labs"><a href="#安装sqli-labs" class="headerlink" title="安装sqli-labs"></a>安装sqli-labs</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>去这里下载<br><a target="_blank" rel="noopener" href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p>
 <p>##下载phpstudy</p>
 <h2 id="将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内"><a href="#将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内" class="headerlink" title="将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内"></a>将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内</h2><h2 id="要注意两个问题"><a href="#要注意两个问题" class="headerlink" title="要注意两个问题"></a>要注意两个问题</h2><h3 id="1-php版本"><a href="#1-php版本" class="headerlink" title="1.php版本"></a>1.php版本</h3><p>php-7.X.X好像不行会报错<br>重新下个其它版本的php<br><img src="https://img-blog.csdnimg.cn/d53d65100b2d4021bc37277f6a08e15f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"></p>
 <h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><p><code>phpstudy_pro\WWW\sqli-labs-master、sql-connection</code>找<code>db-creds.inc</code><br>配置<br><img src="https://img-blog.csdnimg.cn/9b141cbe017c48358ab53048719abc00.png"><br>用户名，密码，记住name的值</p>
@@ -266,6 +268,21 @@
 <p>然后网页输入<a target="_blank" rel="noopener" href="http://localhost/sqli-labs-master/">http://localhost/sqli-labs-master/</a><br>得<br><img src="https://img-blog.csdnimg.cn/fd7317fae1ee49ab86a39876bfa0f699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"></p>
 <p>点击<br><code>Setup/reset Database for labs</code></p>
 <p>然后就可以了</p>
+<h1 id="SQL注入讲解"><a href="#SQL注入讲解" class="headerlink" title="SQL注入讲解"></a>SQL注入讲解</h1><p><img src="https://img-blog.csdnimg.cn/0010589e659f4c1e861109c14b6512c5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70#pic_center"></p>
+<h2 id="1-信息收集"><a href="#1-信息收集" class="headerlink" title="1.信息收集"></a>1.信息收集</h2><h2 id="2-如何判定是否有注入点"><a href="#2-如何判定是否有注入点" class="headerlink" title="2.如何判定是否有注入点"></a>2.如何判定是否有注入点</h2><p>老方法： </p>
+<p>and 1=1 页面正确</p>
+<p>and 1=2 页面错误</p>
+<p>可能存在注入点</p>
+<p>新方法：</p>
+<p>网站- 表名-列名-数据</p>
+<p>判断注入<br>猜解列名数量（字段数） order by * 错误与正常的正常值</p>
+<p>报错猜解<br>union select 1,2,3,4</p>
+<h2 id="然后进入信息收集部分"><a href="#然后进入信息收集部分" class="headerlink" title="然后进入信息收集部分"></a>然后进入信息收集部分</h2><p>数据库版本 version()</p>
+<p>数据库名字 database()</p>
+<p>数据库用户 user()</p>
+<p>操作系统 @@version_compile_</p>
+<p>id 后加报错猜解部分<br>得到2，将2部分改为database(),version() 查询数据库版本和数据库名字</p>
+<h2 id="根据收集到的基本数据，进一步数据注入"><a href="#根据收集到的基本数据，进一步数据注入" class="headerlink" title="根据收集到的基本数据，进一步数据注入"></a>根据收集到的基本数据，进一步数据注入</h2><p>其中知道了数据库的版本<br>必要知识点：在</p>
 
     </div>
 
@@ -287,7 +304,10 @@
     <a href="/2021/08/03/java3/" rel="prev" title="java3">
       <i class="fa fa-chevron-left"></i> java3
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/05/java4/" rel="next" title="java4">
+      java4 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -346,15 +366,15 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%8D%E8%80%85%E5%AE%89%E5%85%A8%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">忍者安全系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">2.</span> <span class="nav-text">SQL注入安全测试中的危害</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">SQL注入产生的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85sqli-labs"><span class="nav-number">4.</span> <span class="nav-text">安装sqli-labs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">4.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%A7%A3%E5%8E%8B%E5%90%8E%E7%9A%84sqli-labs%E7%9A%84%E5%8C%85%E6%94%BE%E7%BD%AE%E4%BA%8Ephpstudy%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84www%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85"><span class="nav-number">4.2.</span> <span class="nav-text">将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B3%A8%E6%84%8F%E4%B8%A4%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">4.3.</span> <span class="nav-text">要注意两个问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-php%E7%89%88%E6%9C%AC"><span class="nav-number">4.3.1.</span> <span class="nav-text">1.php版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.2.</span> <span class="nav-text">2.配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AF%95%E8%AF%95"><span class="nav-number">4.3.3.</span> <span class="nav-text">3.试试</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%8D%E8%80%85%E5%AE%89%E5%85%A8%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">忍者安全系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">2.</span> <span class="nav-text">SQL注入安全测试中的危害</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">SQL注入产生的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85sqli-labs"><span class="nav-number">4.</span> <span class="nav-text">安装sqli-labs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">4.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%A7%A3%E5%8E%8B%E5%90%8E%E7%9A%84sqli-labs%E7%9A%84%E5%8C%85%E6%94%BE%E7%BD%AE%E4%BA%8Ephpstudy%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84www%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85"><span class="nav-number">4.2.</span> <span class="nav-text">将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B3%A8%E6%84%8F%E4%B8%A4%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">4.3.</span> <span class="nav-text">要注意两个问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-php%E7%89%88%E6%9C%AC"><span class="nav-number">4.3.1.</span> <span class="nav-text">1.php版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.2.</span> <span class="nav-text">2.配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AF%95%E8%AF%95"><span class="nav-number">4.3.3.</span> <span class="nav-text">3.试试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E8%AE%B2%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">SQL注入讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="nav-number">5.1.</span> <span class="nav-text">1.信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A6%82%E4%BD%95%E5%88%A4%E5%AE%9A%E6%98%AF%E5%90%A6%E6%9C%89%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">5.2.</span> <span class="nav-text">2.如何判定是否有注入点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E8%BF%9B%E5%85%A5%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E9%83%A8%E5%88%86"><span class="nav-number">5.3.</span> <span class="nav-text">然后进入信息收集部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E6%94%B6%E9%9B%86%E5%88%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%EF%BC%8C%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%95%B0%E6%8D%AE%E6%B3%A8%E5%85%A5"><span class="nav-number">5.4.</span> <span class="nav-text">根据收集到的基本数据，进一步数据注入</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="黑猫"
+    <img class="site-author-image" itemprop="image" alt="黒猫"
       src="/images/1.jpeg">
-  <p class="site-author-name" itemprop="name">黑猫</p>
+  <p class="site-author-name" itemprop="name">黒猫</p>
   <div class="site-description" itemprop="description">记笔记和崩溃的学习记录</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -362,20 +382,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -407,7 +427,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">黑猫</span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
 </div>
 
 <!--
