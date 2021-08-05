@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL注入之SQL简要注入</title>
+    <url>/2021/08/03/SQL%E6%B3%A8%E5%85%A5%E4%B9%8BSQL%E7%AE%80%E8%A6%81%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<h1 id="忍者安全系统"><a href="#忍者安全系统" class="headerlink" title="忍者安全系统"></a>忍者安全系统</h1><p>自己搭一下<br>里面涉及到后续需要的工具都有，就不需要自己去下载了</p>
+<h1 id="SQL注入安全测试中的危害"><a href="#SQL注入安全测试中的危害" class="headerlink" title="SQL注入安全测试中的危害"></a>SQL注入安全测试中的危害</h1><p>1.危害到数据库中的数据</p>
+<p>2.危害到网站的权限</p>
+<h1 id="SQL注入产生的原理"><a href="#SQL注入产生的原理" class="headerlink" title="SQL注入产生的原理"></a>SQL注入产生的原理</h1><p>SQL语句若没有定义变量就不能SQL注入<br>存在可控变量 带入数据库查询 变量为存在过滤或过滤不严谨</p>
+<h1 id="安装sqli-labs"><a href="#安装sqli-labs" class="headerlink" title="安装sqli-labs"></a>安装sqli-labs</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>去这里下载<br><a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p>
+<p>##下载phpstudy</p>
+<h2 id="将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内"><a href="#将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内" class="headerlink" title="将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内"></a>将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内</h2><h2 id="要注意两个问题"><a href="#要注意两个问题" class="headerlink" title="要注意两个问题"></a>要注意两个问题</h2><h3 id="1-php版本"><a href="#1-php版本" class="headerlink" title="1.php版本"></a>1.php版本</h3><p>php-7.X.X好像不行会报错<br>重新下个其它版本的php<br><img src="https://img-blog.csdnimg.cn/d53d65100b2d4021bc37277f6a08e15f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"></p>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><p><code>phpstudy_pro\WWW\sqli-labs-master、sql-connection</code>找<code>db-creds.inc</code><br>配置<br><img src="https://img-blog.csdnimg.cn/9b141cbe017c48358ab53048719abc00.png"><br>用户名，密码，记住name的值</p>
+<p><img src="https://img-blog.csdnimg.cn/6e9675a6f3164949bbc6440d9bfd0d91.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"><br>新建一个数据库，把密码，用户名，和记的name的值填入数据库名称中</p>
+<h3 id="3-试试"><a href="#3-试试" class="headerlink" title="3.试试"></a>3.试试</h3><p>打开phpstudy的 apache和mysql</p>
+<p>然后网页输入<a href="http://localhost/sqli-labs-master/">http://localhost/sqli-labs-master/</a><br>得<br><img src="https://img-blog.csdnimg.cn/fd7317fae1ee49ab86a39876bfa0f699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"></p>
+<p>点击<br><code>Setup/reset Database for labs</code></p>
+<p>然后就可以了</p>
+<h1 id="SQL注入讲解"><a href="#SQL注入讲解" class="headerlink" title="SQL注入讲解"></a>SQL注入讲解</h1><p><img src="https://img-blog.csdnimg.cn/0010589e659f4c1e861109c14b6512c5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70#pic_center"></p>
+<h2 id="1-信息收集"><a href="#1-信息收集" class="headerlink" title="1.信息收集"></a>1.信息收集</h2><h2 id="2-如何判定是否有注入点"><a href="#2-如何判定是否有注入点" class="headerlink" title="2.如何判定是否有注入点"></a>2.如何判定是否有注入点</h2><p>老方法： </p>
+<p>and 1=1 页面正确</p>
+<p>and 1=2 页面错误</p>
+<p>可能存在注入点</p>
+<p>新方法：</p>
+<p>网站- 表名-列名-数据</p>
+<p>判断注入<br>猜解列名数量（字段数） order by * 错误与正常的正常值</p>
+<p>报错猜解<br>union select 1,2,3,4</p>
+<h2 id="然后进入信息收集部分"><a href="#然后进入信息收集部分" class="headerlink" title="然后进入信息收集部分"></a>然后进入信息收集部分</h2><p>数据库版本 version()</p>
+<p>数据库名字 database()</p>
+<p>数据库用户 user()</p>
+<p>操作系统 @@version_compile_</p>
+<p>id 后加报错猜解部分<br>得到2，将2部分改为database(),version() 查询数据库版本和数据库名字</p>
+<h2 id="根据收集到的基本数据，进一步数据注入"><a href="#根据收集到的基本数据，进一步数据注入" class="headerlink" title="根据收集到的基本数据，进一步数据注入"></a>根据收集到的基本数据，进一步数据注入</h2><p>其中知道了数据库的版本<br>必要知识点：在</p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>SQL注入</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客后续配置</title>
     <url>/2021/08/02/hexo%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="增加阅读全文按钮"><a href="#增加阅读全文按钮" class="headerlink" title="增加阅读全文按钮"></a>增加阅读全文按钮</h1><p>在主题配置文件中添加<br>auto_excerpt:<br>  enable: true<br>  length: 150</p>
@@ -109,49 +148,9 @@ description:
       </tags>
   </entry>
   <entry>
-    <title>SQL注入之SQL简要注入</title>
-    <url>/2021/08/03/SQL%E6%B3%A8%E5%85%A5%E4%B9%8BSQL%E7%AE%80%E8%A6%81%E6%B3%A8%E5%85%A5/</url>
-    <content><![CDATA[<h1 id="忍者安全系统"><a href="#忍者安全系统" class="headerlink" title="忍者安全系统"></a>忍者安全系统</h1><p>自己搭一下<br>里面涉及到后续需要的工具都有，就不需要自己去下载了</p>
-<h1 id="SQL注入安全测试中的危害"><a href="#SQL注入安全测试中的危害" class="headerlink" title="SQL注入安全测试中的危害"></a>SQL注入安全测试中的危害</h1><p>1.危害到数据库中的数据</p>
-<p>2.危害到网站的权限</p>
-<h1 id="SQL注入产生的原理"><a href="#SQL注入产生的原理" class="headerlink" title="SQL注入产生的原理"></a>SQL注入产生的原理</h1><p>SQL语句若没有定义变量就不能SQL注入<br>存在可控变量 带入数据库查询 变量为存在过滤或过滤不严谨</p>
-<h1 id="安装sqli-labs"><a href="#安装sqli-labs" class="headerlink" title="安装sqli-labs"></a>安装sqli-labs</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>去这里下载<br><a href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a></p>
-<p>##下载phpstudy</p>
-<h2 id="将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内"><a href="#将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内" class="headerlink" title="将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内"></a>将解压后的sqli-labs的包放置于phpstudy根目录下的www文件夹内</h2><h2 id="要注意两个问题"><a href="#要注意两个问题" class="headerlink" title="要注意两个问题"></a>要注意两个问题</h2><h3 id="1-php版本"><a href="#1-php版本" class="headerlink" title="1.php版本"></a>1.php版本</h3><p>php-7.X.X好像不行会报错<br>重新下个其它版本的php<br><img src="https://img-blog.csdnimg.cn/d53d65100b2d4021bc37277f6a08e15f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"></p>
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><p><code>phpstudy_pro\WWW\sqli-labs-master、sql-connection</code>找<code>db-creds.inc</code><br>配置<br><img src="https://img-blog.csdnimg.cn/9b141cbe017c48358ab53048719abc00.png"><br>用户名，密码，记住name的值</p>
-<p><img src="https://img-blog.csdnimg.cn/6e9675a6f3164949bbc6440d9bfd0d91.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"><br>新建一个数据库，把密码，用户名，和记的name的值填入数据库名称中</p>
-<h3 id="3-试试"><a href="#3-试试" class="headerlink" title="3.试试"></a>3.试试</h3><p>打开phpstudy的 apache和mysql</p>
-<p>然后网页输入<a href="http://localhost/sqli-labs-master/">http://localhost/sqli-labs-master/</a><br>得<br><img src="https://img-blog.csdnimg.cn/fd7317fae1ee49ab86a39876bfa0f699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70"></p>
-<p>点击<br><code>Setup/reset Database for labs</code></p>
-<p>然后就可以了</p>
-<h1 id="SQL注入讲解"><a href="#SQL注入讲解" class="headerlink" title="SQL注入讲解"></a>SQL注入讲解</h1><p><img src="https://img-blog.csdnimg.cn/0010589e659f4c1e861109c14b6512c5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTQzOTc2,size_16,color_FFFFFF,t_70#pic_center"></p>
-<h2 id="1-信息收集"><a href="#1-信息收集" class="headerlink" title="1.信息收集"></a>1.信息收集</h2><h2 id="2-如何判定是否有注入点"><a href="#2-如何判定是否有注入点" class="headerlink" title="2.如何判定是否有注入点"></a>2.如何判定是否有注入点</h2><p>老方法： </p>
-<p>and 1=1 页面正确</p>
-<p>and 1=2 页面错误</p>
-<p>可能存在注入点</p>
-<p>新方法：</p>
-<p>网站- 表名-列名-数据</p>
-<p>判断注入<br>猜解列名数量（字段数） order by * 错误与正常的正常值</p>
-<p>报错猜解<br>union select 1,2,3,4</p>
-<h2 id="然后进入信息收集部分"><a href="#然后进入信息收集部分" class="headerlink" title="然后进入信息收集部分"></a>然后进入信息收集部分</h2><p>数据库版本 version()</p>
-<p>数据库名字 database()</p>
-<p>数据库用户 user()</p>
-<p>操作系统 @@version_compile_</p>
-<p>id 后加报错猜解部分<br>得到2，将2部分改为database(),version() 查询数据库版本和数据库名字</p>
-<h2 id="根据收集到的基本数据，进一步数据注入"><a href="#根据收集到的基本数据，进一步数据注入" class="headerlink" title="根据收集到的基本数据，进一步数据注入"></a>根据收集到的基本数据，进一步数据注入</h2><p>其中知道了数据库的版本<br>必要知识点：在</p>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-      </categories>
-      <tags>
-        <tag>SQL注入</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>黑猫的博客</title>
     <url>/2021/08/01/index/</url>
-    <content><![CDATA[<p><img src="https://c-ssl.duitang.com/uploads/item/201303/23/20130323002025_xNu8n.gif"></p>
-<p><front size=20>活在当下 为所当为 顺其自然</font></p>
+    <content><![CDATA[<p><img src="https://c-ssl.duitang.com/uploads/item/201303/23/20130323002025_xNu8n.gif"><br><front size=20>活在当下 为所当为 顺其自然</font></p>
 ]]></content>
       <categories>
         <category>me</category>
@@ -332,7 +331,7 @@ ok完结
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
-        <category>java基础</category>
+        <category>java</category>
       </categories>
       <tags>
         <tag>static方法</tag>
