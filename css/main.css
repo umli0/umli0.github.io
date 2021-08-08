@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a4ecdd;
+  background: #6c0e1f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2673,7 +2673,7 @@ body {
 }
 .site-author-image {
   max-width: 150px;
-  width: 200px;
+  width: 180px;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
