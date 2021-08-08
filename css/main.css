@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0a42ff;
+  background: #a4ecdd;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2569,7 +2569,7 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
 }
 body {
-  background: url("https://c-ssl.duitang.com/uploads/item/202004/26/20200426002844_hmkpg.jpg");
+  background: url("/images/2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
