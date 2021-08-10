@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b0ff47;
+  background: #d0ff16;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2870,7 +2870,7 @@ p {
   font-size: small;
 }
 .site-meta {
-  background-image: linear-gradient(200deg, #8094ed, #e4a0a3) !important;
+  background-image: linear-gradient(200deg, #227bd4, #e4a0a3) !important;
   background: #fff;
 }
 .tag-cloud-tags a:before {
