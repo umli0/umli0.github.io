@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="cookie|">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java new 5">
+<meta property="og:url" content="https://umli0.github.io/2021/09/08/java%20new%205/index.html">
+<meta property="og:site_name" content="黒猫的博客">
+<meta property="og:description" content="cookie|">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d6f47a9ca18c4d2082b06ff8e357ee6a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e94508739e7f4e848284304a060fe599.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2021-09-08T03:27:02.000Z">
+<meta property="article:modified_time" content="2021-09-09T09:24:51.338Z">
+<meta property="article:author" content="黒猫">
+<meta property="article:tag" content="cookie">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/d6f47a9ca18c4d2082b06ff8e357ee6a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+
+<link rel="canonical" href="https://umli0.github.io/2021/09/08/java%20new%205/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>java new 5 | 黒猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">黒猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2021/09/08/java%20new%205/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpeg">
+      <meta itemprop="name" content="黒猫">
+      <meta itemprop="description" content="活在当下 为所当为 顺其自然">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java new 5
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-08 11:27:02" itemprop="dateCreated datePublished" datetime="2021-09-08T11:27:02+08:00">2021-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-09 17:24:51" itemprop="dateModified" datetime="2021-09-09T17:24:51+08:00">2021-09-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">java进阶课程</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">cookie|</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="cookie原理"><a href="#cookie原理" class="headerlink" title="cookie原理"></a>cookie原理</h1><p><img src="https://img-blog.csdnimg.cn/d6f47a9ca18c4d2082b06ff8e357ee6a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><p><code>什么是状态管理</code></p>
+<pre>
+将浏览器与web服务器之间多次交互当作一个整体来看,并且多次交互说涉及到的数据的(即状态)保存下来
+</pre>
+
+<p><code>状态管理解决的两个问题</code></p>
+<pre>
+1.身份的识别
+a.区分登录账号的个性设置
+b.在企业中感觉员工的级别,设置不同级别的权限
+2.状态的保护和维护
+</pre>
+<p><code>如何进行状态管理</code><br><strong>客户端的状态管理方案</strong></p>
+<pre>
+1.将状态保存在客户端(浏览器),cookie技术
+Cookie一般存储的就是用户的个人信息(姓名,手机号,登录密码等)
+</pre>
+<p><strong>服务器端的状态管理方案 Session</strong></p>
+<pre>
+将状态保存在服务器端
+</pre>
+<h2 id="Cookie技术"><a href="#Cookie技术" class="headerlink" title="Cookie技术"></a>Cookie技术</h2><p><code>1.服务器临时保存在浏览器端的少量数据</code><br><code>2.Cookie的工作方式</code></p>
+<pre>
+  (1).当浏览器房访问服务器是,服务器会将少量数据以set-cookie消息头的方式发送给浏览器,浏览器会将这些数据保存下来
+  (2).    当浏览器再次访问服务器时，会讲之前保存的数据以cookie消息头的方式发送给服务器，从而识别登陆用户
+</pre>
+<p><code>如何添加cookie</code></p>
+<pre>
+声明Cookie对象
+Cookie c=new Cookie("uname","b514");
+c.setMaxAge(40);//cookie的保存时间
+resp.addCookie(c);//添加cookie
+</pre>
+<p><code>如何查看cookie</code><br><img src="https://img-blog.csdnimg.cn/e94508739e7f4e848284304a060fe599.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><code>cookie的编码问题</code><br>Cookie只能保存合法的ascll字符,如果要保存非ascll字符,需要将中文转换成相应的ascll字符的表现形式</p>
+<pre>
+a) String URLEncoder.encode(String str,String charset);编码 添加cookie的时候
+b)String URLDecoder.decode(String str,String charset);解码 获取cookie的时候
+</pre>
+
+
+<h3 id="cookie的生存时间"><a href="#cookie的生存时间" class="headerlink" title="cookie的生存时间"></a>cookie的生存时间</h3><pre>
+如果添加cookie,没有设置生存时间,浏览器会将cookie保存在内存中,只要浏览器不管你,cookie就会一直存在,cookie就一直存在,如果浏览器关闭,cookie就删除
+
+Cookie.setMaxAge(int seconds)
+1)单位是秒
+2)secondes的值可以是是以下三种情况
+a.大于0:一般会报错cookie在硬盘上,超过制定时间,浏览器会删除
+b.小于0:默认值
+c.等于0:删除cookie
+
+a.    不如，要删除cookie名为uid
+a)    Cookie c = new Cookie(“uid”,””);
+b)    c.setMaxAge(0)
+c)    Resp.addCookie(c)
+
+</pre>
+
+<h3 id="cookie的路径问题"><a href="#cookie的路径问题" class="headerlink" title="cookie的路径问题"></a>cookie的路径问题</h3><p><strong>1.浏览器向服务器上的某个地址发请求时，会比较要访问的地址的时候与cookie的地址匹配，只有匹配才会发送</strong></p>
+<p><strong>2.服务器不是获取浏览器全部的Cookie，而是当前访问路径匹配下的所有cookie<br>cookie的默认路径就是该cookie当前的路径</strong></p>
+<pre>
+ a)比如servlet05/diz/的addCookie.jsp添加了一个cookie，那么该cookie的路径就等于servlet05/diz/
+  b)匹配规则：
+  //要根据老师的例子来看，所以先别写了
+</pre>
+<p><strong>3.设置cookie的路径</strong><br><code>cookie.setPath(String path)</code></p>
+<p>cookie是浏览器发送请求后，服务器创建的，服务器创建cookie后发送至浏览器保存，后期有需要浏览器的cookie时，浏览器又把保存的cookie发送给服务器</p>
+<h3 id="Cookie的缺点"><a href="#Cookie的缺点" class="headerlink" title="Cookie的缺点"></a>Cookie的缺点</h3><pre>
+1.不安全，如果有敏感数据，必须以cookie的方式来保存，必须加密（加密算法，比如MD5）
+
+2.可以被用户禁止
+
+3.Cookie只能保存少量数据（4k）
+
+4.浏览器能够保存cookie的数量也是有限制的（300个左右）
+</pre>
+
+<h2 id="Session-会话"><a href="#Session-会话" class="headerlink" title="Session(会话)"></a>Session(会话)</h2><p><code>session是什么呢</code></p>
+<pre>
+session是服务器为客户端创建的一个用来维护状态的对象
+</pre>
+<p><code>session的工作原理是什么</code></p>
+<pre>
+1）浏览器访问服务器时，服务器创建一个session对象（该对象有唯一的一个id,该对象称为session）
+2）服务器将session以cookie的方式发送给浏览器
+3）当浏览器再次访问服务器时，会将sessionid发送给服务器，服务器可以一句sessionid找到之前的session对象
+
+浏览器访问服务器的servlet，服务器的servlet创建一个session对象，然后服务器发送session的ID给浏览器，浏览器就会保存Session的ID，然后浏览器又会发送session的ID给服务器，服务器就会根据Session的ID来寻找session
+</pre>
+
+<h3 id="如何获得session对象"><a href="#如何获得session对象" class="headerlink" title="如何获得session对象"></a><code>如何获得session对象</code></h3><pre>
+方一   HttpSession s=request.getSession(boolean flag)
+1)当flag=true时，查看请求当中是否有sessionId，如果没有，就创建SessionId对象，如果有，则返回
+2）当flag=false时，查看请求当中是否有sessionId,如果没有，返回null,如果有，那么就一句sessionid查找对应的session对象，如果找到了，则返回，如果没找到，返回null
+
+方二   HttpSession s=request.getSession() -----request.getSession(true)
+</pre>
+
+<h3 id="绑定数据相关的几个方法"><a href="#绑定数据相关的几个方法" class="headerlink" title="绑定数据相关的几个方法"></a>绑定数据相关的几个方法</h3><pre>
+1.绑定数据到session对象，setAttribute(String name,Object value)
+2.依据绑定名找到绑定值，开始可能返回null
+3.解除绑定removeAttribute(String name)
+</pre>
+<h3 id="session超时"><a href="#session超时" class="headerlink" title="session超时"></a>session超时</h3><p><code>什么是session超时</code></p>
+<pre>
+1.服务器将空闲时间过长的session对象删除掉，一般服务器默认的超时限制是30分钟
+2.修改
+</pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cookie/" rel="tag"># cookie</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/02/java%20new%201/" rel="prev" title="java进阶课程一">
+      <i class="fa fa-chevron-left"></i> java进阶课程一
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/08/HTML5/" rel="next" title="HTML5">
+      HTML5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cookie%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">cookie原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">状态管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.</span> <span class="nav-text">Cookie技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4"><span class="nav-number">1.2.1.</span> <span class="nav-text">cookie的生存时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie%E7%9A%84%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.2.</span> <span class="nav-text">cookie的路径问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="nav-number">1.2.3.</span> <span class="nav-text">Cookie的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session-%E4%BC%9A%E8%AF%9D"><span class="nav-number">1.3.</span> <span class="nav-text">Session(会话)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97session%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.1.</span> <span class="nav-text">如何获得session对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">绑定数据相关的几个方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session%E8%B6%85%E6%97%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">session超时</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黒猫"
+      src="/images/1.jpeg">
+  <p class="site-author-name" itemprop="name">黒猫</p>
+  <div class="site-description" itemprop="description">活在当下 为所当为 顺其自然</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976?spm=1000.2115.3001.5343" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976?spm&#x3D;1000.2115.3001.5343" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
