@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="复习JQuery是一个js的框架技术，可以在dom对象与JQuery对象直接相互转换 选择器：1）基本选择器（id,class,元素选择器，选择器组）2）层次选择器 有嵌套情况存在的，所有后代，子节点，兄弟节点3）过滤选择器：基本过滤（fist,last,not,） Ajax03-jquery1.dom操作读取或者修改接待你的html内容，文本属性，属性值，value值 回去记得换一下博客上的地址">
+  <meta name="description" content="Ajax03-Jquery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java new 9">
 <meta property="og:url" content="https://umli0.github.io/2021/09/09/java%20new%209/index.html">
 <meta property="og:site_name" content="黒猫的博客">
-<meta property="og:description" content="复习JQuery是一个js的框架技术，可以在dom对象与JQuery对象直接相互转换 选择器：1）基本选择器（id,class,元素选择器，选择器组）2）层次选择器 有嵌套情况存在的，所有后代，子节点，兄弟节点3）过滤选择器：基本过滤（fist,last,not,） Ajax03-jquery1.dom操作读取或者修改接待你的html内容，文本属性，属性值，value值 回去记得换一下博客上的地址">
+<meta property="og:description" content="Ajax03-Jquery">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-09T00:33:39.000Z">
-<meta property="article:modified_time" content="2021-09-09T09:15:54.253Z">
+<meta property="article:modified_time" content="2021-09-11T20:51:09.574Z">
 <meta property="article:author" content="黒猫">
+<meta property="article:tag" content="Ajax03-Jquery">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://umli0.github.io/2021/09/09/java%20new%209/">
@@ -216,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-09 08:33:39 / 修改时间：17:15:54" itemprop="dateCreated datePublished" datetime="2021-09-09T08:33:39+08:00">2021-09-09</time>
+              <time title="创建时间：2021-09-09 08:33:39" itemprop="dateCreated datePublished" datetime="2021-09-09T08:33:39+08:00">2021-09-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-12 04:51:09" itemprop="dateModified" datetime="2021-09-12T04:51:09+08:00">2021-09-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -231,6 +238,7 @@
             </span>
 
           
+            <div class="post-description">Ajax03-Jquery</div>
 
         </div>
       </header>
@@ -241,9 +249,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><p>JQuery是一个js的框架技术，可以在dom对象与JQuery对象直接相互转换</p>
-<h2 id="选择器："><a href="#选择器：" class="headerlink" title="选择器："></a>选择器：</h2><p>1）基本选择器（id,class,元素选择器，选择器组）<br>2）层次选择器 有嵌套情况存在的，所有后代，子节点，兄弟节点<br>3）过滤选择器：基本过滤（fist,last,not,）</p>
-<h2 id="Ajax03-jquery"><a href="#Ajax03-jquery" class="headerlink" title="Ajax03-jquery"></a>Ajax03-jquery</h2><h3 id="1-dom操作"><a href="#1-dom操作" class="headerlink" title="1.dom操作"></a>1.dom操作</h3><p><code>读取或者修改接待你的html内容，文本属性，属性值，value值</code></p>
+        <h1 id="复习"><a href="#复习" class="headerlink" title="复习:"></a>复习:</h1><p>JQuery 是一个js的框架技术，可以在dom对象与JQuery对象之间相互转换<br>选择器：<br>1）基本选择器（id,class，元素选择器，选择器组）<br>2）层次选择器 有嵌套情况存在的，所有后代，子节点，兄弟节点<br>3）过滤选择器：基本过滤（fist,last,not,even,odd,eq,gt,lt）<br>4）内容过滤选择器：contains，empty，has，parent<br>5）可见性选择器：hidden，visible<br>6）属性过滤选择器<br>7）子元素选择器<br>8）表单对象属性选择器</p>
+<h1 id="Ajax03-Jquery"><a href="#Ajax03-Jquery" class="headerlink" title="Ajax03-Jquery"></a>Ajax03-Jquery</h1><h2 id="dom操作"><a href="#dom操作" class="headerlink" title="dom操作"></a>dom操作</h2><p>(1)    读取或者修改你的html内容，文本属性，属性值，value值</p>
+<h2 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h2><p>(1)    <code>$(html)</code></p>
+<h2 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1)	append：作为最后一个子元素添加</span><br><span class="line">(2)	prepend：作为第一个子元素添加</span><br><span class="line">(3)	before：作为上一个兄弟元素添加</span><br><span class="line">(4)	after：作为下一个兄弟元素添加</span><br></pre></td></tr></table></figure>
+<h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1)	remove()</span><br><span class="line">(2)	empty()</span><br></pre></td></tr></table></figure>
+<h2 id="将html与js代码分离，保证代码的简洁度"><a href="#将html与js代码分离，保证代码的简洁度" class="headerlink" title="将html与js代码分离，保证代码的简洁度"></a>将html与js代码分离，保证代码的简洁度</h2><p>记得填写代码</p>
+<h2 id="clone-连同事件处理函数一起复制"><a href="#clone-连同事件处理函数一起复制" class="headerlink" title="clone 连同事件处理函数一起复制"></a>clone 连同事件处理函数一起复制</h2><p>记得填写代码</p>
+<h2 id="属性操作，attr-removeAtrr"><a href="#属性操作，attr-removeAtrr" class="headerlink" title="属性操作，attr() removeAtrr"></a>属性操作，attr() removeAtrr</h2><p>记得填写代码</p>
+<h2 id="样式的操作"><a href="#样式的操作" class="headerlink" title="样式的操作"></a>样式的操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1)	attr:设置css样式</span><br><span class="line">(2)	addClass：添加样式，参数必须是一个css选择器，</span><br><span class="line">removeClass：删除样式，如果没有参数，就是删除所有class选择器</span><br><span class="line">(3)	toggleClass:切换样式</span><br><span class="line">(4)	hasClass：判断节点时候有该样式，有则返回true，否则返回false</span><br><span class="line">(5)	css():直接添加样式</span><br></pre></td></tr></table></figure>
+<h2 id="遍历：不是servlet，ajax-jQuery-Vue"><a href="#遍历：不是servlet，ajax-jQuery-Vue" class="headerlink" title="遍历：不是servlet，ajax+jQuery+Vue"></a>遍历：不是servlet，ajax+jQuery+Vue</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1)	childern 查找子节点</span><br><span class="line">(2)	parent：查找父节点</span><br><span class="line">(3)	prev 上一个兄弟节点</span><br><span class="line">(4)	next 下一个兄弟节点</span><br><span class="line">(5)	siblings：其他兄弟节点</span><br><span class="line">(6)	find 查找后代</span><br></pre></td></tr></table></figure>
+<h1 id="事件处理-event"><a href="#事件处理-event" class="headerlink" title="事件处理 event"></a>事件处理 event</h1><p>（1）事件处理<br>    绑定事件处理函数</p>
+<ol>
+<li>   绑定到html元素上<br>a.    onclick</li>
+<li>   绑定到dom对象上<br>a.    var obj = document.getElementById(“d1”);<br>b.    obj.onclick = f1;<br>②如何获得时间对象呢？f1(event)</li>
+</ol>
+<p>③时间对象的作用<br>a.    找到事件源（谁产生的这个事件）<br>a)    e.target(火狐，谷歌)<br>b)    e.srcElement(IE)<br>b.    获得鼠标点击的坐标<br>a)    e.clientX<br>b)    e.clientY<br>c.    取消事件冒泡<br>a)    e.cancleBubble = true;<br>④什么时事件冒泡，如何取消<br>子节点产生的时间，会依次线上抛给对应的父节点<br>⑤jQuery对事件处理的支持<br>1）绑定事件处理函数<br>a.    正式写法 $obj.bind(事件类型，事件处理函数)<br>b.    简写形式 $obj.click(f1);<br>2）获得事件对象<br>a.    只需要给事件处理函数传递任意一个变量<br>a)    $obj.click(function(e){<br>e：就是事件对象，实际上，该事件对象是jQuery对底层事件对象的一个封装<br>b)    })<br>3）事件对象的作用<br>a.    找到事件源 var obj = e.target<br>b.    获取鼠标点击坐标 e.pageX,e.pageY<br>c.    取消冒泡 e.stopPropagation()<br>4）合成时间<br>a.    hover(f1,f2):模拟鼠标悬停时间（鼠标进入和离开），鼠标进入时执行f1，鼠标离开时，执行f2</p>
 <p>回去记得换一下博客上的地址</p>
 <h1 id="未搞定的"><a href="#未搞定的" class="headerlink" title="未搞定的"></a>未搞定的</h1><p>demo3<br>demo6</p>
 
@@ -254,6 +275,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Ajax03-Jquery/" rel="tag"># Ajax03-Jquery</a>
+          </div>
 
         
 
@@ -265,7 +289,7 @@
       <i class="fa fa-chevron-left"></i> java new 2
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/09/10/java-new-10/" rel="next" title="java new 10">
+    <a href="/2021/09/10/java%20new%2010/" rel="next" title="java new 10">
       java new 10 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -326,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">选择器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax03-jquery"><span class="nav-number">1.2.</span> <span class="nav-text">Ajax03-jquery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dom%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.dom操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AA%E6%90%9E%E5%AE%9A%E7%9A%84"><span class="nav-number">2.</span> <span class="nav-text">未搞定的</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">复习:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax03-Jquery"><span class="nav-number">2.</span> <span class="nav-text">Ajax03-Jquery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dom%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.</span> <span class="nav-text">dom操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text">创建节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="nav-number">2.3.</span> <span class="nav-text">添加节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="nav-number">2.4.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86html%E4%B8%8Ejs%E4%BB%A3%E7%A0%81%E5%88%86%E7%A6%BB%EF%BC%8C%E4%BF%9D%E8%AF%81%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AE%80%E6%B4%81%E5%BA%A6"><span class="nav-number">2.5.</span> <span class="nav-text">将html与js代码分离，保证代码的简洁度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clone-%E8%BF%9E%E5%90%8C%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E4%B8%80%E8%B5%B7%E5%A4%8D%E5%88%B6"><span class="nav-number">2.6.</span> <span class="nav-text">clone 连同事件处理函数一起复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C%EF%BC%8Cattr-removeAtrr"><span class="nav-number">2.7.</span> <span class="nav-text">属性操作，attr() removeAtrr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.8.</span> <span class="nav-text">样式的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%EF%BC%9A%E4%B8%8D%E6%98%AFservlet%EF%BC%8Cajax-jQuery-Vue"><span class="nav-number">2.9.</span> <span class="nav-text">遍历：不是servlet，ajax+jQuery+Vue</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86-event"><span class="nav-number">3.</span> <span class="nav-text">事件处理 event</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AA%E6%90%9E%E5%AE%9A%E7%9A%84"><span class="nav-number">4.</span> <span class="nav-text">未搞定的</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -342,20 +366,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
