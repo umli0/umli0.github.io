@@ -216,7 +216,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-22 05:17:08 / 修改时间：05:19:37" itemprop="dateCreated datePublished" datetime="2021-09-22T05:17:08+08:00">2021-09-22</time>
+              <time title="创建时间：2021-09-22 05:17:08 / 修改时间：05:24:26" itemprop="dateCreated datePublished" datetime="2021-09-22T05:17:08+08:00">2021-09-22</time>
             </span>
 
           
@@ -230,25 +230,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Spring<br>1、框架 就是一个开发好的程序，重点在于怎么使用，记住用法之后再了解原理<br>2、为什么使用，在开发过程中，让操作变得简单<br>3、Spring核心  IOC（DI）、AOP<br>(1)    IOC控制反转，平常的new对象叫主动控制，控制反转就是把对象的管理交给Spring的容器<br>(2)    DI：依赖注入 进一步简化控制反转的操作<br>4、引入依赖<br>5、操作applicationContext.xml文件，写入要生成的的对象的bean</p>
-<p>Day02<br>1、spring 注解方式管理bean对象<br>(1)    注解：只要带@***** 这就是注解，利用反射的原理，实现框架的功能<br>2、什么是注解<br>(1)    Java代码中出现以@开头的内容，都是注解<br>①    @Overide表示程序员告诉Java下面的方法是重写方法的方法，如果不是java会报错<br>②    @SuppressWarings(“unused”)表示程序员告诉java下边的变量定义不要 报警高<br>③    @Deprecated 表示告诉java下面的方法是过期的，在调用这个方法时会有标注<br>3、Spring的组件扫描<br>(1)    现在Spring的问题<br>①    当我们需要一个类的对象作为组件注入时，我们必须在config类中使用@Bean声明一个方法，返回这个类的对象，如果需要注入的对象很多，那么代码量就会提升，对于那么简单的直接实例化就可以返回的注入，我们可以使用组件扫描自动进行<br>(2)    组件扫描也是一个注解，它一般便携在@Configuration注解的下面<br>①    @ComponentScan(basePackages=”****”)<br>②    Component：组件<br>③    Scan：扫描<br>④    basePackages：基础包<br>⑤    从指定的基础包开始扫描这个包中的所有类，使用组件注解注入组件对象，<br>(3)    实现组件扫描的步骤<br>①    在Congfig类中添加ComponentScan注解，并指定扫描的包<br>②    在想注入到Spring容器中的类上加注解@Component</p>
-<ol>
-<li>   工作原理：在Spring容器（ACAC）实例化时，会自动扫描ComponentScan注解指定的包</li>
-<li>   指定的包和这个包中所有子包的类都会被扫描，所有类前标记有Component注解或功能相同的注解都会自动注入到Spring容器<br>③创建测试类测试<br>小结：组件注入Spring容器的两种方式</li>
-</ol>
-<p>(4)    和@Component功能一致的注解<br>①    @Controller<br>②    @Service<br>③    为什么一个功能的注解要写出这么多名字，因为实际开发中Spring框架中可能要注入多种类的各种组件，Controller意味控制器，如果今后需要注入类似Servlet这样的控制器对象，就要使用Controller声明，Service意味着业务层，如果今后需要注入业务层的对象，就使用Service<br>④    如果实在不想使用自动注入的默认名称，可以使用自定义组件ID<br>⑤    使用方法@Component（“*****”）注解后跟的()定义自定义组件的ID，在使用ACAC对象获得这个组件时，就必须使用自定义组件ID</p>
-<p>4、Spring的Bean管理<br>(1)    什么时Bean管理<br>①    Spring容器中可能有很多我们注入的组件，这些组件在从容器中提取出来并使用时，会有一些细节上的区别和区分<br>②    Bean管理就是设置Spring容器中组件的细节的差别<br>(2)    Bean的作用域设置<br>①    注入Spring容器中的组件在获得时，是不是同一个对象，如果是，我们称之为单例对象，如果不是，我们称之为原型独享<br>(3)    Bean的生命周期<br>①    从对象的创建到销毁的过程<br>②    何时创建？对象一般实在实例化对象时创建Spring容器中默认情况下再初始化ACAC对象时，Spring容器中所有的对象也创建了<br>③    何时销毁？</p>
-<ol>
-<li>   一般在GC回收时销毁对象（手动销毁如close（）方法</li>
-<li>   Spring容器中默认情况下是在ACAC对象被销毁时，Spring容器中的所有对象也就销毁了<br>(4)    Bean对象生命周期管理<br>①    Spring容器中的对象何时创建，何时销毁<br>②    默认情况下Spring容器实例化时，容器中的对象也创建，Spring容器销毁时容器中的对象也销毁<br>③    非默认情况下</li>
-<li>   当注入的对象是Scope为”prototype”类型<br>a.    Spring容器实例化时，容器中prototype的对象不会实例化<br>b.    Spring容器销毁时，容器中prototype对象不会销毁，原因是如果Spring负责维护过多数量的对象，难免会有内存浪费甚至造成溢出</li>
-<li>   当我们设置单例对象为懒惰初始化（延迟加载）在类前要开@Lazy<br>Spring容器实例化时，容器中被设置为@Lazy的类不会实例化在程序运行过程中<br>如果使用getBean方法获得这个对象，才实例化</li>
-</ol>
-<p>5、使用@Import配置多个配置文件<br>(1)    我们在配置Spring容器中的内容只能通过Config类，如果一个项目组多人同时对一个Config继续宁配置，难免会有冲突</p>
-
+          <p>还没有写简介</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/22/java%20new%2016/#more" rel="contents">
+              <a class="btn" href="/2021/09/22/java%20new%2016/">
                 阅读全文 &raquo;
               </a>
             </div>
