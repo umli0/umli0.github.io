@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="VUE第三方开发框架（下）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java new 14">
+<meta property="og:url" content="https://umli0.github.io/2021/09/16/java%20new%2014/index.html">
+<meta property="og:site_name" content="黒猫的博客">
+<meta property="og:description" content="VUE第三方开发框架（下）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-16T08:07:25.000Z">
+<meta property="article:modified_time" content="2021-09-21T13:27:45.943Z">
+<meta property="article:author" content="黒猫">
+<meta property="article:tag" content="VUE">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://umli0.github.io/2021/09/16/java%20new%2014/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>java new 14 | 黒猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">黒猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2021/09/16/java%20new%2014/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpeg">
+      <meta itemprop="name" content="黒猫">
+      <meta itemprop="description" content="活在当下 为所当为 顺其自然">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java new 14
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-16 16:07:25" itemprop="dateCreated datePublished" datetime="2021-09-16T16:07:25+08:00">2021-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-21 21:27:45" itemprop="dateModified" datetime="2021-09-21T21:27:45+08:00">2021-09-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">java进阶课程</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">VUE第三方开发框架（下）</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="二、属性绑定"><a href="#二、属性绑定" class="headerlink" title="二、属性绑定"></a>二、属性绑定</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1．v-bind：class   href</span><br><span class="line">2．分支结构：if else</span><br><span class="line">3．循环结构：</span><br><span class="line">4．表单数据绑定</span><br><span class="line">5．表单修饰符</span><br><span class="line">6．计算属性</span><br><span class="line">7．数组操作</span><br></pre></td></tr></table></figure>
+
+<h1 id="标签的属性绑定"><a href="#标签的属性绑定" class="headerlink" title="标签的属性绑定"></a>标签的属性绑定</h1><h2 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h2><ul>
+<li>a标签的属性绑定  标签的属性绑定<br>  需求 href 中的属性动态赋值<br>  语法 v-bind:href=”VUE中的属性</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a v-bind:href=&quot;url&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">&lt;a :href=&quot;url&quot;&gt;百度&lt;/a&gt;  //简写</span><br></pre></td></tr></table></figure>
+<h2 id="class类型绑定"><a href="#class类型绑定" class="headerlink" title="class类型绑定"></a>class类型绑定</h2><ul>
+<li>class类型绑定<br>  class中可定义多个样式，简化程序的调用<br>  需求 需要动态的为class赋值<br>  规则 class是属性的绑定 绑定之后查找对应的属性<br>  colorClass “blue” 之后根据value值查找对应的css样式</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class=&quot;colorClass&quot;&gt;我是class修饰&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="属性切换"><a href="#属性切换" class="headerlink" title="属性切换"></a>属性切换</h2><ul>
+<li>属性切换<br>  需求 通过按钮控制样式时展现属性<br>  语法 :class{class类型名称：flag}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class=&quot;&#123;red: flag&#125;&quot;&gt;我是class属性&lt;/div&gt; //red是class属性名</span><br><span class="line">&lt;button @click=&quot;flag=!flag&quot;&gt;切换&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<details>
+<summary>完整程序</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;属性绑定&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">		.red&#123;</span><br><span class="line">		background-color: red;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 6.25rem;</span><br><span class="line">		&#125;</span><br><span class="line">		.blue&#123;</span><br><span class="line">			background-color: blue;</span><br><span class="line">			width: 50px;</span><br><span class="line">			height: 50px;</span><br><span class="line">		&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;!--a标签的属性绑定</span><br><span class="line">			需求 href 中的属性动态赋值</span><br><span class="line">			语法 v-bind:href=&quot;VUE中的属性&quot;--&gt;</span><br><span class="line">			&lt;a v-bind:href=&quot;url&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">			&lt;a :href=&quot;url&quot;&gt;京东&lt;/a&gt; 			</span><br><span class="line">			</span><br><span class="line">			&lt;!--2.class类型绑定</span><br><span class="line">			class中可定义多个样式，简化程序的调用</span><br><span class="line">			需求 需要动态的为class赋值</span><br><span class="line">			规则 class是属性的绑定 绑定之后查找对应的属性</span><br><span class="line">			colorClass &quot;blue&quot; 之后根据value值查找对应的css样式--&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;hr &gt;</span><br><span class="line">			&lt;div :class=&quot;colorClass&quot;&gt;我是class修饰&lt;/div&gt;</span><br><span class="line">			&lt;hr &gt;</span><br><span class="line">			&lt;!--3.属性切换</span><br><span class="line">			需求 通过按钮控制样式时展现属性</span><br><span class="line">			语法 :class&#123;class类型名称：flag&#125;</span><br><span class="line">			--&gt;</span><br><span class="line">			&lt;div :class=&quot;&#123;red: flag&#125;&quot;&gt;我是class属性&lt;/div&gt;</span><br><span class="line">			&lt;button @click=&quot;flag=!flag&quot;&gt;切换&lt;/button&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">		const app=new Vue(&#123;</span><br><span class="line">			el:&quot;#app&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				url:&quot;http://www.jd.com &quot;,</span><br><span class="line">				colorClass:&quot;blue&quot;,</span><br><span class="line">				flag:true</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><ul>
+<li>分支结构语法<br>  1.v-if<br>  2.v-else-if<br>  3.v-else<details>
+<summary>分支结构完整代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;分支结构&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;!--</span><br><span class="line">			分支结构语法</span><br><span class="line">			1.v-if</span><br><span class="line">			2.v-else-if</span><br><span class="line">			3.v-else</span><br><span class="line">			&gt;=90优秀</span><br><span class="line">			&gt;=80良好</span><br><span class="line">			&gt;=70中等</span><br><span class="line">			&gt;=60及格</span><br><span class="line">			否则 不及格</span><br><span class="line">			--&gt;</span><br><span class="line">			&lt;h3&gt;评级&lt;/h3&gt;</span><br><span class="line">			请录入分数：&lt;input v-model=&quot;score&quot;/&gt;</span><br><span class="line">			&lt;div v-if=&quot;score&gt;=90&quot;&gt;优秀&lt;/div&gt;</span><br><span class="line">			&lt;div v-else-if=&quot;score&gt;=80&quot;&gt;良好&lt;/div&gt;</span><br><span class="line">			&lt;div v-else-if=&quot;score&gt;=70&quot;&gt;中等&lt;/div&gt;</span><br><span class="line">			&lt;div v-else-if=&quot;score&gt;=60&quot;&gt;及格&lt;/div&gt;</span><br><span class="line">			&lt;div v-else&gt;不及格&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">		const app=new Vue(&#123;</span><br><span class="line">			el:&quot;#app&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				score:70</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><pre><code>数组，对象，数组套对象（对象数组）可以用来循环
+遍历数据，将数组中的数据在页面中展示
+</code></pre>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p>遍历数据的方法<code>v-for=&quot;item in array&quot;</code>和<code>v-text=&quot;item&quot;</code></p>
+<p>遍历数据，得到下标<code> v-for=&quot;(item,index) in array</code> array中的item,index</p>
+<p>显示下标值：<br>显示数据值：</p>
+<h3 id="遍历对象"><a href="#遍历对象" class="headerlink" title="遍历对象"></a>遍历对象</h3><p><code> v-for=&quot;(value,key,index) in user&quot;</code><br><code>&#123;&#123;index&#125;&#125;,&#123;&#123;key&#125;&#125;,&#123;&#123;value&#125;&#125;</code></p>
+<h3 id="遍历集合"><a href="#遍历集合" class="headerlink" title="遍历集合"></a>遍历集合</h3><p><code>v-for=&quot;user in userList&quot;</code><br>    <code>&#123;&#123;user.id&#125;&#125;</code><br>    <code>&#123;&#123;user.name&#125;&#125;</code><br>    <code>&#123;&#123;user.age&#125;&#125;</code></p>
+<details>
+<summary>遍历数组，对象和对象集合的完整代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;!--</span><br><span class="line">			1.什么时候使用循环 多次重复的执行同一操作</span><br><span class="line">			2.什么数据使用循环</span><br><span class="line">			数组</span><br><span class="line">			对象</span><br><span class="line">			数组套对象（对象数组）</span><br><span class="line">			--&gt;</span><br><span class="line">			&lt;!--1.遍历数据，将数组中的数据在页面中展示--&gt;</span><br><span class="line">			&lt;p v-for=&quot;item in array&quot; v-text=&quot;item&quot;&gt;</span><br><span class="line">				&lt;!--&#123;&#123;item&#125;&#125;--&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;!-- 获取下标 </span><br><span class="line">			语法 v-for=&quot;（遍历的元素，遍历的下标） in array&quot;</span><br><span class="line">			--&gt;</span><br><span class="line">			&lt;p v-for=&quot;(item,index) in array&quot;&gt;</span><br><span class="line">				下标：&#123;&#123;index&#125;&#125;--------数据值&#123;&#123;item&#125;&#125;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			&lt;!-- 遍历对象</span><br><span class="line">			 v-for=&quot;(value,key,index) in user&quot;</span><br><span class="line">			 v---&gt;</span><br><span class="line">			&lt;p v-for=&quot;(value,key,index) in user&quot;&gt;</span><br><span class="line">				&#123;&#123;index&#125;&#125;,&#123;&#123;key&#125;&#125;,&#123;&#123;value&#125;&#125;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			&lt;!-- 遍历集合 --&gt;</span><br><span class="line">			&lt;p v-for=&quot;user in userList&quot;&gt;</span><br><span class="line">				&#123;&#123;user.id&#125;&#125;</span><br><span class="line">				&#123;&#123;user.name&#125;&#125;</span><br><span class="line">				&#123;&#123;user.age&#125;&#125;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;!-- 总结</span><br><span class="line">			 遍历数组 参数（value,index）</span><br><span class="line">			 遍历对象 参数（value,key,index）</span><br><span class="line">			 特点 遍历数据在页面中展示</span><br><span class="line">			 --&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">	const app=new Vue(&#123;</span><br><span class="line">		el:&quot;#app&quot;,</span><br><span class="line">		data:&#123;</span><br><span class="line">			array:[&quot;马云&quot;,&quot;刘强东&quot;,&quot;马化腾&quot;,&quot;任正非&quot;],</span><br><span class="line">		</span><br><span class="line">		user:&#123;</span><br><span class="line">			id:100,</span><br><span class="line">			name:&quot;tomcat&quot;,</span><br><span class="line">			age:18</span><br><span class="line">		&#125;,</span><br><span class="line">		</span><br><span class="line">		userList:[</span><br><span class="line">			&#123;</span><br><span class="line">				id:100,</span><br><span class="line">				name:&quot;tomcat&quot;,</span><br><span class="line">				age:18</span><br><span class="line">			&#125;,</span><br><span class="line">			&#123;</span><br><span class="line">				id:200,</span><br><span class="line">				name:&quot;mysql&quot;,</span><br><span class="line">				age:20</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		]</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+
+<h2 id="表单提交-数据和vue进行数据绑定"><a href="#表单提交-数据和vue进行数据绑定" class="headerlink" title="表单提交,数据和vue进行数据绑定"></a>表单提交,数据和vue进行数据绑定</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">		submitForm()&#123;</span><br><span class="line">			//数据提交</span><br><span class="line">		console.log(&quot;姓名：&quot;+this.name);			</span><br><span class="line">        console.log(&quot;性别：&quot;+this.gender);</span><br><span class="line">		console.log(&quot;封装好之后，可以使用ajax方法实现提交数据&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<details>
+<summary>表单提交数据绑定的完整程序</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;常用表单属性&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h1&gt;本案例练习 表单提交数据时 数据如何和vue进行数据绑定&lt;/h1&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;form id=&quot;userForm&quot; action=&quot;http://baidu.com&quot;&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;span&gt;</span><br><span class="line">						&lt;!--单选框 name属性必须一致--&gt;</span><br><span class="line">						&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;男&quot; id=&quot;man&quot; v-model=&quot;gender&quot;/&gt;</span><br><span class="line">						&lt;label for=&quot;man&quot;&gt;男&lt;/label&gt;</span><br><span class="line">						&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;女&quot; id=&quot;woman&quot; v-model=&quot;gender&quot;/&gt;</span><br><span class="line">						&lt;label for=&quot;woman&quot;&gt;女&lt;/label&gt;</span><br><span class="line">					&lt;/span&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;span&gt;爱好：&lt;/span&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot; value=&quot;吃&quot; v-model=&quot;hbbies&quot; /&gt;吃</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot; value=&quot;喝&quot; v-model=&quot;hobbies&quot;/&gt;喝</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;hobbies&quot; value=&quot;玩&quot; v-model=&quot;hobbies&quot;/&gt;玩</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;span&gt;职业&lt;/span&gt;</span><br><span class="line">					&lt;select name=&quot;occuration&quot; v-model=&quot;occuration&quot; multiple=&quot;true&quot;&gt;</span><br><span class="line">						&lt;option value=&quot;工人&quot;&gt;工人&lt;/option&gt;</span><br><span class="line">						&lt;option value=&quot;教师&quot;&gt;教师&lt;/option&gt;</span><br><span class="line">						&lt;option value=&quot;工程师&quot;&gt;工程师&lt;/option&gt;</span><br><span class="line">					&lt;/select&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;span&gt;个人简介&lt;/span&gt;</span><br><span class="line">					&lt;textarea name=&quot;userInfo&quot; style=&quot;width:100px;height: 50px;&quot; v-model=&quot;userInfo&quot;&gt;&lt;/textarea&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;!--阻止默认提交事件--&gt;</span><br><span class="line">					&lt;input type=&quot;submit&quot; value=&quot;提交&quot; v-on:click.prevent=&quot;submitForm&quot;/&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/form&gt;</span><br><span class="line">			&lt;script&gt;</span><br><span class="line">			const &quot;app&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				el:&quot;#app&quot;,</span><br><span class="line">				name:&quot;请输入姓名&quot;,</span><br><span class="line">				gender:&quot;女&quot;,</span><br><span class="line">				//多个数据定义时，要使用数组</span><br><span class="line">				hobbies:[&quot;吃&quot;,&quot;喝&quot;,&quot;玩&quot;],</span><br><span class="line">				occuration:[&quot;工人&quot;],</span><br><span class="line">				userInfo:&quot;&quot;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				submitForm()&#123;</span><br><span class="line">					//数据提交</span><br><span class="line">					console.log(&quot;姓名：&quot;+this.name);</span><br><span class="line">					console.log(&quot;性别：&quot;+this.gender);</span><br><span class="line">					console.log(&quot;爱好：&quot;+this.hobbies);</span><br><span class="line">					console.log(&quot;职业：&quot;+this.occuration);</span><br><span class="line">					console.log(&quot;用户详情:&quot;+this.userInfo);</span><br><span class="line">					console.log(&quot;封装好之后，可以使用ajax方法实现提交数据&quot;)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			&lt;/script&gt;</span><br><span class="line">			</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+
+
+<h2 id="表单修饰符"><a href="#表单修饰符" class="headerlink" title="表单修饰符"></a>表单修饰符</h2><p>.number 只能输入数值类型<br><code> v-model.number=&quot;变量名&quot;</code></p>
+<p>.trim 去除左右空格，字段中间的空格无法去除<br><code>v-moder.trim=&quot;变量名&quot;</code></p>
+<p>.lazy 失去焦点事件，lazy修饰符是让数据在失去焦点或者回车时才会更新，避免内容没输入完，就提交了<br><code>v-model.lazy=&quot;变量名&quot;</code></p>
+<details>
+<summary>表单修饰符</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;表单修饰符&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h1&gt;表单修饰符 限制输入的类型 number/trim(去除空格)/lazy&lt;/h1&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;!--.number 只能输入数值类型</span><br><span class="line">			.trim 去除左右空格,字段中间的空格无法去除</span><br><span class="line">			.lazy 失去焦点事件</span><br><span class="line">			--&gt;</span><br><span class="line">			&lt;h3&gt;数据展现&#123;&#123;age&#125;&#125;&lt;/h3&gt;</span><br><span class="line">			年龄：&lt;input type=&quot;text&quot; v-model.number=&quot;age&quot;/&gt; </span><br><span class="line">			&lt;button @click=&quot;addNum&quot;&gt;增加&lt;/button&gt;</span><br><span class="line">			&lt;hr /&gt;</span><br><span class="line">			</span><br><span class="line">			用户名：&lt;input type=&quot;text&quot; v-moder.trim=&quot;name&quot;/&gt;</span><br><span class="line">			&lt;hr /&gt;</span><br><span class="line">			用户输入的长度：&#123;&#123;name.length&#125;&#125;&lt;br/&gt;</span><br><span class="line">			展现数据lazy---&#123;&#123;msg&#125;&#125;&lt;br/&gt;</span><br><span class="line">			&lt;input type=&quot;text&quot; v-model.lazy=&quot;msg&quot; /&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		const app=new Vue(&#123;</span><br><span class="line">			el:&quot;#app&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				age:18,</span><br><span class="line">				name:&quot;ccc&quot;,</span><br><span class="line">				msg:&quot;&quot;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				addNum()&#123;</span><br><span class="line">					this.age +=1;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="将输入内容反转"><a href="#将输入内容反转" class="headerlink" title="将输入内容反转"></a>将输入内容反转</h2><p>用户的输入内容进行反转 abc–cba<br>    1.字符串转化成数组，拆分split(“”)<br>    2.将数组倒序 reverse<br>    3.将数组转化为字符串join()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">	reverse()&#123;</span><br><span class="line">	console.log(&quot;方法执行！！&quot;); </span><br><span class="line">	return this.msg.split(&quot;&quot;).reverse().join(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">computed:&#123;</span><br><span class="line">	reverseCom()&#123;</span><br><span class="line">	console.log(&quot;计算属性！！！&quot;);</span><br><span class="line">	return this.msg.split(&quot;&quot;).reverse().join(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reverse()中的语句会重复执行</span><br><span class="line">而reverseCom中的语句只会执行一次</span><br></pre></td></tr></table></figure>
+<details>
+<summary>
+将输入的内容反转的完整代码
+</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;计算属性&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;!--需求</span><br><span class="line">			将用户的输入内容进行反转 abc--cba</span><br><span class="line">			API</span><br><span class="line">			1.字符串转化成数组，拆分split(&quot;&quot;)</span><br><span class="line">			2.将数组倒序 reverse</span><br><span class="line">			3.将数组转化为字符串join()</span><br><span class="line">			</span><br><span class="line">			计算属性功能方法</span><br><span class="line">			1.插值表达式中应该写简单的算数计算，如果复杂就应该疯转</span><br><span class="line">			2.如果数据操作相同，则应简化过长</span><br><span class="line">			</span><br><span class="line">			总结：</span><br><span class="line">			计算属性相对于方法，效率高</span><br><span class="line">			--&gt;</span><br><span class="line">			&lt;h3&gt;数据展现：&lt;/h3&gt;</span><br><span class="line">			&#123;&#123;reverse()&#125;&#125;&lt;br&gt;</span><br><span class="line">			&#123;&#123;reverse()&#125;&#125;&lt;br&gt;</span><br><span class="line">			&#123;&#123;reverse()&#125;&#125;&lt;br&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;hr /&gt;</span><br><span class="line">			&#123;&#123;reverseCom&#125;&#125;&lt;br /&gt;</span><br><span class="line">			&#123;&#123;reverseCom&#125;&#125;&lt;br /&gt;</span><br><span class="line">			&#123;&#123;reverseCom&#125;&#125;&lt;br /&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		const app=new Vue(&#123;</span><br><span class="line">			el:&quot;#app&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				msg:&quot;abc&quot;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				reverse()&#123;</span><br><span class="line">					console.log(&quot;方法执行！！&quot;);</span><br><span class="line">					return this.msg.split(&quot;&quot;).reverse().join(&quot;&quot;);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">			computed:&#123;</span><br><span class="line">				reverseCom()&#123;</span><br><span class="line">					console.log(&quot;计算属性！！！&quot;);</span><br><span class="line">					return this.msg.split(&quot;&quot;).reverse().join(&quot;&quot;);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="数组的操作"><a href="#数组的操作" class="headerlink" title="数组的操作"></a>数组的操作</h2><p>数组的方法<br>java中的叫法 push 入栈  pop 出栈<br>     push()在结尾追加元素  pop()删除最后一个元素<br>     shift()删除第一个元素<br>     unshify()在开头追加元素<br>     splice()替换数组中的数据<br>     sort()数据排序<br>     reverse()数组反转</p>
+<p><code>@click=&quot;push&quot;</code><br><code>push()&#123;this.array.push(this.msg);&#125;,</code></p>
+<details>
+<summary>数组的操作的完整代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;数组的操作&lt;/title&gt;</span><br><span class="line">		&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h1&gt;数组操作&lt;/h1&gt;</span><br><span class="line">		&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">			&lt;!-- 数组的方法  Java中的叫法push：入栈  pop 出栈 </span><br><span class="line">				push() 在结尾追加元素</span><br><span class="line">				pop() 删除最后一个元素</span><br><span class="line">				shift() 删除第一个元素</span><br><span class="line">				unshift() 在开头追加元素</span><br><span class="line">				splice() 替换数组中的数据</span><br><span class="line">				sort() 数据排序</span><br><span class="line">				reverse() 数组反转</span><br><span class="line">			--&gt;</span><br><span class="line">			输入框：&lt;input type=&quot;text&quot; v-model=&quot;msg&quot;/&gt;&lt;br&gt;</span><br><span class="line">			&lt;span v-for=&quot;(value) in array&quot;&gt;</span><br><span class="line">				&#123;&#123;value&#125;&#125;</span><br><span class="line">			&lt;/span&gt;&lt;br&gt;</span><br><span class="line">			&lt;button @click=&quot;push&quot;&gt;push&lt;/button&gt;</span><br><span class="line">			&lt;button @click=&quot;pop&quot;&gt;pop&lt;/button&gt;</span><br><span class="line">			&lt;button @click=&quot;shift&quot;&gt;shift&lt;/button&gt;</span><br><span class="line">			&lt;button @click=&quot;unshift&quot;&gt;unshift&lt;/button&gt;</span><br><span class="line">			&lt;button @click=&quot;splice&quot;&gt;替换&lt;/button&gt;</span><br><span class="line">			</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		const app = new Vue(&#123;</span><br><span class="line">			el:&quot;#app&quot;,</span><br><span class="line">			data:&#123;</span><br><span class="line">				array:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;],</span><br><span class="line">				msg:&quot;&quot;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods:&#123;</span><br><span class="line">				push()&#123;</span><br><span class="line">					this.array.push(this.msg);</span><br><span class="line">				&#125;,</span><br><span class="line">				pop()&#123;</span><br><span class="line">					// 数组数据会自动的更新</span><br><span class="line">					this.array.pop();</span><br><span class="line">				&#125;,</span><br><span class="line">				shift()&#123;</span><br><span class="line">					this.array.shift();</span><br><span class="line">				&#125;,</span><br><span class="line">				unshift()&#123;</span><br><span class="line">					//在开头追加</span><br><span class="line">					this.array.unshift(this.msg);</span><br><span class="line">				&#125;,</span><br><span class="line">				splice()&#123;</span><br><span class="line">					/*</span><br><span class="line">					参数：3个参数</span><br><span class="line">					arg1：数据操作的起始位置 从0开始</span><br><span class="line">					arg2：操作的数量  阿拉伯数字</span><br><span class="line">					arg3：替换后的数据，可以有多个</span><br><span class="line">					*/</span><br><span class="line">				   // this.array.splice(0,1,this.msg);</span><br><span class="line">				   // this.array.splice(0,2,this.msg,this.msg)</span><br><span class="line">				   </span><br><span class="line">				   // 将最后一个替换为msg</span><br><span class="line">				   // let index = this.array.length-1;</span><br><span class="line">				   // this.array.splice(index,1,this.msg);</span><br><span class="line">				   //删除第二个元素</span><br><span class="line">				   this.array.splice(1,1);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+<h1 id="三-小结"><a href="#三-小结" class="headerlink" title="三.小结"></a>三.小结</h1><ul>
+<li>1.属性绑定<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）v-bind:xxxx 动态为属性赋值</span><br><span class="line">2）class绑定，如果用户需要切换class 则可以使用该操作</span><br><span class="line">3）class绑定，数据展现，可以通过&#123;class 类型：true /false&#125;</span><br></pre></td></tr></table></figure></li>
+<li>2.分支结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）用法：如果数据为真则展现为html标签</span><br><span class="line">2）语法：v-if/v-elseif/v-else</span><br><span class="line">3)要求：v-if可以单独使用</span><br><span class="line">4）另外两个必须与v-if连用</span><br></pre></td></tr></table></figure></li>
+<li>3.循环结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1）用法：通过循环展现标签+数据</span><br><span class="line">2）用法：</span><br><span class="line">v-for((value,index)in array)</span><br><span class="line">v-for((value,key,index)in obj)</span><br><span class="line">v-for(user in userList)后续通过user属性取值</span><br></pre></td></tr></table></figure></li>
+<li>4.表单操作<br>一般数据进行提交时，都会使用表单<br>每个表单几乎都写action,action现在基本不用<br>一般通过阻止默认的方式，禁用action.之后手写点击事件触发后续操作（Ajax）<br>用户录入标签体：1.文本框 2.单选 3.多选 4.下拉框 5.文本域<br>掌握各个标签的双向数据绑定的写法，值有多个，使用数据<br>表单修饰符1.numbe 2.trim  3.lazy</li>
+<li>5、计算属性</li>
+</ul>
+<p>(3)    复杂的操作如果通过<code>&#123;&#123;&#125;&#125;</code>插值表达式封装，比较冗余<br>(4)    如果将复杂的操作封装为方法，调用一次执行一次，效率低<br>(5)    计算属性：<br>    可以封装复杂操作<br>    内部有缓存机制，只需要计算一次，多次调用，效率高</p>
+<ul>
+<li>6、数组的操作<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(1)	Push</span><br><span class="line">(2)	Pop</span><br><span class="line">(3)	Shift</span><br><span class="line">(4)	Unshif</span><br><span class="line">(5)	Splice</span><br><span class="line">(6)	Sort</span><br><span class="line">(7)	Reverse</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/VUE/" rel="tag"># VUE</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/16/java%20new%2013/" rel="prev" title="java new 13">
+      <i class="fa fa-chevron-left"></i> java new 13
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/17/boke-system/" rel="next" title="boke system">
+      boke system <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">二、属性绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">标签的属性绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a%E6%A0%87%E7%AD%BE"><span class="nav-number">2.1.</span> <span class="nav-text">a标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class%E7%B1%BB%E5%9E%8B%E7%BB%91%E5%AE%9A"><span class="nav-number">2.2.</span> <span class="nav-text">class类型绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%88%87%E6%8D%A2"><span class="nav-number">2.3.</span> <span class="nav-text">属性切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.4.</span> <span class="nav-text">分支结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8D%E5%8E%86"><span class="nav-number">2.5.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.1.</span> <span class="nav-text">遍历数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.5.2.</span> <span class="nav-text">遍历对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E9%9B%86%E5%90%88"><span class="nav-number">2.5.3.</span> <span class="nav-text">遍历集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4-%E6%95%B0%E6%8D%AE%E5%92%8Cvue%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="nav-number">2.6.</span> <span class="nav-text">表单提交,数据和vue进行数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.7.</span> <span class="nav-text">表单修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%BE%93%E5%85%A5%E5%86%85%E5%AE%B9%E5%8F%8D%E8%BD%AC"><span class="nav-number">2.8.</span> <span class="nav-text">将输入内容反转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.9.</span> <span class="nav-text">数组的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-%E5%B0%8F%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">三.小结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黒猫"
+      src="/images/1.jpeg">
+  <p class="site-author-name" itemprop="name">黒猫</p>
+  <div class="site-description" itemprop="description">活在当下 为所当为 顺其自然</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
