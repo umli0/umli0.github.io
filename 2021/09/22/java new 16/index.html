@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="还没有写简介">
+  <meta name="description" content="Spring|">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java new 16">
+<meta property="og:title" content="16-Spring框架">
 <meta property="og:url" content="https://umli0.github.io/2021/09/22/java%20new%2016/index.html">
 <meta property="og:site_name" content="黒猫的博客">
-<meta property="og:description" content="还没有写简介">
+<meta property="og:description" content="Spring|">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-21T21:17:08.000Z">
-<meta property="article:modified_time" content="2021-09-21T21:24:26.724Z">
+<meta property="article:modified_time" content="2021-09-23T02:09:59.888Z">
 <meta property="article:author" content="黒猫">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://umli0.github.io/2021/09/22/java%20new%2016/">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>java new 16 | 黒猫的博客</title>
+  <title>16-Spring框架 | 黒猫的博客</title>
   
 
 
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          java new 16
+          16-Spring框架
         </h1>
 
         <div class="post-meta">
@@ -216,13 +217,28 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-22 05:17:08 / 修改时间：05:24:26" itemprop="dateCreated datePublished" datetime="2021-09-22T05:17:08+08:00">2021-09-22</time>
+              <time title="创建时间：2021-09-22 05:17:08" itemprop="dateCreated datePublished" datetime="2021-09-22T05:17:08+08:00">2021-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-23 10:09:59" itemprop="dateModified" datetime="2021-09-23T10:09:59+08:00">2021-09-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">java进阶课程</span></a>
+                </span>
             </span>
 
           
-            <div class="post-description">还没有写简介</div>
+            <div class="post-description">Spring|</div>
 
         </div>
       </header>
@@ -233,21 +249,143 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Spring<br>1、框架 就是一个开发好的程序，重点在于怎么使用，记住用法之后再了解原理<br>2、为什么使用，在开发过程中，让操作变得简单<br>3、Spring核心  IOC（DI）、AOP<br>(1)    IOC控制反转，平常的new对象叫主动控制，控制反转就是把对象的管理交给Spring的容器<br>(2)    DI：依赖注入 进一步简化控制反转的操作<br>4、引入依赖<br>5、操作applicationContext.xml文件，写入要生成的的对象的bean</p>
-<p>Day02<br>1、spring 注解方式管理bean对象<br>(1)    注解：只要带@***** 这就是注解，利用反射的原理，实现框架的功能<br>2、什么是注解<br>(1)    Java代码中出现以@开头的内容，都是注解<br>①    @Overide表示程序员告诉Java下面的方法是重写方法的方法，如果不是java会报错<br>②    @SuppressWarings(“unused”)表示程序员告诉java下边的变量定义不要 报警高<br>③    @Deprecated 表示告诉java下面的方法是过期的，在调用这个方法时会有标注<br>3、Spring的组件扫描<br>(1)    现在Spring的问题<br>①    当我们需要一个类的对象作为组件注入时，我们必须在config类中使用@Bean声明一个方法，返回这个类的对象，如果需要注入的对象很多，那么代码量就会提升，对于那么简单的直接实例化就可以返回的注入，我们可以使用组件扫描自动进行<br>(2)    组件扫描也是一个注解，它一般便携在@Configuration注解的下面<br>①    @ComponentScan(basePackages=”****”)<br>②    Component：组件<br>③    Scan：扫描<br>④    basePackages：基础包<br>⑤    从指定的基础包开始扫描这个包中的所有类，使用组件注解注入组件对象，<br>(3)    实现组件扫描的步骤<br>①    在Congfig类中添加ComponentScan注解，并指定扫描的包<br>②    在想注入到Spring容器中的类上加注解@Component</p>
+        <h1 id="复习Spring"><a href="#复习Spring" class="headerlink" title="复习Spring"></a>复习Spring</h1><p>1、框架 就是一个开发好的程序，重点在于怎么使用，记住用法之后再了解原理<br>2、使用原因是在开发过程中，让操作变得简单<br>3、Spring核心  IOC（DI）、AOP<br>(1)    IOC控制反转，平常的new对象叫主动控制，控制反转就是把对象的管理交给Spring的容器<br>(2)    DI：依赖注入 进一步简化控制反转的操作<br>4、引入依赖<br>5、操作applicationContext.xml文件，写入要生成的的对象的bean<br>6.Spring容器：Spring 容器是Spring 框架的核心。 容器将创建对象，把它们连接在一起，配置它们，并管理他们的整个生命周期从创建到销毁。 Spring 容器使用依赖注入（DI）来管理组成一个应用程序的组件</p>
+<h1 id="spring-注解方式管理bean对象"><a href="#spring-注解方式管理bean对象" class="headerlink" title="spring 注解方式管理bean对象"></a>spring 注解方式管理bean对象</h1><p>(1)    注解：只要带@***** 这就是注解，利用反射的原理，实现框架的功能<br>##注解<br>Java代码中出现以@开头的内容，都是注解</p>
 <ol>
-<li>   工作原理：在Spring容器（ACAC）实例化时，会自动扫描ComponentScan注解指定的包</li>
-<li>   指定的包和这个包中所有子包的类都会被扫描，所有类前标记有Component注解或功能相同的注解都会自动注入到Spring容器<br>③创建测试类测试<br>小结：组件注入Spring容器的两种方式</li>
+<li><p>@Overide表示程序员告诉Java下面的方法是重写方法的方法，如果不是java会报错</p>
+</li>
+<li><p>@SuppressWarings(“unused”)表示程序员告诉java下边的变量定义不要 报警高</p>
+</li>
+<li><p>@Deprecated 表示告诉java下面的方法是过期的，在调用这个方法时会有标注</p>
+</li>
+<li><p>@Configuration注解标记表示程序员告诉Java，这个类是配置Spring容器内容的类</p>
+</li>
+<li><p>@Bean注解标记表示程序要告诉Java下面这个方法返回的对象，要放入spring容器</p>
+</li>
 </ol>
-<p>(4)    和@Component功能一致的注解<br>①    @Controller<br>②    @Service<br>③    为什么一个功能的注解要写出这么多名字，因为实际开发中Spring框架中可能要注入多种类的各种组件，Controller意味控制器，如果今后需要注入类似Servlet这样的控制器对象，就要使用Controller声明，Service意味着业务层，如果今后需要注入业务层的对象，就使用Service<br>④    如果实在不想使用自动注入的默认名称，可以使用自定义组件ID<br>⑤    使用方法@Component（“*****”）注解后跟的()定义自定义组件的ID，在使用ACAC对象获得这个组件时，就必须使用自定义组件ID</p>
-<p>4、Spring的Bean管理<br>(1)    什么时Bean管理<br>①    Spring容器中可能有很多我们注入的组件，这些组件在从容器中提取出来并使用时，会有一些细节上的区别和区分<br>②    Bean管理就是设置Spring容器中组件的细节的差别<br>(2)    Bean的作用域设置<br>①    注入Spring容器中的组件在获得时，是不是同一个对象，如果是，我们称之为单例对象，如果不是，我们称之为原型独享<br>(3)    Bean的生命周期<br>①    从对象的创建到销毁的过程<br>②    何时创建？对象一般实在实例化对象时创建Spring容器中默认情况下再初始化ACAC对象时，Spring容器中所有的对象也创建了<br>③    何时销毁？</p>
+<details>
+<summary>利用注解实现框架功能</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line">package day02.am;</span><br><span class="line"></span><br><span class="line">public class HelloSpring &#123;</span><br><span class="line">     public void hello()&#123;</span><br><span class="line">         System.out.println(&quot;hello Spring&quot;);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">package day02.am;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">//@Configuration注解标记表示程序告诉Java，这个类是配置Spring容器内容的类</span><br><span class="line">@Configuration</span><br><span class="line">public class Config &#123;</span><br><span class="line">    //@Bean注解标记表示程序要告诉Java下面这个方法返回的对象，要放入spring容器</span><br><span class="line">    @Bean</span><br><span class="line">    public HelloSpring a()&#123;</span><br><span class="line">        return new HelloSpring();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">3.</span><br><span class="line">package day02.am;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"></span><br><span class="line">public class TestHello &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void TestHelloSpring()&#123;</span><br><span class="line">        //第一步初始化Spring容器</span><br><span class="line">        //构造方法中制定配置信息的来源类</span><br><span class="line">        AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(Config.class);</span><br><span class="line">        //从Spring容器中获得组件（对象）</span><br><span class="line">        //getBean的第一个参数是Config类中获得Bean的方法的方法名</span><br><span class="line">        //getBean的第二个参数是返回类型的反射</span><br><span class="line">        HelloSpring h=ctx.getBean(&quot;a&quot;,HelloSpring.class);</span><br><span class="line">        //获得对象，正常调用</span><br><span class="line">        h.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+
+<h1 id="Spring的组件扫描"><a href="#Spring的组件扫描" class="headerlink" title="Spring的组件扫描"></a>Spring的组件扫描</h1><h2 id="现在Spring的问题"><a href="#现在Spring的问题" class="headerlink" title="现在Spring的问题"></a>现在Spring的问题</h2><p>当我们需要一个类的对象作为组件注入时，我们必须在config类中使用@Bean声明一个方法，返回这个类的对象，如果需要注入的对象很多，那么代码量就会提升，对于那么简单的直接实例化就可以返回的注入，我们可以使用组件扫描自动进行</p>
+<h2 id="组件扫描也是注解"><a href="#组件扫描也是注解" class="headerlink" title="组件扫描也是注解"></a>组件扫描也是注解</h2><p>组件扫描也是一个注解，它一般便携在@Configuration注解的下面<br>@ComponentScan(basePackages=”****”)<br>Component：组件<br>Scan：扫描<br>basePackages：基础包<br>从指定的基础包开始扫描这个包中的所有类，使用组件注解注入组件对象，</p>
+<h2 id="实现组件扫描的步骤"><a href="#实现组件扫描的步骤" class="headerlink" title="实现组件扫描的步骤"></a>实现组件扫描的步骤</h2><p> 1.在Congfig类中添加ComponentScan注解，并指定扫描的包<br> 2.在想注入到Spring容器中的类上加注解@Component<br>   1)工作原理：在Spring容器（ACAC）实例化时，会自动扫描ComponentScan注解指定的包<br>   2)指定的包和这个包中所有子包的类都会被扫描，所有类前标记有Component注解或功能相同的注解都会自动注入到Spring容器<br> 3.创建测试类测试</p>
+<p>小结：组件注入Spring容器的两种方式</p>
+<h2 id="和-Component功能一致的注解"><a href="#和-Component功能一致的注解" class="headerlink" title="和@Component功能一致的注解"></a>和@Component功能一致的注解</h2><pre><code>`@Controller`
+</code></pre>
+<details>
+<summary>@Controller注解的代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package day02.scan;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line"></span><br><span class="line">@Controller</span><br><span class="line">public class ScanController &#123;</span><br><span class="line">    public void ctrl()&#123;</span><br><span class="line">        System.out.println(&quot;ScanController运行&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<pre><code>`@Service`
+</code></pre>
+<details>
+<summary>@Service注解的代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package day02.scan;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ScanService &#123;</span><br><span class="line">    public void ser()&#123;</span><br><span class="line">        System.out.println(&quot;ScanServer运行&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<pre><code>`@Component`
+</code></pre>
+<details>
+<summary>@Component注解的代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package day02.scan;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line">//表示这个类在被扫描时，自动实例化对象，并进入Spring容器</span><br><span class="line">@Component(&quot;cpcp&quot;)</span><br><span class="line">public class ScanBean &#123;</span><br><span class="line">    public void work()&#123;</span><br><span class="line">        System.out.println(&quot;ScanBean的work运行&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<ul>
+<li>测试类的代码<details>
+<summary>代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package day02.scan;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"></span><br><span class="line">public class TestScan &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void testScan()&#123;</span><br><span class="line">        AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(Config.class);</span><br><span class="line">        ScanBean cpcp=ctx.getBean(&quot;cpcp&quot;,ScanBean.class);</span><br><span class="line">        cpcp.work();</span><br><span class="line"></span><br><span class="line">        ScanController sc=ctx.getBean(&quot;scanController&quot;,ScanController.class);</span><br><span class="line">        sc.ctrl();</span><br><span class="line"></span><br><span class="line">        ScanService ss=ctx.getBean(&quot;scanService&quot;,ScanService.class);</span><br><span class="line">        ss.ser();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<p>为什么一个功能的注解要写出这么多名字，因为实际开发中Spring框架中可能要注入多种类的各种组件，Controller意味控制器，如果今后需要注入类似Servlet这样的控制器对象，就要使用Controller声明，Service意味着业务<br>层，如果今后需要注入业务层的对象，就使用Service</p>
+<h2 id="自定义组件ID"><a href="#自定义组件ID" class="headerlink" title="自定义组件ID"></a>自定义组件ID</h2><p>如果实在不想使用自动注入的默认名称，可以使用自定义组件ID</p>
+<p>使用方法@Component（“*****”）注解后跟的()定义自定义组件的ID，在使用ACAC对象获得这个组件时，就必须使用自定义组件ID</p>
+<p><code>@Component(&quot;cpcp&quot;)</code></p>
+<h1 id="Spring的Bean管理"><a href="#Spring的Bean管理" class="headerlink" title="Spring的Bean管理"></a>Spring的Bean管理</h1><h1 id="Bean管理"><a href="#Bean管理" class="headerlink" title="Bean管理"></a>Bean管理</h1><p> 1.Spring容器中可能有很多我们注入的组件，这些组件在从容器中提取出来并使用时，会有一些细节上的区别和区分<br> 2.Bean管理就是设置Spring容器中组件的细节的差别</p>
+<h1 id="Bean的作用域设置"><a href="#Bean的作用域设置" class="headerlink" title="Bean的作用域设置"></a>Bean的作用域设置</h1><p>1.注入Spring容器中的组件在获得时，是不是同一个对象，如果是，我们称之为单例对象，如果不是，我们称之为原型独享</p>
+<h1 id="Bean的生命周期"><a href="#Bean的生命周期" class="headerlink" title="Bean的生命周期"></a>Bean的生命周期</h1><ol>
+<li>从对象的创建到销毁的过程</li>
+<li>何时创建？对象一般实在实例化对象时创建Spring容器中默认情况下再初始化ACAC对象时，Spring容器中所有的对象也创建了</li>
+<li>何时销毁？</li>
+</ol>
 <ol>
 <li>   一般在GC回收时销毁对象（手动销毁如close（）方法</li>
-<li>   Spring容器中默认情况下是在ACAC对象被销毁时，Spring容器中的所有对象也就销毁了<br>(4)    Bean对象生命周期管理<br>①    Spring容器中的对象何时创建，何时销毁<br>②    默认情况下Spring容器实例化时，容器中的对象也创建，Spring容器销毁时容器中的对象也销毁<br>③    非默认情况下</li>
+<li>   Spring容器中默认情况下是在ACAC对象被销毁时，Spring容器中的所有对象也就销毁了</li>
+</ol>
+<h1 id="Bean对象生命周期管理"><a href="#Bean对象生命周期管理" class="headerlink" title="Bean对象生命周期管理"></a>Bean对象生命周期管理</h1><p>Spring容器中的对象何时创建，何时销毁</p>
+<h2 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h2><p>默认情况下Spring容器实例化时，容器中的对象也创建，Spring容器销毁时容器中的对象也销毁</p>
+<h2 id="非默认情况下"><a href="#非默认情况下" class="headerlink" title="非默认情况下"></a>非默认情况下</h2><ol>
 <li>   当注入的对象是Scope为”prototype”类型<br>a.    Spring容器实例化时，容器中prototype的对象不会实例化<br>b.    Spring容器销毁时，容器中prototype对象不会销毁，原因是如果Spring负责维护过多数量的对象，难免会有内存浪费甚至造成溢出</li>
 <li>   当我们设置单例对象为懒惰初始化（延迟加载）在类前要开@Lazy<br>Spring容器实例化时，容器中被设置为@Lazy的类不会实例化在程序运行过程中<br>如果使用getBean方法获得这个对象，才实例化</li>
 </ol>
-<p>5、使用@Import配置多个配置文件<br>(1)    我们在配置Spring容器中的内容只能通过Config类，如果一个项目组多人同时对一个Config继续宁配置，难免会有冲突</p>
+<h1 id="使用-Import配置多个配置文件"><a href="#使用-Import配置多个配置文件" class="headerlink" title="使用@Import配置多个配置文件"></a>使用@Import配置多个配置文件</h1><p>(1)    我们在配置Spring容器中的内容只能通过Config类，如果一个项目组多人同时对一个Config继续宁配置，难免会有冲突<br>所以此时在原Config文件中引入<code>@Import(day02.cof.Config2.class)</code>其它的Config就可以引入其它的Config内容</p>
+<h1 id="不知道怎么总结"><a href="#不知道怎么总结" class="headerlink" title="不知道怎么总结"></a>不知道怎么总结</h1><details>
+<summary>FlyTool</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package day02.scope;</span><br><span class="line">import org.springframework.context.annotation.Scope;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line">@Component</span><br><span class="line">@Scope</span><br><span class="line">public class FlyTool &#123;</span><br><span class="line">     int power=100;</span><br><span class="line">     public void fly()&#123;</span><br><span class="line">         System.out.println(&quot;竹蜻蜓带你飞&quot;);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+<details>
+<summary>TimeMachine</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package day02.scope;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line">//import org.w3c.dom.ls.LSOutput;</span><br><span class="line">//</span><br><span class="line">import javax.annotation.PostConstruct;</span><br><span class="line">import javax.annotation.PreDestroy;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">public class TimeMachine&#123;</span><br><span class="line"> //PostConstruct，告诉java下面的方法要在当前对象内创建时执行</span><br><span class="line">    // 也就是要创建这个类的对象，这个方法就会执行</span><br><span class="line">    @PostConstruct</span><br><span class="line">    public void open()&#123;</span><br><span class="line">        System.out.println(&quot;打开时光的抽屉&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //告诉java下面的方法要在当前类对象小销毁前执行</span><br><span class="line">    //也就是说只要销毁这个类的对象，这个方法就会运行</span><br><span class="line">    @PreDestroy</span><br><span class="line">    public void close()&#123;</span><br><span class="line">        System.out.println( &quot;关闭时光抽屉&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    int power=100;</span><br><span class="line">    public void timeTracvle()&#123;</span><br><span class="line">        System.out.println(&quot;进行是挂旅行&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+<details>
+<summary>scopeTestLife</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package day02.scope;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line"></span><br><span class="line">public class scopeTestLife &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void testlife()&#123;</span><br><span class="line">        AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(FlyTool.class);//这里之前出了错（写Config.class时）</span><br><span class="line">        FlyTool fly=ctx. getBean(&quot;flyTool&quot;,FlyTool.class);</span><br><span class="line">        System.out.println(fly.power);</span><br><span class="line">        fly.fly();</span><br><span class="line">        FlyTool fly2=ctx.getBean(&quot;flyTool&quot;,FlyTool.class);</span><br><span class="line">        System.out.println(fly==fly2);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testLife2()&#123;</span><br><span class="line">        AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(TimeMachine.class);</span><br><span class="line"></span><br><span class="line">        TimeMachine tm=ctx.getBean(&quot;timeMachine&quot;,TimeMachine.class);</span><br><span class="line">        System.out.println(tm.power);</span><br><span class="line">        tm.timeTracvle();</span><br><span class="line">        tm.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+<h1 id="Spring-DI-（依赖注入）"><a href="#Spring-DI-（依赖注入）" class="headerlink" title="Spring DI （依赖注入）"></a>Spring DI （依赖注入）</h1><h1 id="依赖注入是什么"><a href="#依赖注入是什么" class="headerlink" title="依赖注入是什么"></a>依赖注入是什么</h1><p> 1.就是将组件（对象）保存到Spring容器中管理的操作，依赖注入就是程序运行过程中，业务需要依赖的组件也注入到Spring中，并且可以在Spring内部形成依赖关系</p>
+<p> 2.Bean实现依赖注入</p>
+<ol>
+<li>   注入青龙偃月刀，创建一个类（DrangonBlade）这个类有一个返回武器名称的方法</li>
+<li>   注入关羽，还能一个类（GuanYu）这个类有一个DrangonBlade属性</li>
+<li>   创建Config类，使用@Bean注入DrangonBlade和GuanYu注入GuanYu时的方法需要一个DrangonBlade参数，在方法中，将这个参数复制为GuanYu对象的DrangonBlade属性<br>4）    测试类中，获得关羽的Bean可以直接调用关羽的方法，</li>
+<li>   注意：如果Spring容器中注入了一个DranonBlade的对象，那么注入GuanYu的方法的参数明随意即可，但是如果Spring容器中只注入多个对象，那么GuanYu的方法的参数名必须和其中一个方法名一致</li>
+</ol>
+<h1 id="Autowired-自动装配-实现依赖注入（DI）"><a href="#Autowired-自动装配-实现依赖注入（DI）" class="headerlink" title="@Autowired(自动装配)实现依赖注入（DI）"></a>@Autowired(自动装配)实现依赖注入（DI）</h1><p>@autowired要做的工作其实就是初始化我们类的成员变量</p>
+<ol>
+<li>   创建DragonBlade和GuanYu类代码一致，但是要加上@Component注解</li>
+<li>   创建Config类，无需编写任何@Bean只需要扫描组件包即可，在GuanYu类中的DragonBlade属性生添加@AutoWired注解，标识自动装配需要的对象@AutoWired注解同时支持编写在属性的Set方法上，使用相对灵活</li>
+</ol>
+<h1 id="IOC-DI的解耦"><a href="#IOC-DI的解耦" class="headerlink" title="IOC/DI的解耦"></a>IOC/DI的解耦</h1><h2 id="耦合性"><a href="#耦合性" class="headerlink" title="耦合性"></a>耦合性</h2><ol>
+<li>   程序中一个组件（对象）依赖另一个组件时，就会出现耦合性问题</li>
+<li>   （主对象（关羽）依赖对象(龙刀)）如果主对象中声明的时依赖对象的具体类型，就是紧耦合，</li>
+<li>   如果主对象中声明的时依赖对象的抽象类型，就是松耦合</li>
+<li>   我们追求的时松耦合，为什么呢？因为松耦合能最大限度的实现易维护易扩展的目的</li>
+</ol>
+<h2 id="Autowired自动装配规则"><a href="#Autowired自动装配规则" class="headerlink" title="@Autowired自动装配规则"></a>@Autowired自动装配规则</h2><ol>
+<li>   如果依赖对象的类型在Spring容器中没有匹配对象，运行报错（异常）</li>
+<li>   如果依赖对象的类型在Spring容器中只有唯一匹配对象，运行正常</li>
+<li>   如果依赖对象的类型在Spring额容器中有多个匹配对象，且没有匹配对象的id，运行报错</li>
+<li>   如果依赖对象的类型在Spring容器中有多个匹配对象，且有匹配对象的id，运行正常，匹配对象的ID的方法有两种</li>
+</ol>
+<ol>
+<li>   主对象声明的依赖对象的属性名使用Spring容器中的组件的id</li>
+<li>   主对象生命的依赖对象的属性名上使用@Qualifier注解在（）编写组件id</li>
+</ol>
+<h1 id="Bean和-Componet注解混合注入"><a href="#Bean和-Componet注解混合注入" class="headerlink" title="@Bean和@Componet注解混合注入"></a>@Bean和@Componet注解混合注入</h1><h1 id="关于jdbc的注入问题"><a href="#关于jdbc的注入问题" class="headerlink" title="关于jdbc的注入问题"></a>关于jdbc的注入问题</h1><p>先创建一个模块 new–module<br>(1)    先加载jar包</p>
+<ol>
+<li>   JDBC相关依赖</li>
+<li>   Spring相关依赖</li>
+</ol>
+<p>(2)    在已经配置的Spring环境中，Config类中使用@Bean注入了一个数据库连接池对象<br>    @Bean注解后面可以跟()其中设置属性destoryMethod=”xxx”,  ，运行的方法</p>
+<p>(3)    在测试文件夹编写代码测试即可</p>
+<h1 id="使用Properties文件配置数据库连接池"><a href="#使用Properties文件配置数据库连接池" class="headerlink" title="使用Properties文件配置数据库连接池"></a>使用Properties文件配置数据库连接池</h1><p>（1）配置环境 ，同上<br>（2）将编写好的db.properties文件不知道resources文件夹中<br>（3）在已经配置的Spring环境中</p>
+<ol>
+<li>   Config类，中使用@Bean注入一个数据连接对象</li>
+<li>   PropertySource 注解并在（）中指定位置，这个注解会自动读取Propertie指定的文件中的内容</li>
+<li>   使用@Value在注入数据源的方法的参数中制定properties文件中的key<br>（4）测试</li>
+</ol>
 
     </div>
 
@@ -256,6 +394,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
 
         
 
@@ -263,10 +404,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/17/java%20new%2015/" rel="prev" title="java new 15">
-      <i class="fa fa-chevron-left"></i> java new 15
+    <a href="/2021/09/17/java%20new%2015/" rel="prev" title="15-SpringMVC框架">
+      <i class="fa fa-chevron-left"></i> 15-SpringMVC框架
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/22/java%20new%2017/" rel="next" title="17-SpringMVC">
+      17-SpringMVC <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -325,6 +469,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E4%B9%A0Spring"><span class="nav-number">1.</span> <span class="nav-text">复习Spring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F%E7%AE%A1%E7%90%86bean%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">spring 注解方式管理bean对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E7%9A%84%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F"><span class="nav-number">3.</span> <span class="nav-text">Spring的组件扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E5%9C%A8Spring%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">现在Spring的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E4%B9%9F%E6%98%AF%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.2.</span> <span class="nav-text">组件扫描也是注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.3.</span> <span class="nav-text">实现组件扫描的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C-Component%E5%8A%9F%E8%83%BD%E4%B8%80%E8%87%B4%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.4.</span> <span class="nav-text">和@Component功能一致的注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6ID"><span class="nav-number">3.5.</span> <span class="nav-text">自定义组件ID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E7%9A%84Bean%E7%AE%A1%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">Spring的Bean管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">Bean管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E8%AE%BE%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">Bean的作用域设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">7.</span> <span class="nav-text">Bean的生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean%E5%AF%B9%E8%B1%A1%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">Bean对象生命周期管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B"><span class="nav-number">8.1.</span> <span class="nav-text">默认情况下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B"><span class="nav-number">8.2.</span> <span class="nav-text">非默认情况下</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Import%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">使用@Import配置多个配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E7%9F%A5%E9%81%93%E6%80%8E%E4%B9%88%E6%80%BB%E7%BB%93"><span class="nav-number">10.</span> <span class="nav-text">不知道怎么总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-DI-%EF%BC%88%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">Spring DI （依赖注入）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">12.</span> <span class="nav-text">依赖注入是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Autowired-%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D-%E5%AE%9E%E7%8E%B0%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%EF%BC%88DI%EF%BC%89"><span class="nav-number">13.</span> <span class="nav-text">@Autowired(自动装配)实现依赖注入（DI）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOC-DI%E7%9A%84%E8%A7%A3%E8%80%A6"><span class="nav-number">14.</span> <span class="nav-text">IOC&#x2F;DI的解耦</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%A6%E5%90%88%E6%80%A7"><span class="nav-number">14.1.</span> <span class="nav-text">耦合性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowired%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E8%A7%84%E5%88%99"><span class="nav-number">14.2.</span> <span class="nav-text">@Autowired自动装配规则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bean%E5%92%8C-Componet%E6%B3%A8%E8%A7%A3%E6%B7%B7%E5%90%88%E6%B3%A8%E5%85%A5"><span class="nav-number">15.</span> <span class="nav-text">@Bean和@Componet注解混合注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ejdbc%E7%9A%84%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98"><span class="nav-number">16.</span> <span class="nav-text">关于jdbc的注入问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Properties%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="nav-number">17.</span> <span class="nav-text">使用Properties文件配置数据库连接池</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -340,7 +485,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -353,7 +498,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

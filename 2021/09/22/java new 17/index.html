@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="SpringMVC|">
+<meta property="og:type" content="article">
+<meta property="og:title" content="17-SpringMVC">
+<meta property="og:url" content="https://umli0.github.io/2021/09/22/java%20new%2017/index.html">
+<meta property="og:site_name" content="黒猫的博客">
+<meta property="og:description" content="SpringMVC|">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7abc8514a9264de498d653e7dfab984e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e64e7a1c437b4fb690d4e557f5d20c9e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/557bfc94d70c43dc9d288348e761befc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/440a3eabd71e4a4b8d1da87ec552c398.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8f4efe0119da468a902c7a2d06664704.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2021-09-22T00:52:58.000Z">
+<meta property="article:modified_time" content="2021-09-26T17:12:07.345Z">
+<meta property="article:author" content="黒猫">
+<meta property="article:tag" content="SpringMVC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/7abc8514a9264de498d653e7dfab984e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+
+<link rel="canonical" href="https://umli0.github.io/2021/09/22/java%20new%2017/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>17-SpringMVC | 黒猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">黒猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2021/09/22/java%20new%2017/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpeg">
+      <meta itemprop="name" content="黒猫">
+      <meta itemprop="description" content="活在当下 为所当为 顺其自然">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          17-SpringMVC
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-22 08:52:58" itemprop="dateCreated datePublished" datetime="2021-09-22T08:52:58+08:00">2021-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-27 01:12:07" itemprop="dateModified" datetime="2021-09-27T01:12:07+08:00">2021-09-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">java进阶课程</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">SpringMVC|</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="回顾SpringMVC"><a href="#回顾SpringMVC" class="headerlink" title="回顾SpringMVC"></a>回顾SpringMVC</h1><p>MVC设计模式（思想）</p>
+<h2 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h2><p>1、设计模式，是一套反复被使用，多数人知晓，经过分类的、代码设计经验的总结<br>2、使用设计模式的目的：为了代码的可重用性，让代码更容易被他人理解、保证代码的可靠性<br>3、设计模式使代码编程真正的工程化<br>4、设计模式是软件工程的技术，就像大厦的结构<br>(1)    比如：白酒酿造空虚，前后不能发生改变，温差也不能变，这样白酒才能好喝，稍微变动，就会变味</p>
+<h1 id="MVC设计模式"><a href="#MVC设计模式" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h1><ol>
+<li><p>是一种通用的软件编程思想</p>
+</li>
+<li><p>在MVC设计模式中，任何软件都可以分为三部分<br>(1)    控制程序流转的控制器（Controller）<br>(2)    封装数据处理出数据的模型（Model）<br>(3)    负责展示数据的试图（view）</p>
+</li>
+<li><p>在MVC设计思想中，要求一个符合MVC设计思想的软件应该保证上面三部分相互独立，互不干扰，每个部分只负责自己擅长的部分</p>
+</li>
+<li><p>如果一个模块发生变化，应该尽量做到不影响其他模块，这样做的好处，软件的结构变得更加清晰，可读性强，有利于后期扩展和维护，并且代码可以实现复用</p>
+</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/7abc8514a9264de498d653e7dfab984e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p>1、Servlet的缺点<br>(1)    通常情况下，一个servlet只负责处理一个请求，若项目总有成百上千个请求需要处理，就需要有成百上千个Servlet类，这样会使得项目中Servlet类的个数暴增</p>
+<p>(2)    在Servlet3.0版本之前，每一个Servlet都需要在web.xml文件中至少做八行配置信息，配置内容多且反锁，当Servlet特别多的时候，web.xml配置量太多，不利于团队开发</p>
+<p>(3)    当通过客户端提交参数到服务器，通过Servlet进行接收时，无论数据本身是什么格式，在Servlet中一律按照字符串接收，后期需要进行类型转换，复杂类型还需要特殊处理</p>
+<p>(4)    Servlet具有容器依赖性，必须放在服务器中运行，不利于单元测试</p>
+<hr>
+<h1 id="SpringMVC简介"><a href="#SpringMVC简介" class="headerlink" title="SpringMVC简介"></a>SpringMVC简介</h1><p>(1)    SpringMVC是spring框架的一个模块，spring和springmvc无需中间整合<br>(2)    SpringMVC是一个基于mvc的web框架</p>
+<h1 id="SpringMVC执行原理"><a href="#SpringMVC执行原理" class="headerlink" title="SpringMVC执行原理"></a>SpringMVC执行原理</h1><p> 1.用户发送请求至前端控制器(<code>DispatcherServlet</code>)<br>  接收请求，调用其他组件处理请求，响应结果，相当于转发器，中央处理器，是整个流程控制的中心</p>
+<p> 2.前端控制器（<code>DispatcherServlet</code>）收到请求后调用处理器映射器（<code>HandlerMapping</code>）<br>  处理器映射器（<code>HandlerMapping</code>）找到具体Controller（可以根据xml配置，注解进行查找），并将Controller返回给DispatcherServlet</p>
+<p> 3.前端控制器 调用处理器适配器，处理器适配器经过适配调用具体的Controller（Controller-&gt;service-&gt;Dao-&gt;数据库）<br>    Controller执行完成后返回ModelAndView</p>
+<ol>
+<li>   Model（模型）</li>
+<li>   View（逻辑视图）</li>
+<li>   处理器适配器（HanderAdapter）将Controller执行的结果（ModelAndView）返回给前端控制器    </li>
+</ol>
+<p> 4.前端控制器将执行的结果传给视图解析器（ViewReslover）<br>    视图解析器根据View解析后返回具体的JSP页面</p>
+<p> 5.前端控制器根据Model对View进行渲染（将模型数据填充至视图），前端控制器将填充了数据的网页响应给用户，</p>
+<p> 6.整个过程中需要开发人员编写的部分有 Controller，Service，Dao，View</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p> <strong>Web.xml</strong><br><img src="https://img-blog.csdnimg.cn/e64e7a1c437b4fb690d4e557f5d20c9e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p><strong>Springmvc-config.xml</strong><br><img src="https://img-blog.csdnimg.cn/557bfc94d70c43dc9d288348e761befc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h1 id="springmvc参数绑定"><a href="#springmvc参数绑定" class="headerlink" title="springmvc参数绑定"></a>springmvc参数绑定</h1><p>(1)    当项目总引入springmvc后，所有的请求流转将由springmvc控制，当客户端发送的请求中包含数据（请求参数），那么该如何在controller中获取这些参数</p>
+<p>(2)    Springmvc会自动的将请求中包含的参数和方法的参数进行匹配，也就是说只要保证请求参数名称和方法名中的参数名称相对应，（参数的格式也要正确），在方法中就可以使用这些参数</p>
+<h1 id="基本类型参数绑定"><a href="#基本类型参数绑定" class="headerlink" title="基本类型参数绑定"></a>基本类型参数绑定</h1><p>(1)    当需要获取客户端发送过来的少量数据时，可以在Controller中声明的方法上，通过声明方法参数对这些参数一个一个进行接收</p>
+<p>需求：通过浏览器发送请求访问Controller，并在请求中携带name,age数据访问服务器，服务器端的Controller中获取这些数据</p>
+<p>案例</p>
+<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><ol>
+<li>问题一<br>中间出现了<br><code>org.springframework.web.servlet.DispatcherServlet&#39; is not assignable to &#39;javax.servlet.Servlet,jakarta.servlet.Servlet这样的问题</code></li>
+</ol>
+<p>是因为tomcat没有添加依赖<br>Project Structure–Modules–springmvc01(因为有多个模块，这里我没选对，把依赖添加到别的模块去了，所以失败了)–dependencies–tomcat</p>
+<p>2.问题二<br>用hello访问路径访问，访问不到<br>原因：pages.home.jsp文件应该在WEB-INF文件夹下</p>
+<ul>
+<li>代码</li>
+</ul>
+<details>
+<summary>HelloController代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package cn.itpc.controller;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Controller作用：表示当前类属于controller层，</span><br><span class="line"> * 同时表示将当前类的对象的创建交给spring、容器负责</span><br><span class="line"> * http://localhost:8080/springmvc01/hello</span><br><span class="line"> */</span><br><span class="line">@Controller</span><br><span class="line">public class HelloController &#123;</span><br><span class="line">    /**</span><br><span class="line">     * @RequestMapping(&quot;/hello&quot;)用于配置当前方法的访问路径(是浏览器上的访问路径，不是文件的访问路径),不能省略，不能重复</span><br><span class="line">     * @RequestMapping注解在当前方法上声明的访问路径，在当前controller不能重复</span><br><span class="line">     * 如果controller上没有访问路径，当前方法上的访问路径在左右controller中不能重复</span><br><span class="line">     *</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;/hello&quot;) //路径为hello时运行这玩意</span><br><span class="line">    public String testHello()&#123;</span><br><span class="line">        System.out.println(&quot;hello springmvc...&quot;);</span><br><span class="line">        return &quot;home&quot;; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/testParam1&quot;)</span><br><span class="line">    public String testParam1(String name,Integer age,String addr)&#123;</span><br><span class="line">        System.out.println(&quot;name=&quot;+name);</span><br><span class="line">        System.out.println(&quot;age=&quot;+age);</span><br><span class="line">        System.out.println(&quot;addr=&quot;+addr);</span><br><span class="line">        return &quot;home&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//不同路径下运行不同代码，但是最后都是到那个home.jsp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h1 id="引用类型参数绑定"><a href="#引用类型参数绑定" class="headerlink" title="引用类型参数绑定"></a>引用类型参数绑定</h1><p>(1)    当需要获取客户端发送过来的多个数据时，可以在Controller中声明的方法上，通过声明方法参数对这些数据一个一个进行接收比较麻烦，可以在方法上声明对象类型的参数，通过对这些数据统一进行接收，springmvc会自动将接收过来的参数封装在对象上</p>
+<p><code>在方法中声明对象的对象类型，该对象是User型，然后就将接收来的数据自动封装到该User型对象上</code></p>
+<h1 id="日期类型参数的绑定"><a href="#日期类型参数的绑定" class="headerlink" title="日期类型参数的绑定"></a>日期类型参数的绑定</h1><p><img src="https://img-blog.csdnimg.cn/440a3eabd71e4a4b8d1da87ec552c398.png"><br>(2)    当参数与spring中日期格式不匹配时，就会报400错误，可以看出，如果日期参数yyyy-MM-dd<br>格式，其实是因为参数格式不匹配导致的，由于springmvc默认格式 yyyy/MM/dd 如果不是，就会出现400错误<br>(3)    解决方案：<br>在springmvc中，提供了@InitBider注解，用于制定自定义的日期转换格式，因此，我们只需要在Controller类中，添加下面的代码</p>
+<h1 id="跳转和乱码处理"><a href="#跳转和乱码处理" class="headerlink" title="跳转和乱码处理"></a>跳转和乱码处理</h1><h2 id="实现转发（forword）"><a href="#实现转发（forword）" class="headerlink" title="实现转发（forword）"></a>实现转发（forword）</h2><ol>
+<li>在前面的request中，通过request对象可以实现请求转发，同样，springmvc也提供了请求转发的方式</li>
+<li>Forward方式相当于：</li>
+</ol>
+<ol>
+<li>   request.getRequestDispatcher(“url”).forward(  request,response);</li>
+<li>   转发是一次请求，一次响应</li>
+<li>   转发后地址栏没有变化，（还是访问testForward的地址）</li>
+<li>   转发前后的request和response对象也是同一个<h2 id="实现重定向（redirect）"><a href="#实现重定向（redirect）" class="headerlink" title="实现重定向（redirect）"></a>实现重定向（redirect）</h2></li>
+</ol>
+<ol>
+<li><p>在servlet中，可以通过response对象实现重定向，同样在springmvc中也提供重定向的方式</p>
+</li>
+<li><p>redirect相当于：response.sendRedirect（url）</p>
+</li>
+<li><p>重定向是两次请求，两次响应<br>&lt;1&gt;重定向之后地址栏发生了变化（变为转发后的地址）<br>&lt;2&gt;并且在重定向之后，request和response对象不是同一个</p>
+</li>
+</ol>
+<h2 id="乱码处理"><a href="#乱码处理" class="headerlink" title="乱码处理"></a>乱码处理</h2><p>在web.xml插入代码<br><img src="https://img-blog.csdnimg.cn/8f4efe0119da468a902c7a2d06664704.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<details>
+<summary>乱码处理的代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  处理编码--&gt;</span><br><span class="line">  &lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;UTF8&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">  &lt;/filter&gt;</span><br><span class="line">  &lt;filter-mapping&gt;</span><br><span class="line">    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+</details>
+
+<p>9、Springmvc响应的数据 Model<br>(1)    当请求发起访问Controller中的方法时，可以通过参数声明，在方法内使用Model<br>(2)    Model对象实际上是一个Map集合，例如：往model中添加一个属性类似于 request.setAttribute(“name”, obj)<br>(3)    addAtuibute方法会将属性保存到request中，再通过转发讲数据带到相应的JSP中，通过el表达式取出</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SpringMVC/" rel="tag"># SpringMVC</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/22/java%20new%2016/" rel="prev" title="16-Spring框架">
+      <i class="fa fa-chevron-left"></i> 16-Spring框架
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/22/Spring%E6%A1%86%E6%9E%B6/" rel="next" title="Spring框架">
+      Spring框架 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BESpringMVC"><span class="nav-number">1.</span> <span class="nav-text">回顾SpringMVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是设计模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">MVC设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringMVC"><span class="nav-number">3.</span> <span class="nav-text">SpringMVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringMVC%E7%AE%80%E4%BB%8B"><span class="nav-number">4.</span> <span class="nav-text">SpringMVC简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringMVC%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">SpringMVC执行原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#springmvc%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A"><span class="nav-number">7.</span> <span class="nav-text">springmvc参数绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A"><span class="nav-number">8.</span> <span class="nav-text">基本类型参数绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">8.1.</span> <span class="nav-text">出现的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A"><span class="nav-number">9.</span> <span class="nav-text">引用类型参数绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%E7%9A%84%E7%BB%91%E5%AE%9A"><span class="nav-number">10.</span> <span class="nav-text">日期类型参数的绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E5%92%8C%E4%B9%B1%E7%A0%81%E5%A4%84%E7%90%86"><span class="nav-number">11.</span> <span class="nav-text">跳转和乱码处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%EF%BC%88forword%EF%BC%89"><span class="nav-number">11.1.</span> <span class="nav-text">实现转发（forword）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%88redirect%EF%BC%89"><span class="nav-number">11.2.</span> <span class="nav-text">实现重定向（redirect）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%B1%E7%A0%81%E5%A4%84%E7%90%86"><span class="nav-number">11.3.</span> <span class="nav-text">乱码处理</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黒猫"
+      src="/images/1.jpeg">
+  <p class="site-author-name" itemprop="name">黒猫</p>
+  <div class="site-description" itemprop="description">活在当下 为所当为 顺其自然</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
