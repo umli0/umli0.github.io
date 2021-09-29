@@ -103,6 +103,21 @@
       </tags>
   </entry>
   <entry>
+    <title>boke system</title>
+    <url>/2021/09/17/boke-system/</url>
+    <content><![CDATA[<h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><ul>
+<li>目前拥有的界面</li>
+<li>注册，登陆界面，显示所有博文的界面，修改博文的界面，修改用户信息的界面，但是还不能吧登陆和博文好好的联系在一起</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java项目</category>
+      </categories>
+      <tags>
+        <tag>java项目</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客后续配置</title>
     <url>/2021/08/02/hexo%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="增加阅读全文按钮"><a href="#增加阅读全文按钮" class="headerlink" title="增加阅读全文按钮"></a>增加阅读全文按钮</h1><p>在主题配置文件中添加<br>auto_excerpt:<br>  enable: true<br>  length: 150</p>
@@ -223,6 +238,55 @@ description:
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>html基础复习</title>
+    <url>/2021/09/10/html%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="HTML标准"><a href="#HTML标准" class="headerlink" title="HTML标准"></a>HTML标准</h1><p>(1)    可能相同的标签，不同的浏览器默认的字体的大小有区别：<span>hello</span><br>例：</p>
+<pre><code>谷歌浏览器：16px
+IE浏览器 20px
+</code></pre>
+<p>(2)    如何实现HTML5的标准<br>创建网页在网页第一行书写特殊声明：</p>
+<pre><code>HTML5 &lt;!DOCTYPE html&gt;
+HTL4.01 &lt;!DOCTYPE HTML PUBLI”-//W3C//DTD HTML 4.01 Strict//ENhttp://www.w3.org/TR/html4/strict.dtd”&gt;
+</code></pre>
+<p>(3)常用内核</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IE 	Trident 	IE；360；猎豹</span><br><span class="line">FireFOX Gecko</span><br><span class="line">Safari  WebKit</span><br><span class="line">Chrome/Opear Blink WebKit分支</span><br></pre></td></tr></table></figure>
+
+<h1 id="HTML是什么"><a href="#HTML是什么" class="headerlink" title="HTML是什么"></a>HTML是什么</h1><p>(1)超文本标记语言，超文本就是带功能的文本，有特殊语法结构<br>(2)    Html特点</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">以.html或者.htm为后缀的文件</span><br><span class="line">当完成.html文件书写时通过浏览器解析执行（解释性语言，java属于编译型语言）</span><br><span class="line">用&lt;&gt;来标识标记</span><br></pre></td></tr></table></figure>
+<p>(3)    常用的语法<div></div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标记，元素，标签，对象，借点...</span><br><span class="line">单标签  &lt;meta charset=”UTF-8”/&gt;  &lt;br/&gt; &lt;hr/&gt;等</span><br><span class="line">双标签 &lt;html&gt;&lt;/html&gt; &lt;head&gt;&lt;/head&gt; &lt;title&gt;&lt;/title&gt;等</span><br></pre></td></tr></table></figure>
+<p>(4)    嵌套标签<br>(5)    属性值<br>(6)    注释  <code>//（java）</code> 或<code>&lt;!--注释 --&gt;</code><br>(7)    文档结构<br>(8)    head 头部标签</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">   title</span><br><span class="line">meta</span><br></pre></td></tr></table></figure>
+<p>(9)    body：浏览器可视区域</p>
+<h1 id="lang语言种类"><a href="#lang语言种类" class="headerlink" title="lang语言种类"></a>lang语言种类</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1)	&lt;html lang=”en”&gt;  &lt;/html&gt;  用来定义当前文档（网页）使用自然语言（中文，日文，韩文，阿拉伯文...）</span><br><span class="line">(2)	en 定义当前网页语言为英语；zh-CN定义当前网页使用语言为中文   zh表示简体中文，CN中国</span><br><span class="line">(3)	字符集： gb2312（简体中文） gbk  big5 台湾  UTF-8 万国码</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="常用标记"><a href="#常用标记" class="headerlink" title="常用标记"></a>常用标记</h1><p><code>&lt;p&gt;</code>将html中文分段</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">特点：文本在一个段落中会根据浏览器的大小自动换行</span><br><span class="line">段落与段落之间会保存空隙</span><br><span class="line">如果希望强制换行就用&lt;br/&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="特殊字符："><a href="#特殊字符：" class="headerlink" title="特殊字符："></a>特殊字符：</h1><p><code>    &lt;&lt;  空格 &gt;</code></p>
+<h1 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1)	字体加粗 &lt;b&gt; &lt;strong&gt;用strong</span><br><span class="line">(2)	斜体 &lt;em&gt; &lt;i&gt;  推荐用em</span><br><span class="line">(3)	删除线 &lt;del&gt; &lt;s&gt;推荐用del</span><br><span class="line">(4)	下划线 &lt;u&gt; &lt;ins&gt; 推荐ins</span><br></pre></td></tr></table></figure>
+<h1 id="div和span标签"><a href="#div和span标签" class="headerlink" title="div和span标签"></a>div和span标签</h1><p>(1)    没有语义，作用就是定义一个盒子，用来装内容</p>
+<p>(2）简单分析：一个红框对应一个div，一段文字对应的一个span元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.	div——块级元素，用于页面的布局 </span><br><span class="line">2.	div独占一行</span><br><span class="line">3.	Span行内元素，多个元素在同一行内显示</span><br><span class="line">4.	元素分类</span><br></pre></td></tr></table></figure>
+<ol>
+<li>   块级元素:单独成行，从上往下排列<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.	div</span><br><span class="line">2.	h1~h6</span><br><span class="line">3.	p</span><br><span class="line">4.	ul</span><br><span class="line">5.	li</span><br></pre></td></tr></table></figure></li>
+<li>   行内元素：与其他行内元素，共用一行，一行放不下，自动换行<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.	Span</span><br><span class="line">2.	S</span><br><span class="line">3.	Del</span><br><span class="line">4.	Em</span><br><span class="line">5.	I</span><br></pre></td></tr></table></figure></li>
+<li>   行内块元素<br>a.    Input</li>
+</ol>
+<h1 id="图片和路径"><a href="#图片和路径" class="headerlink" title="图片和路径"></a>图片和路径</h1><p>(1)    图片标签</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在HTML标签中&lt;img&gt;用于定义html页面中的图像</span><br><span class="line">src属性是img中必须的属性，用于指定图像文件的路径和文件名</span><br><span class="line">alt属性文本属性，当图像不能显示时出现的文本</span><br><span class="line">title属性，提示文本，当鼠标放在图像上显示的文字</span><br><span class="line">Width/height</span><br></pre></td></tr></table></figure>
+<ol>
+<li>   如果用户不指定宽和高图片按原来图片大小显示</li>
+<li>   如果制定宽和高则图片按指定大小显示</li>
+<li>指定图片只需制定宽度或者高度一个即可，另一个会自动缩放</li>
+</ol>
+]]></content>
+      <categories>
+        <category>html基础复习</category>
+      </categories>
+      <tags>
+        <tag>html基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -361,70 +425,6 @@ links:
       </tags>
   </entry>
   <entry>
-    <title>boke system</title>
-    <url>/2021/09/17/boke-system/</url>
-    <content><![CDATA[<h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><ul>
-<li>目前拥有的界面</li>
-<li>注册，登陆界面，显示所有博文的界面，修改博文的界面，修改用户信息的界面，但是还不能吧登陆和博文好好的联系在一起</li>
-</ul>
-]]></content>
-      <categories>
-        <category>java项目</category>
-      </categories>
-      <tags>
-        <tag>java项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>html基础复习</title>
-    <url>/2021/09/10/html%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="HTML标准"><a href="#HTML标准" class="headerlink" title="HTML标准"></a>HTML标准</h1><p>(1)    可能相同的标签，不同的浏览器默认的字体的大小有区别：<span>hello</span><br>例：</p>
-<pre><code>谷歌浏览器：16px
-IE浏览器 20px
-</code></pre>
-<p>(2)    如何实现HTML5的标准<br>创建网页在网页第一行书写特殊声明：</p>
-<pre><code>HTML5 &lt;!DOCTYPE html&gt;
-HTL4.01 &lt;!DOCTYPE HTML PUBLI”-//W3C//DTD HTML 4.01 Strict//ENhttp://www.w3.org/TR/html4/strict.dtd”&gt;
-</code></pre>
-<p>(3)常用内核</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IE 	Trident 	IE；360；猎豹</span><br><span class="line">FireFOX Gecko</span><br><span class="line">Safari  WebKit</span><br><span class="line">Chrome/Opear Blink WebKit分支</span><br></pre></td></tr></table></figure>
-
-<h1 id="HTML是什么"><a href="#HTML是什么" class="headerlink" title="HTML是什么"></a>HTML是什么</h1><p>(1)超文本标记语言，超文本就是带功能的文本，有特殊语法结构<br>(2)    Html特点</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">以.html或者.htm为后缀的文件</span><br><span class="line">当完成.html文件书写时通过浏览器解析执行（解释性语言，java属于编译型语言）</span><br><span class="line">用&lt;&gt;来标识标记</span><br></pre></td></tr></table></figure>
-<p>(3)    常用的语法<div></div></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标记，元素，标签，对象，借点...</span><br><span class="line">单标签  &lt;meta charset=”UTF-8”/&gt;  &lt;br/&gt; &lt;hr/&gt;等</span><br><span class="line">双标签 &lt;html&gt;&lt;/html&gt; &lt;head&gt;&lt;/head&gt; &lt;title&gt;&lt;/title&gt;等</span><br></pre></td></tr></table></figure>
-<p>(4)    嵌套标签<br>(5)    属性值<br>(6)    注释  <code>//（java）</code> 或<code>&lt;!--注释 --&gt;</code><br>(7)    文档结构<br>(8)    head 头部标签</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">   title</span><br><span class="line">meta</span><br></pre></td></tr></table></figure>
-<p>(9)    body：浏览器可视区域</p>
-<h1 id="lang语言种类"><a href="#lang语言种类" class="headerlink" title="lang语言种类"></a>lang语言种类</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1)	&lt;html lang=”en”&gt;  &lt;/html&gt;  用来定义当前文档（网页）使用自然语言（中文，日文，韩文，阿拉伯文...）</span><br><span class="line">(2)	en 定义当前网页语言为英语；zh-CN定义当前网页使用语言为中文   zh表示简体中文，CN中国</span><br><span class="line">(3)	字符集： gb2312（简体中文） gbk  big5 台湾  UTF-8 万国码</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="常用标记"><a href="#常用标记" class="headerlink" title="常用标记"></a>常用标记</h1><p><code>&lt;p&gt;</code>将html中文分段</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">特点：文本在一个段落中会根据浏览器的大小自动换行</span><br><span class="line">段落与段落之间会保存空隙</span><br><span class="line">如果希望强制换行就用&lt;br/&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="特殊字符："><a href="#特殊字符：" class="headerlink" title="特殊字符："></a>特殊字符：</h1><p><code>    &lt;&lt;  空格 &gt;</code></p>
-<h1 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1)	字体加粗 &lt;b&gt; &lt;strong&gt;用strong</span><br><span class="line">(2)	斜体 &lt;em&gt; &lt;i&gt;  推荐用em</span><br><span class="line">(3)	删除线 &lt;del&gt; &lt;s&gt;推荐用del</span><br><span class="line">(4)	下划线 &lt;u&gt; &lt;ins&gt; 推荐ins</span><br></pre></td></tr></table></figure>
-<h1 id="div和span标签"><a href="#div和span标签" class="headerlink" title="div和span标签"></a>div和span标签</h1><p>(1)    没有语义，作用就是定义一个盒子，用来装内容</p>
-<p>(2）简单分析：一个红框对应一个div，一段文字对应的一个span元素</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.	div——块级元素，用于页面的布局 </span><br><span class="line">2.	div独占一行</span><br><span class="line">3.	Span行内元素，多个元素在同一行内显示</span><br><span class="line">4.	元素分类</span><br></pre></td></tr></table></figure>
-<ol>
-<li>   块级元素:单独成行，从上往下排列<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.	div</span><br><span class="line">2.	h1~h6</span><br><span class="line">3.	p</span><br><span class="line">4.	ul</span><br><span class="line">5.	li</span><br></pre></td></tr></table></figure></li>
-<li>   行内元素：与其他行内元素，共用一行，一行放不下，自动换行<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.	Span</span><br><span class="line">2.	S</span><br><span class="line">3.	Del</span><br><span class="line">4.	Em</span><br><span class="line">5.	I</span><br></pre></td></tr></table></figure></li>
-<li>   行内块元素<br>a.    Input</li>
-</ol>
-<h1 id="图片和路径"><a href="#图片和路径" class="headerlink" title="图片和路径"></a>图片和路径</h1><p>(1)    图片标签</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在HTML标签中&lt;img&gt;用于定义html页面中的图像</span><br><span class="line">src属性是img中必须的属性，用于指定图像文件的路径和文件名</span><br><span class="line">alt属性文本属性，当图像不能显示时出现的文本</span><br><span class="line">title属性，提示文本，当鼠标放在图像上显示的文字</span><br><span class="line">Width/height</span><br></pre></td></tr></table></figure>
-<ol>
-<li>   如果用户不指定宽和高图片按原来图片大小显示</li>
-<li>   如果制定宽和高则图片按指定大小显示</li>
-<li>指定图片只需制定宽度或者高度一个即可，另一个会自动缩放</li>
-</ol>
-]]></content>
-      <categories>
-        <category>html基础复习</category>
-      </categories>
-      <tags>
-        <tag>html基础知识</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>html基础复习6</title>
     <url>/2021/09/15/html%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A06/</url>
     <content><![CDATA[<h1 id="table标签和form标签"><a href="#table标签和form标签" class="headerlink" title="table标签和form标签"></a>table标签和form标签</h1><p>table是用来布局的<br>form是表示一个表单，用来吧一系列控件包围起来，然后统一发送这些数据提交，即发送多项内容，而input等只能在只提交单向内容时使用，不然会混乱。form表单只提交form内的内容，不再form内不会提交。</p>
@@ -535,21 +535,6 @@ getInputStream() 获取请求的输入流中的数据
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>java new12</title>
-    <url>/2021/09/14/java%20new%2012/</url>
-    <content><![CDATA[<h1 id="html快捷键"><a href="#html快捷键" class="headerlink" title="html快捷键"></a>html快捷键</h1><p>选中需要注释的内容 + ctrl+/ 快速注释</p>
-<p>java快捷键<br>sout快速生成 System.out.println(“”);</p>
-<hr>
-<p>屏幕录制<br>win+G</p>
-]]></content>
-      <categories>
-        <category>html基础复习</category>
-      </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java new 11</title>
     <url>/2021/09/13/java%20new%2011/</url>
     <content><![CDATA[<h1 id="动画功能animate"><a href="#动画功能animate" class="headerlink" title="动画功能animate"></a>动画功能animate</h1><h2 id="show-hide"><a href="#show-hide" class="headerlink" title="show,hide"></a>show,hide</h2><p>&lt;1&gt;通过同时改变元素的宽度和高度来显示和隐藏<br>&lt;2&gt;用法：<code>$obj.show</code>(速度，回调函数)<br>   1.速度：执行速度，单位可以是毫秒，也可以是slow,fast,normal<br>   2.回调函数：当整个动画完成之后，执行该函数</p>
@@ -567,6 +552,21 @@ getInputStream() 获取请求的输入流中的数据
       </categories>
       <tags>
         <tag>动画功能animate</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java new12</title>
+    <url>/2021/09/14/java%20new%2012/</url>
+    <content><![CDATA[<h1 id="html快捷键"><a href="#html快捷键" class="headerlink" title="html快捷键"></a>html快捷键</h1><p>选中需要注释的内容 + ctrl+/ 快速注释</p>
+<p>java快捷键<br>sout快速生成 System.out.println(“”);</p>
+<hr>
+<p>屏幕录制<br>win+G</p>
+]]></content>
+      <categories>
+        <category>html基础复习</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -716,6 +716,86 @@ v-once：
       </tags>
   </entry>
   <entry>
+    <title>15-SpringMVC框架</title>
+    <url>/2021/09/17/java%20new%2015/</url>
+    <content><![CDATA[<h1 id="SSM（Spring-SpringMVC-MyBatis）"><a href="#SSM（Spring-SpringMVC-MyBatis）" class="headerlink" title="SSM（Spring SpringMVC MyBatis）"></a>SSM（Spring SpringMVC MyBatis）</h1><h1 id="SpringMVC-替代Servlet的"><a href="#SpringMVC-替代Servlet的" class="headerlink" title="SpringMVC 替代Servlet的"></a>SpringMVC 替代Servlet的</h1><p>早期的MVC模型<br><img src="https://img-blog.csdnimg.cn/a0c9f03ae160412b9cb91d115a3d4e07.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p>Spring MVC 的架构<br><img src="https://img-blog.csdnimg.cn/c57dab3e02e547b3a6683d677307362b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>参考了<a href="https://www.jianshu.com/p/91a2d0a1e45a" title="我没有三颗心脏">我没有三颗心脏</a><br>1.最早Servlet的使用方式，要想web.xml填写信息，一个servlet要填写8行ccc<br>2.活得页面中提交的信息，用request.getParameter()<br>3.SpringMVC 封装的Servlet</p>
+<h1 id="MyBatis替换JDBC"><a href="#MyBatis替换JDBC" class="headerlink" title="MyBatis替换JDBC"></a>MyBatis替换JDBC</h1><p>1，DBUtils连接池<br>2.自动化执行sql语句的参数赋值与取值，用xml文件执行，MyBatis就会自动生成dao</p>
+<h1 id="Spring-的功能"><a href="#Spring-的功能" class="headerlink" title="Spring 的功能"></a>Spring 的功能</h1><p>整合其他的框架（每一个框架都会有1到多个的配置文件，spring可以把多个配置文件整合成一个配置文件）<br>Spring实际上是一系列组件的总称，它包含很多辅助组件，Spring是一个框架帮助开发<br>官网spring.io</p>
+<h1 id="什么是框架"><a href="#什么是框架" class="headerlink" title="什么是框架"></a>什么是框架</h1><p>框架就是已经开发好的一个程序，学习框架就是学习怎么使用别人已经开发好的程序，学习框架的重点在于记住框架功能的用法，记住用法之后再来学习其中的原理<br>重点在于记住框架功能的用法，记住用法之后再来学习其中的原理</p>
+<h1 id="Spring的核心功能"><a href="#Spring的核心功能" class="headerlink" title="Spring的核心功能"></a>Spring的核心功能</h1><h2 id="IOC-DI-控制反转和依赖注入"><a href="#IOC-DI-控制反转和依赖注入" class="headerlink" title="IOC,DI:控制反转和依赖注入"></a>IOC,DI:控制反转和依赖注入</h2><p> 1.控制反转：创建对象 new 不利于对象的管理，所以spring就把创建和管理的对象交到了框架<br> 2.依赖注入：不需要new对象，框架直接给变量创建对象</p>
+<h2 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP:面向切面编程"></a>AOP:面向切面编程</h2><h2 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h2><p>正常的控制叫主动控制，主动控制的流程为：由应用程序主动实例化或创建程序组件，适合编写简答或小心的程序</p>
+<p>控制反转：应用程序中需要使用的组件全部放在外部容器中（Spring），在需要的时候,应用程序向外部容器索要即可，适合开发大型项目</p>
+<h1 id="实验操作"><a href="#实验操作" class="headerlink" title="实验操作"></a>实验操作</h1><ol>
+<li><p>创建一个maven文件</p>
+</li>
+<li><p>创建需要的文件夹，java,source,test等</p>
+</li>
+<li><p>在pom.xml中添加代码段</p>
+<details>
+<summary>添加的代码段</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">添加properties代码段</span><br><span class="line">&lt;properties&gt;</span><br><span class="line">    &lt;!-- 设置 JDK 版本为 1.8 --&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;!-- 设置编码为 UTF-8 --&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">还要添加dependencies代码段</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">        &lt;!-- Spring Context --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.2.2.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;javax.annotation&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javax.annotation-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.3.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;4.13&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+</details></li>
+</ol>
+<p>4.applicationContext.xml的更改</p>
+<p>5.新增测试文件在Test下的spring下的TestBen<br>  Egg文件也应在对应的spring包下的对应Egg文件下</p>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p>步骤<br>先给java.Spring.xxx写入-applicationContext.xml文件写入内容-java.Spring.test中写入测试方法</p>
+<ul>
+<li>在java.spring.Egg文件下写<details>
+<summary>
+Egg.java文件完全代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package Spring;</span><br><span class="line"></span><br><span class="line">public class Egg &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;鸡蛋&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<ul>
+<li>在Spring.TomatoWithEgg 中写入<details>
+<summary>
+TomatoWithEgg文件完全代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package Spring;</span><br><span class="line"></span><br><span class="line">public class TomatoWithEgg &#123;</span><br><span class="line">    Egg egg;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;西红柿炒&quot; + egg ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setEgg(Egg egg) &#123;</span><br><span class="line">        this.egg = egg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Egg getEgg() &#123;</span><br><span class="line">        return egg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<ul>
+<li> ExampleBean文件</li>
+</ul>
+<details>
+<summary>ExampleBean文件完全代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package Spring;</span><br><span class="line"></span><br><span class="line">public class ExampleBean &#123;</span><br><span class="line">    String n;</span><br><span class="line">    public ExampleBean()&#123;</span><br><span class="line">        this.n=n;</span><br><span class="line">        System.out.println(&quot;调用 ExampleBean()&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getN() &#123;</span><br><span class="line">        return n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setN(String n) &#123;</span><br><span class="line">        this.n = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;ExampleBean&#123;&quot; +</span><br><span class="line">                &quot;n=&#x27;&quot; + n + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &#x27;&#125;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void init()&#123;</span><br><span class="line">        System.out.println(&quot;初始化&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public void destroy()&#123;</span><br><span class="line">        System.out.println(&quot;销毁&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+
+
+
+
+
+
+<ul>
+<li>在test.spring.TestBen文件下写<details>
+<summary>
+TestBen.java文件完全代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package spring;</span><br><span class="line"></span><br><span class="line">import Spring.Egg;</span><br><span class="line">import Spring.ExampleBean;</span><br><span class="line">import Spring.TomatoWithEgg;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.springframework.context.ApplicationContext;</span><br><span class="line">import org.springframework.context.support.AbstractApplicationContext;</span><br><span class="line">import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class TestBen &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void testIOC()&#123;</span><br><span class="line">        String cfg=&quot;applicationContext.xml&quot;;</span><br><span class="line">        ApplicationContext ctx=new ClassPathXmlApplicationContext(cfg);</span><br><span class="line">        Egg e=ctx.getBean(&quot;e&quot;,Egg.class);</span><br><span class="line">        System.out.println(e);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testIOC2()&#123;</span><br><span class="line">        ApplicationContext ctx=new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">        TomatoWithEgg food=ctx.getBean(&quot;food&quot;,TomatoWithEgg.class);</span><br><span class="line">        System.out.println(food);</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public  void testDate()&#123;</span><br><span class="line">        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">         Date d1 = ctx.getBean(&quot;dateObj&quot;,Date.class);</span><br><span class="line">        System.out.println(d1);</span><br><span class="line">        Date d2 = ctx.getBean(&quot;dateObj&quot;,Date.class);</span><br><span class="line">        System.out.println(d2);</span><br><span class="line">        System.out.println(d1==d2);</span><br><span class="line">        //对象是单例的   不管声明了几个变量，引用的对象都是同一个，节省内存资源  spring中默认创建对象是单例的</span><br><span class="line">    &#125;</span><br><span class="line">    @Test//生存周琦管理办法</span><br><span class="line">    public void testLife()&#123;</span><br><span class="line">        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">        ExampleBean bean1 = ctx.getBean(&quot;examObj1&quot;,ExampleBean.class);</span><br><span class="line">        System.out.println(bean1);</span><br><span class="line"></span><br><span class="line">        ExampleBean bean2 = ctx.getBean(&quot;examObj2&quot;,ExampleBean.class);</span><br><span class="line">        System.out.println(bean2);</span><br><span class="line">        System.out.println(bean1==bean2);</span><br><span class="line">        AbstractApplicationContext c = (AbstractApplicationContext) ctx;</span><br><span class="line">        c.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<ul>
+<li>applicationContext.xml文件<details>
+<summary>
+applicationContext.xml文件完全代码</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	   xmlns:beans=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">	   xmlns:jee=&quot;http://www.springframework.org/schema/jee&quot;</span><br><span class="line">	   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd</span><br><span class="line">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd</span><br><span class="line">		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd</span><br><span class="line">		http://www.springframework.org/schema/tx</span><br><span class="line">		http://www.springframework.org/schema/util http://www.springframework.org/schema/tx/spring-util-3.2.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--	Bean注入，解决对象的关系管理--&gt;</span><br><span class="line">	&lt;bean id=&quot;e&quot; class=&quot;Spring.Egg&quot;&gt;&lt;/bean&gt;</span><br><span class="line">	&lt;bean id=&quot;food&quot; class=&quot;Spring.TomatoWithEgg&quot;&gt;</span><br><span class="line">		&lt;!--调用Bean属性设置方法setEgg（） 将id为egg</span><br><span class="line">		的Bean对象注入（DI/IOC）到西红柿炒鸡蛋(food)中--&gt;</span><br><span class="line">		&lt;property name=&quot;egg&quot; ref=&quot;e&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">	&lt;bean id=&quot;dateObj&quot; class=&quot;java.util.Date&quot;&gt;&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!--	测试bean对象生存周琦管理--&gt;</span><br><span class="line">	&lt;bean id=&quot;examObj1&quot; class=&quot;Spring.ExampleBean&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot;/&gt;</span><br><span class="line">	&lt;!--原型的对象，destory方法无效	--&gt;</span><br><span class="line">	&lt;bean id=&quot;examObj2&quot; class=&quot;Spring.ExampleBean&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot; scope=&quot;prototype&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+</details></li>
+</ul>
+<h1 id="JavaBean简介"><a href="#JavaBean简介" class="headerlink" title="JavaBean简介"></a>JavaBean简介</h1><p>Bean就是“豆子”的意思，javaBean就是承载程序中数据信息的相关类<br>在编写Java程序过程中应该遵守编写JavaBean的规范，方便程序交流<br>JavaBean同时也是Java开发过程中的行业规范，一定要遵守<br>1、一定要在某个包下<br>2、一定有无参构造方法（有多少个其他的没关系，但是一定要无参的）<br>3、需要实现序列化接口<br>4、类中的所有属性应该遵守编写 setXxx 和getXxx方法</p>
+<h1 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h1><p>1、什么是Junit<br>(1)    Unit就是单元的意思，Junit就是Java单元测试<br>(2)    所谓单元测试就是可以运行程序中的某个部分（单元中）的代码<br>2、怎么使用<br>(1)    倒入Junit的依赖<br>(2)    在test文件夹中创建测试相关的类<br>(3)    在创建的这个内种，编写测试方法，这个测试方法前要加@Test</p>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>感觉学完一课Spring框架，没有任何实感，而且感觉什么都没学进去，没能理解<br>看看别的博主写的Spring框架的内容<br><a href="https://www.cnblogs.com/tanghaorong/p/13288269.html#_label2" title="唐浩荣">唐浩荣</a></p>
+]]></content>
+      <categories>
+        <category>java进阶课程</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>16-Spring框架</title>
     <url>/2021/09/22/java%20new%2016/</url>
     <content><![CDATA[<h1 id="复习Spring"><a href="#复习Spring" class="headerlink" title="复习Spring"></a>复习Spring</h1><p>1、框架 就是一个开发好的程序，重点在于怎么使用，记住用法之后再了解原理<br>2、使用原因是在开发过程中，让操作变得简单<br>3、Spring核心  IOC（DI）、AOP<br>(1)    IOC控制反转，平常的new对象叫主动控制，控制反转就是把对象的管理交给Spring的容器<br>(2)    DI：依赖注入 进一步简化控制反转的操作<br>4、引入依赖<br>5、操作applicationContext.xml文件，写入要生成的的对象的bean<br>6.Spring容器：Spring 容器是Spring 框架的核心。 容器将创建对象，把它们连接在一起，配置它们，并管理他们的整个生命周期从创建到销毁。 Spring 容器使用依赖注入（DI）来管理组成一个应用程序的组件</p>
@@ -855,86 +935,6 @@ v-once：
 <li>   PropertySource 注解并在（）中指定位置，这个注解会自动读取Propertie指定的文件中的内容</li>
 <li>   使用@Value在注入数据源的方法的参数中制定properties文件中的key<br>（4）测试</li>
 </ol>
-]]></content>
-      <categories>
-        <category>java进阶课程</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>15-SpringMVC框架</title>
-    <url>/2021/09/17/java%20new%2015/</url>
-    <content><![CDATA[<h1 id="SSM（Spring-SpringMVC-MyBatis）"><a href="#SSM（Spring-SpringMVC-MyBatis）" class="headerlink" title="SSM（Spring SpringMVC MyBatis）"></a>SSM（Spring SpringMVC MyBatis）</h1><h1 id="SpringMVC-替代Servlet的"><a href="#SpringMVC-替代Servlet的" class="headerlink" title="SpringMVC 替代Servlet的"></a>SpringMVC 替代Servlet的</h1><p>早期的MVC模型<br><img src="https://img-blog.csdnimg.cn/a0c9f03ae160412b9cb91d115a3d4e07.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
-<p>Spring MVC 的架构<br><img src="https://img-blog.csdnimg.cn/c57dab3e02e547b3a6683d677307362b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>参考了<a href="https://www.jianshu.com/p/91a2d0a1e45a" title="我没有三颗心脏">我没有三颗心脏</a><br>1.最早Servlet的使用方式，要想web.xml填写信息，一个servlet要填写8行ccc<br>2.活得页面中提交的信息，用request.getParameter()<br>3.SpringMVC 封装的Servlet</p>
-<h1 id="MyBatis替换JDBC"><a href="#MyBatis替换JDBC" class="headerlink" title="MyBatis替换JDBC"></a>MyBatis替换JDBC</h1><p>1，DBUtils连接池<br>2.自动化执行sql语句的参数赋值与取值，用xml文件执行，MyBatis就会自动生成dao</p>
-<h1 id="Spring-的功能"><a href="#Spring-的功能" class="headerlink" title="Spring 的功能"></a>Spring 的功能</h1><p>整合其他的框架（每一个框架都会有1到多个的配置文件，spring可以把多个配置文件整合成一个配置文件）<br>Spring实际上是一系列组件的总称，它包含很多辅助组件，Spring是一个框架帮助开发<br>官网spring.io</p>
-<h1 id="什么是框架"><a href="#什么是框架" class="headerlink" title="什么是框架"></a>什么是框架</h1><p>框架就是已经开发好的一个程序，学习框架就是学习怎么使用别人已经开发好的程序，学习框架的重点在于记住框架功能的用法，记住用法之后再来学习其中的原理<br>重点在于记住框架功能的用法，记住用法之后再来学习其中的原理</p>
-<h1 id="Spring的核心功能"><a href="#Spring的核心功能" class="headerlink" title="Spring的核心功能"></a>Spring的核心功能</h1><h2 id="IOC-DI-控制反转和依赖注入"><a href="#IOC-DI-控制反转和依赖注入" class="headerlink" title="IOC,DI:控制反转和依赖注入"></a>IOC,DI:控制反转和依赖注入</h2><p> 1.控制反转：创建对象 new 不利于对象的管理，所以spring就把创建和管理的对象交到了框架<br> 2.依赖注入：不需要new对象，框架直接给变量创建对象</p>
-<h2 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP:面向切面编程"></a>AOP:面向切面编程</h2><h2 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h2><p>正常的控制叫主动控制，主动控制的流程为：由应用程序主动实例化或创建程序组件，适合编写简答或小心的程序</p>
-<p>控制反转：应用程序中需要使用的组件全部放在外部容器中（Spring），在需要的时候,应用程序向外部容器索要即可，适合开发大型项目</p>
-<h1 id="实验操作"><a href="#实验操作" class="headerlink" title="实验操作"></a>实验操作</h1><ol>
-<li><p>创建一个maven文件</p>
-</li>
-<li><p>创建需要的文件夹，java,source,test等</p>
-</li>
-<li><p>在pom.xml中添加代码段</p>
-<details>
-<summary>添加的代码段</summary>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">添加properties代码段</span><br><span class="line">&lt;properties&gt;</span><br><span class="line">    &lt;!-- 设置 JDK 版本为 1.8 --&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;!-- 设置编码为 UTF-8 --&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">还要添加dependencies代码段</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">        &lt;!-- Spring Context --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.2.2.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;javax.annotation&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javax.annotation-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.3.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;4.13&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
-</details></li>
-</ol>
-<p>4.applicationContext.xml的更改</p>
-<p>5.新增测试文件在Test下的spring下的TestBen<br>  Egg文件也应在对应的spring包下的对应Egg文件下</p>
-<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p>步骤<br>先给java.Spring.xxx写入-applicationContext.xml文件写入内容-java.Spring.test中写入测试方法</p>
-<ul>
-<li>在java.spring.Egg文件下写<details>
-<summary>
-Egg.java文件完全代码</summary>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package Spring;</span><br><span class="line"></span><br><span class="line">public class Egg &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;鸡蛋&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</details></li>
-</ul>
-<ul>
-<li>在Spring.TomatoWithEgg 中写入<details>
-<summary>
-TomatoWithEgg文件完全代码</summary>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package Spring;</span><br><span class="line"></span><br><span class="line">public class TomatoWithEgg &#123;</span><br><span class="line">    Egg egg;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;西红柿炒&quot; + egg ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setEgg(Egg egg) &#123;</span><br><span class="line">        this.egg = egg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Egg getEgg() &#123;</span><br><span class="line">        return egg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details></li>
-</ul>
-<ul>
-<li> ExampleBean文件</li>
-</ul>
-<details>
-<summary>ExampleBean文件完全代码</summary>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package Spring;</span><br><span class="line"></span><br><span class="line">public class ExampleBean &#123;</span><br><span class="line">    String n;</span><br><span class="line">    public ExampleBean()&#123;</span><br><span class="line">        this.n=n;</span><br><span class="line">        System.out.println(&quot;调用 ExampleBean()&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getN() &#123;</span><br><span class="line">        return n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setN(String n) &#123;</span><br><span class="line">        this.n = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;ExampleBean&#123;&quot; +</span><br><span class="line">                &quot;n=&#x27;&quot; + n + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &#x27;&#125;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void init()&#123;</span><br><span class="line">        System.out.println(&quot;初始化&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public void destroy()&#123;</span><br><span class="line">        System.out.println(&quot;销毁&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</details>
-
-
-
-
-
-
-
-
-
-<ul>
-<li>在test.spring.TestBen文件下写<details>
-<summary>
-TestBen.java文件完全代码</summary>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package spring;</span><br><span class="line"></span><br><span class="line">import Spring.Egg;</span><br><span class="line">import Spring.ExampleBean;</span><br><span class="line">import Spring.TomatoWithEgg;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.springframework.context.ApplicationContext;</span><br><span class="line">import org.springframework.context.support.AbstractApplicationContext;</span><br><span class="line">import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class TestBen &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void testIOC()&#123;</span><br><span class="line">        String cfg=&quot;applicationContext.xml&quot;;</span><br><span class="line">        ApplicationContext ctx=new ClassPathXmlApplicationContext(cfg);</span><br><span class="line">        Egg e=ctx.getBean(&quot;e&quot;,Egg.class);</span><br><span class="line">        System.out.println(e);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testIOC2()&#123;</span><br><span class="line">        ApplicationContext ctx=new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">        TomatoWithEgg food=ctx.getBean(&quot;food&quot;,TomatoWithEgg.class);</span><br><span class="line">        System.out.println(food);</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public  void testDate()&#123;</span><br><span class="line">        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">         Date d1 = ctx.getBean(&quot;dateObj&quot;,Date.class);</span><br><span class="line">        System.out.println(d1);</span><br><span class="line">        Date d2 = ctx.getBean(&quot;dateObj&quot;,Date.class);</span><br><span class="line">        System.out.println(d2);</span><br><span class="line">        System.out.println(d1==d2);</span><br><span class="line">        //对象是单例的   不管声明了几个变量，引用的对象都是同一个，节省内存资源  spring中默认创建对象是单例的</span><br><span class="line">    &#125;</span><br><span class="line">    @Test//生存周琦管理办法</span><br><span class="line">    public void testLife()&#123;</span><br><span class="line">        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">        ExampleBean bean1 = ctx.getBean(&quot;examObj1&quot;,ExampleBean.class);</span><br><span class="line">        System.out.println(bean1);</span><br><span class="line"></span><br><span class="line">        ExampleBean bean2 = ctx.getBean(&quot;examObj2&quot;,ExampleBean.class);</span><br><span class="line">        System.out.println(bean2);</span><br><span class="line">        System.out.println(bean1==bean2);</span><br><span class="line">        AbstractApplicationContext c = (AbstractApplicationContext) ctx;</span><br><span class="line">        c.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</details></li>
-</ul>
-<ul>
-<li>applicationContext.xml文件<details>
-<summary>
-applicationContext.xml文件完全代码</summary>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	   xmlns:beans=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">	   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">	   xmlns:jee=&quot;http://www.springframework.org/schema/jee&quot;</span><br><span class="line">	   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd</span><br><span class="line">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd</span><br><span class="line">		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd</span><br><span class="line">		http://www.springframework.org/schema/tx</span><br><span class="line">		http://www.springframework.org/schema/util http://www.springframework.org/schema/tx/spring-util-3.2.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--	Bean注入，解决对象的关系管理--&gt;</span><br><span class="line">	&lt;bean id=&quot;e&quot; class=&quot;Spring.Egg&quot;&gt;&lt;/bean&gt;</span><br><span class="line">	&lt;bean id=&quot;food&quot; class=&quot;Spring.TomatoWithEgg&quot;&gt;</span><br><span class="line">		&lt;!--调用Bean属性设置方法setEgg（） 将id为egg</span><br><span class="line">		的Bean对象注入（DI/IOC）到西红柿炒鸡蛋(food)中--&gt;</span><br><span class="line">		&lt;property name=&quot;egg&quot; ref=&quot;e&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">	&lt;bean id=&quot;dateObj&quot; class=&quot;java.util.Date&quot;&gt;&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!--	测试bean对象生存周琦管理--&gt;</span><br><span class="line">	&lt;bean id=&quot;examObj1&quot; class=&quot;Spring.ExampleBean&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot;/&gt;</span><br><span class="line">	&lt;!--原型的对象，destory方法无效	--&gt;</span><br><span class="line">	&lt;bean id=&quot;examObj2&quot; class=&quot;Spring.ExampleBean&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot; scope=&quot;prototype&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
-</details></li>
-</ul>
-<h1 id="JavaBean简介"><a href="#JavaBean简介" class="headerlink" title="JavaBean简介"></a>JavaBean简介</h1><p>Bean就是“豆子”的意思，javaBean就是承载程序中数据信息的相关类<br>在编写Java程序过程中应该遵守编写JavaBean的规范，方便程序交流<br>JavaBean同时也是Java开发过程中的行业规范，一定要遵守<br>1、一定要在某个包下<br>2、一定有无参构造方法（有多少个其他的没关系，但是一定要无参的）<br>3、需要实现序列化接口<br>4、类中的所有属性应该遵守编写 setXxx 和getXxx方法</p>
-<h1 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h1><p>1、什么是Junit<br>(1)    Unit就是单元的意思，Junit就是Java单元测试<br>(2)    所谓单元测试就是可以运行程序中的某个部分（单元中）的代码<br>2、怎么使用<br>(1)    倒入Junit的依赖<br>(2)    在test文件夹中创建测试相关的类<br>(3)    在创建的这个内种，编写测试方法，这个测试方法前要加@Test</p>
-<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>感觉学完一课Spring框架，没有任何实感，而且感觉什么都没学进去，没能理解<br>看看别的博主写的Spring框架的内容<br><a href="https://www.cnblogs.com/tanghaorong/p/13288269.html#_label2" title="唐浩荣">唐浩荣</a></p>
 ]]></content>
       <categories>
         <category>java进阶课程</category>
@@ -1312,6 +1312,27 @@ session是服务器为客户端创建的一个用来维护状态的对象
       </tags>
   </entry>
   <entry>
+    <title>java 进阶课程八</title>
+    <url>/2021/09/08/java%20new%208/</url>
+    <content><![CDATA[<p>jQuery<br>#（1）jQuery介绍<br> js简介<br> JQuery是一个js框架（jquery.js）,特点就是利用选择器查找要操作的节点（dom对象，html各个标签），然后将找到的节点封装成jQuery对象，通过调用JQuery对象的方法或者属性来实现对底层的被封装的节点的操作，这样做的好处就是，代码有更好的兼容性从，也会更加简洁</p>
+<h1 id="（2）JQuery对象和dom对象之间的转换"><a href="#（2）JQuery对象和dom对象之间的转换" class="headerlink" title="（2）JQuery对象和dom对象之间的转换"></a>（2）JQuery对象和dom对象之间的转换</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dom--&gt;JQuery</span><br><span class="line">$(dom对象)</span><br><span class="line"></span><br><span class="line">JQuery--&gt;Dom</span><br><span class="line">$obj.get(0)</span><br><span class="line">$obj.get()[0]</span><br></pre></td></tr></table></figure>
+<p>#（3）选择器 select</p>
+<h2 id="lt-1-gt-基本选择器"><a href="#lt-1-gt-基本选择器" class="headerlink" title="&lt;1&gt;基本选择器"></a>&lt;1&gt;基本选择器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#id</span><br><span class="line">. Class</span><br><span class="line">Element</span><br><span class="line">多选择器</span><br></pre></td></tr></table></figure>
+<h2 id="lt-2-gt-层次选择器"><a href="#lt-2-gt-层次选择器" class="headerlink" title="&lt;2&gt;层次选择器"></a>&lt;2&gt;层次选择器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select1  select2 考虑所有后代</span><br><span class="line">select1&gt;select2	只考虑子节点</span><br><span class="line">select1+select2	下一个兄弟节点</span><br><span class="line">select1~select2	下面所有兄弟节点</span><br></pre></td></tr></table></figure>
+<h2 id="lt-3-gt-过滤选择器"><a href="#lt-3-gt-过滤选择器" class="headerlink" title="&lt;3&gt;过滤选择器"></a>&lt;3&gt;过滤选择器</h2><h3 id="基本过滤选择器"><a href="#基本过滤选择器" class="headerlink" title="基本过滤选择器"></a>基本过滤选择器</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:first</span><br><span class="line">:last</span><br><span class="line">:not(select)</span><br><span class="line">:even</span><br><span class="line">:odd</span><br><span class="line">:eq(index)</span><br><span class="line">:gt(index)</span><br><span class="line">:lt(index)</span><br></pre></td></tr></table></figure>
+<h3 id="内容过滤选择器"><a href="#内容过滤选择器" class="headerlink" title="内容过滤选择器"></a>内容过滤选择器</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a)	:contains(text) 匹配包含给定文本的元素</span><br><span class="line">b)	:empty 匹配所有不包含志愿书或者文本的空元素</span><br><span class="line">c)	:has(select) 匹配包含有选择器所匹配的元素的元素</span><br><span class="line">d)	:parent 匹配含有元素或者文本的元素</span><br></pre></td></tr></table></figure>
+<h3 id="可见性过滤选择器"><a href="#可见性过滤选择器" class="headerlink" title="可见性过滤选择器"></a>可见性过滤选择器</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a)	:hidden 匹配所有不可见元素或者type为hidden的元素</span><br><span class="line">b)	:visible匹配所有的课件元素</span><br><span class="line">d.	属性过滤选择器</span><br><span class="line">e.	子元素过滤选择器</span><br><span class="line">a)	nth-child(下标从1开始)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>java进阶课程</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+        <tag>选择器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java 进阶课程七</title>
     <url>/2021/09/08/java%20new%207/</url>
     <content><![CDATA[<h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><p> JSTL标签<br>（1）jstl是apache开发的一套标签，捐献给了sun公司，命名为jstl<br>（2）如何使用jstl，目的是进一步的前后端分离，<br>1.将jstl相关jar依赖添加到项目里<br>2.使用taglib指令引入标签<code> &lt;%@taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;</code></p>
@@ -1365,27 +1386,6 @@ session是服务器为客户端创建的一个用来维护状态的对象
       <tags>
         <tag>jstl标签</tag>
         <tag>jQuery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java 进阶课程八</title>
-    <url>/2021/09/08/java%20new%208/</url>
-    <content><![CDATA[<p>jQuery<br>#（1）jQuery介绍<br> js简介<br> JQuery是一个js框架（jquery.js）,特点就是利用选择器查找要操作的节点（dom对象，html各个标签），然后将找到的节点封装成jQuery对象，通过调用JQuery对象的方法或者属性来实现对底层的被封装的节点的操作，这样做的好处就是，代码有更好的兼容性从，也会更加简洁</p>
-<h1 id="（2）JQuery对象和dom对象之间的转换"><a href="#（2）JQuery对象和dom对象之间的转换" class="headerlink" title="（2）JQuery对象和dom对象之间的转换"></a>（2）JQuery对象和dom对象之间的转换</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dom--&gt;JQuery</span><br><span class="line">$(dom对象)</span><br><span class="line"></span><br><span class="line">JQuery--&gt;Dom</span><br><span class="line">$obj.get(0)</span><br><span class="line">$obj.get()[0]</span><br></pre></td></tr></table></figure>
-<p>#（3）选择器 select</p>
-<h2 id="lt-1-gt-基本选择器"><a href="#lt-1-gt-基本选择器" class="headerlink" title="&lt;1&gt;基本选择器"></a>&lt;1&gt;基本选择器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#id</span><br><span class="line">. Class</span><br><span class="line">Element</span><br><span class="line">多选择器</span><br></pre></td></tr></table></figure>
-<h2 id="lt-2-gt-层次选择器"><a href="#lt-2-gt-层次选择器" class="headerlink" title="&lt;2&gt;层次选择器"></a>&lt;2&gt;层次选择器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select1  select2 考虑所有后代</span><br><span class="line">select1&gt;select2	只考虑子节点</span><br><span class="line">select1+select2	下一个兄弟节点</span><br><span class="line">select1~select2	下面所有兄弟节点</span><br></pre></td></tr></table></figure>
-<h2 id="lt-3-gt-过滤选择器"><a href="#lt-3-gt-过滤选择器" class="headerlink" title="&lt;3&gt;过滤选择器"></a>&lt;3&gt;过滤选择器</h2><h3 id="基本过滤选择器"><a href="#基本过滤选择器" class="headerlink" title="基本过滤选择器"></a>基本过滤选择器</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:first</span><br><span class="line">:last</span><br><span class="line">:not(select)</span><br><span class="line">:even</span><br><span class="line">:odd</span><br><span class="line">:eq(index)</span><br><span class="line">:gt(index)</span><br><span class="line">:lt(index)</span><br></pre></td></tr></table></figure>
-<h3 id="内容过滤选择器"><a href="#内容过滤选择器" class="headerlink" title="内容过滤选择器"></a>内容过滤选择器</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a)	:contains(text) 匹配包含给定文本的元素</span><br><span class="line">b)	:empty 匹配所有不包含志愿书或者文本的空元素</span><br><span class="line">c)	:has(select) 匹配包含有选择器所匹配的元素的元素</span><br><span class="line">d)	:parent 匹配含有元素或者文本的元素</span><br></pre></td></tr></table></figure>
-<h3 id="可见性过滤选择器"><a href="#可见性过滤选择器" class="headerlink" title="可见性过滤选择器"></a>可见性过滤选择器</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a)	:hidden 匹配所有不可见元素或者type为hidden的元素</span><br><span class="line">b)	:visible匹配所有的课件元素</span><br><span class="line">d.	属性过滤选择器</span><br><span class="line">e.	子元素过滤选择器</span><br><span class="line">a)	nth-child(下标从1开始)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>java进阶课程</category>
-      </categories>
-      <tags>
-        <tag>jQuery</tag>
-        <tag>选择器</tag>
       </tags>
   </entry>
   <entry>
@@ -1462,6 +1462,28 @@ session是服务器为客户端创建的一个用来维护状态的对象
       </tags>
   </entry>
   <entry>
+    <title>java12</title>
+    <url>/2021/08/16/java12/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="fe53fdb683627241fdd4f91045a1c8e7c24a9ec3bd52eff67164edcdf17b4205">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ffd4a32378d3894b58ad41d50be7df1412f9f77f31b7cc8f6064b30f98dafce604e8c9bbe76195b199a7ab6bfbc69f9a64eb546a8870c55cf783a3ba28f46e130327763788b03553a70be9894dea0f841caa80c39c54bb5d0cdb913d2e75e2f46b32ef7785fae12312595530516713663616df77976c57dfd0f34e4d58dcd2ed59db48131ffd61b34096d1719552c58014dcf7f0ea6041b22fe284e9f797d1e56ae2c683b536227f4fc8a77efc233edb94502238439c3027c0ee9321a693591f2867cc75b6fb0f767b23fa06d7033c05df2c71244e04acd0704ae9ac3bd2dfcb3623d5722763c20e949b0251fe6d3156871bf112c5995c56e6a9396aff6f3158840086b3320654bf9e642ed0585e55d2158efbb4b2b4cef3fc9b26a7b80b93af392b2101b9e98cd924c7915dea6b5ddab363e0539f9d0dd3515bded914f7bb270577576e9ba1d9003202978ccc0dc092bd889e39ff717ba70cb9389eb28d315fc4a9ecd21c0e8f001eda9c639cfec2afb834a15f122b227c969c200a40e1e81ff7e155a30f751991f2ab5a9b8945b59a7f8a0a64c84ae5088c428a743c7459327f95bc95d81d52d351c78ed2025f873153d92ba4a7e02b99c386ed78fb7dea73d323929a578902f392f7efb4a6f6f6d2fadb9e39f5a91a2c05f01077473abebc3662d195ee6afb03107c215608e3c97903be4f70e17f863f333e51775802703d9646bdf0e480481c6ef11462913902d5c1b9878a01b11b35ce268f22f6e12f4a0bae95f3adb6ffc901d3cb8d5f4002c2ae1436e8a9aec63fc7013b1b6e96de8116804a569466ebee723f9404e92e02fd3ef2b7d6204e892e0b654ff62bb44b59c128301618594578a05b5913d1c178098d4ac8fce238b2c1b89a558c17e1259ef5d967356d1c0e97b7c12d3e39fb885082dc72586332699cb338f01acb3d0dc0f4e562cde6de45215269850bc2f314d29f74695d912930ef99a6351320ab37e5ae80619865d931f4aefffb5623453bb478a42acf93fcee1b98fa78d380cbf5576616452173f91c78e3fdb6027637b1c125411d781f8bf1127d66cc1a5e6da730613b79a21bb76aafb33fdd26400d410a5fee4381c1d1584df4caf863223d191f44c25955c24aace6a201c9723133eb2528154ba030546f469f8c853cee0e324aea8dbe748645a8101ed97ab5aa8f8eb4bb78a6fdc7ee394b45969147b13bfd1879dee120458b30f379a4906d6c94b57fdf564a06fe9093a987014b0200da14908d7530a9d4e87d83f2f654952c2295d00bea25cb6935af2a77f384013c8f8c28d2d2427672f7d9b9c6953d8063f0606f9fe80dab7f39d9ce37478119f7f20527699e712efd8df6f6dafd93c095fdb1aeea8034be800b85b2ef6da4bda48f0004e493b21edcc25c0c53026e703da0a5ca45d89b2f4f807b249041257e2b878f8f8bc00955ffa62414cf727ab06eb6bc3d8df14d06238d8e5f207e8f73bfd291be0e1e833feb63e07b19fa631eddade84b379d5b535dd4d472c2a1583f30f9857d4d1027ad5c96b3cc44aa0e54b3b8c0b648250f760e7f9cca4b17523f16a2deed8b76eb2f4565f49cb51c06374d8a1c5a2c27562e14523ceb0037d007aa57ca102916665b0f2aad16f737ce4ff3f84e7e1cd530f3545a8c21c4aa3d05b00e69b6e239099ff0b79618e1ac305f65070f4b94ea29e2826e28d05c684fb2263869d9da15d971319bb820e5d1a034c4aafa21f3f176efcb6a13bbcc312f01245d3e87930aeadaea11d3bc49641e7c83d0a2ae33fd991d99f75c5752c51422331b5b27a890d09873f0b98be4420f75872a86a5198575a1952da60b0e61c7347ac8105f9247221b3ff1e28b11e137551641ca34b47ce3f186c28aff2de855cb56f8254791d01dbb0fa207d3d177bd7b6228ed33ff8afacd69ddca23f291ad4547d4b00db328ad6900cb70ac1ebc20fe548ec24a5674259b743ea13a3caec2d73ae91d4286f6139c022a13b8c6b1b966045412548a0da25fa6085189975fa42c20e368f8590be5b45dbe814fdaf0af82ac343f5c3ee55e6bcc246afe54950abcedbec3205981ae7727569f43fea2b92587b6e9e5bed3c3339fe2736ce765b9339f0f030c4f2b5ce31168e1077a681794a8a6b0b7de74853237d4705754a6fda69b325d2a43cb802883fa19336a47024ed69690dfcfa0cf897c1aa1a21473401fcf105ba35835c08c28473705d50da5a37114e79c63b5f81e8f252b2ab7eb17c1916acea23e08e91427d7d01d2550575bbbe9765a961b6ba4bb4ee092d1a6a0304d6c11d6396e9bf38708dec57c4a9af07ad64d28b36f50750006fcf22b924958e930d3426367c64cb6a7352713e5e2a2f5bb9a5cf8e5e222016095bb993305d326b84b05b731aa9d3a1530569c9dde60169333a721326d327fcd202cf42cd98ffd03abe072aae7d28e7323b5b556a0f3742effd82185d5b9ea473e1cb26f1557f7c42176519acd0992ff2c97992b3cb624f7907f61fad432b5e87901d022cc4a9a02380b5d74b1080082a731ca1ac1c95a8e288de7d44c41d3fac213dbf1bc6f17edce9bddaf9262646ca50d553ac65d9c4efe755dadae839fc48ade5712093f75a212bc3e9a60aa0c08e6b8ff46e3375561a01ee80051e8dbb210775b8b6e0e7d42ac2c7f6100054bafc7d201b5b1109febca4f227e45dacca477f1152799a529b331182444993875992eab34105818b52b8cb4843c8512f5b2f59ab51e8318bc72b5403cd42d99b61f89375fb4d7ba17a43ef6ef331ad83f95b0be1335a4b21c094c6ca16e497fe2589b1a1a7d329f103b5004c8f109f193c0ca0aff4397520cd3cf99fc3e3177befd6af5d8a767e7054482e72cae4ebcbbd6c9036b12459b33bc72ecb062a69b1a4eb8ccb48cc7d63c1cc7abd508c5e1609f3dc82756a50d5a66252ed189e644a0d783537cd9c85a54243f6eb350b8e3ae9c174ae9920bac2fbbef1ec2afa98d130ec68e8b2be68e27cc7472cb3aaa06424829acee1c743e04c535451beded24441c073d3fff865e4242b7462170b3919f94c8d1cbc6175959de193439a75b5cc5a1670f0fe312bb5cb549acda5cac821c94810cbab46994602c076c33b0ad69bb450eb6cc14cfe07376e3d3d70b454bf63ea21691a84cafe1c454050c3fa2f911bb6512ce4b420eef4981ddf59d4cf32b0a7d5923be968297b238540cbdd1a4f2f0bac307200f96fd66f6eaf3a567208acd0b8e032dc4f2e399e668837c58baf8f1db57944da2f67127579357ba56a36c4e026bcfd13f93005954cf4c00a2ffeadfa17b16a65ecb6288e9488c30ab8812445c2ea6549050c1044ef92e55c67fcc98e1f87a57ad2284e454b5da081f7f2fbb8c726d471dca770e37861ea4fcbb4f5e6f63d23f5c40578de96db1dcee63db143d948ef5532a14b49841f6570e85522c0fc59ea0ba4fe9d543ba976a108d8d28977b1d8f1712376dbe1b163dd281081c756ecaaff1d09726f3e5281826de2389214329b129443b776fc7e7a89d3709efe07340340521bf9d185f1207d72666f7b4a66569f04bd980c0e58f1de3536bf11afcd6a1eea12ad23ae3dfefd79a5f215087240372d4242a33f2f1aee45df4c21e87f40a00c264ebb7195ce374a0fffb1333907dd6b0297582145fb1923b5c19b9fca37c7a4b43590309b6</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>GC和JVM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java11</title>
     <url>/2021/08/16/java11/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -1507,47 +1529,6 @@ session是服务器为客户端创建的一个用来维护状态的对象
       </tags>
   </entry>
   <entry>
-    <title>java12</title>
-    <url>/2021/08/16/java12/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="fe53fdb683627241fdd4f91045a1c8e7c24a9ec3bd52eff67164edcdf17b4205">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ffd4a32378d3894b58ad41d50be7df1412f9f77f31b7cc8f6064b30f98dafce604e8c9bbe76195b199a7ab6bfbc69f9a64eb546a8870c55cf783a3ba28f46e130327763788b03553a70be9894dea0f841caa80c39c54bb5d0cdb913d2e75e2f46b32ef7785fae12312595530516713663616df77976c57dfd0f34e4d58dcd2ed59db48131ffd61b34096d1719552c58014dcf7f0ea6041b22fe284e9f797d1e56ae2c683b536227f4fc8a77efc233edb94502238439c3027c0ee9321a693591f2867cc75b6fb0f767b23fa06d7033c05df2c71244e04acd0704ae9ac3bd2dfcb3623d5722763c20e949b0251fe6d3156871bf112c5995c56e6a9396aff6f3158840086b3320654bf9e642ed0585e55d2158efbb4b2b4cef3fc9b26a7b80b93af392b2101b9e98cd924c7915dea6b5ddab363e0539f9d0dd3515bded914f7bb270577576e9ba1d9003202978ccc0dc092bd889e39ff717ba70cb9389eb28d315fc4a9ecd21c0e8f001eda9c639cfec2afb834a15f122b227c969c200a40e1e81ff7e155a30f751991f2ab5a9b8945b59a7f8a0a64c84ae5088c428a743c7459327f95bc95d81d52d351c78ed2025f873153d92ba4a7e02b99c386ed78fb7dea73d323929a578902f392f7efb4a6f6f6d2fadb9e39f5a91a2c05f01077473abebc3662d195ee6afb03107c215608e3c97903be4f70e17f863f333e51775802703d9646bdf0e480481c6ef11462913902d5c1b9878a01b11b35ce268f22f6e12f4a0bae95f3adb6ffc901d3cb8d5f4002c2ae1436e8a9aec63fc7013b1b6e96de8116804a569466ebee723f9404e92e02fd3ef2b7d6204e892e0b654ff62bb44b59c128301618594578a05b5913d1c178098d4ac8fce238b2c1b89a558c17e1259ef5d967356d1c0e97b7c12d3e39fb885082dc72586332699cb338f01acb3d0dc0f4e562cde6de45215269850bc2f314d29f74695d912930ef99a6351320ab37e5ae80619865d931f4aefffb5623453bb478a42acf93fcee1b98fa78d380cbf5576616452173f91c78e3fdb6027637b1c125411d781f8bf1127d66cc1a5e6da730613b79a21bb76aafb33fdd26400d410a5fee4381c1d1584df4caf863223d191f44c25955c24aace6a201c9723133eb2528154ba030546f469f8c853cee0e324aea8dbe748645a8101ed97ab5aa8f8eb4bb78a6fdc7ee394b45969147b13bfd1879dee120458b30f379a4906d6c94b57fdf564a06fe9093a987014b0200da14908d7530a9d4e87d83f2f654952c2295d00bea25cb6935af2a77f384013c8f8c28d2d2427672f7d9b9c6953d8063f0606f9fe80dab7f39d9ce37478119f7f20527699e712efd8df6f6dafd93c095fdb1aeea8034be800b85b2ef6da4bda48f0004e493b21edcc25c0c53026e703da0a5ca45d89b2f4f807b249041257e2b878f8f8bc00955ffa62414cf727ab06eb6bc3d8df14d06238d8e5f207e8f73bfd291be0e1e833feb63e07b19fa631eddade84b379d5b535dd4d472c2a1583f30f9857d4d1027ad5c96b3cc44aa0e54b3b8c0b648250f760e7f9cca4b17523f16a2deed8b76eb2f4565f49cb51c06374d8a1c5a2c27562e14523ceb0037d007aa57ca102916665b0f2aad16f737ce4ff3f84e7e1cd530f3545a8c21c4aa3d05b00e69b6e239099ff0b79618e1ac305f65070f4b94ea29e2826e28d05c684fb2263869d9da15d971319bb820e5d1a034c4aafa21f3f176efcb6a13bbcc312f01245d3e87930aeadaea11d3bc49641e7c83d0a2ae33fd991d99f75c5752c51422331b5b27a890d09873f0b98be4420f75872a86a5198575a1952da60b0e61c7347ac8105f9247221b3ff1e28b11e137551641ca34b47ce3f186c28aff2de855cb56f8254791d01dbb0fa207d3d177bd7b6228ed33ff8afacd69ddca23f291ad4547d4b00db328ad6900cb70ac1ebc20fe548ec24a5674259b743ea13a3caec2d73ae91d4286f6139c022a13b8c6b1b966045412548a0da25fa6085189975fa42c20e368f8590be5b45dbe814fdaf0af82ac343f5c3ee55e6bcc246afe54950abcedbec3205981ae7727569f43fea2b92587b6e9e5bed3c3339fe2736ce765b9339f0f030c4f2b5ce31168e1077a681794a8a6b0b7de74853237d4705754a6fda69b325d2a43cb802883fa19336a47024ed69690dfcfa0cf897c1aa1a21473401fcf105ba35835c08c28473705d50da5a37114e79c63b5f81e8f252b2ab7eb17c1916acea23e08e91427d7d01d2550575bbbe9765a961b6ba4bb4ee092d1a6a0304d6c11d6396e9bf38708dec57c4a9af07ad64d28b36f50750006fcf22b924958e930d3426367c64cb6a7352713e5e2a2f5bb9a5cf8e5e222016095bb993305d326b84b05b731aa9d3a1530569c9dde60169333a721326d327fcd202cf42cd98ffd03abe072aae7d28e7323b5b556a0f3742effd82185d5b9ea473e1cb26f1557f7c42176519acd0992ff2c97992b3cb624f7907f61fad432b5e87901d022cc4a9a02380b5d74b1080082a731ca1ac1c95a8e288de7d44c41d3fac213dbf1bc6f17edce9bddaf9262646ca50d553ac65d9c4efe755dadae839fc48ade5712093f75a212bc3e9a60aa0c08e6b8ff46e3375561a01ee80051e8dbb210775b8b6e0e7d42ac2c7f6100054bafc7d201b5b1109febca4f227e45dacca477f1152799a529b331182444993875992eab34105818b52b8cb4843c8512f5b2f59ab51e8318bc72b5403cd42d99b61f89375fb4d7ba17a43ef6ef331ad83f95b0be1335a4b21c094c6ca16e497fe2589b1a1a7d329f103b5004c8f109f193c0ca0aff4397520cd3cf99fc3e3177befd6af5d8a767e7054482e72cae4ebcbbd6c9036b12459b33bc72ecb062a69b1a4eb8ccb48cc7d63c1cc7abd508c5e1609f3dc82756a50d5a66252ed189e644a0d783537cd9c85a54243f6eb350b8e3ae9c174ae9920bac2fbbef1ec2afa98d130ec68e8b2be68e27cc7472cb3aaa06424829acee1c743e04c535451beded24441c073d3fff865e4242b7462170b3919f94c8d1cbc6175959de193439a75b5cc5a1670f0fe312bb5cb549acda5cac821c94810cbab46994602c076c33b0ad69bb450eb6cc14cfe07376e3d3d70b454bf63ea21691a84cafe1c454050c3fa2f911bb6512ce4b420eef4981ddf59d4cf32b0a7d5923be968297b238540cbdd1a4f2f0bac307200f96fd66f6eaf3a567208acd0b8e032dc4f2e399e668837c58baf8f1db57944da2f67127579357ba56a36c4e026bcfd13f93005954cf4c00a2ffeadfa17b16a65ecb6288e9488c30ab8812445c2ea6549050c1044ef92e55c67fcc98e1f87a57ad2284e454b5da081f7f2fbb8c726d471dca770e37861ea4fcbb4f5e6f63d23f5c40578de96db1dcee63db143d948ef5532a14b49841f6570e85522c0fc59ea0ba4fe9d543ba976a108d8d28977b1d8f1712376dbe1b163dd281081c756ecaaff1d09726f3e5281826de2389214329b129443b776fc7e7a89d3709efe07340340521bf9d185f1207d72666f7b4a66569f04bd980c0e58f1de3536bf11afcd6a1eea12ad23ae3dfefd79a5f215087240372d4242a33f2f1aee45df4c21e87f40a00c264ebb7195ce374a0fffb1333907dd6b0297582145fb1923b5c19b9fca37c7a4b43590309b6</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>GC和JVM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java14</title>
-    <url>/2021/08/17/java14/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="8d9ac2d57e7faaf49fe3091a90d9e3fca63ccc2b4a28428e5a528832013544ee">9d8b959681eab972fc20f2fbdc59450c156386fdc81f55326dc0bd7c03fd7afaa5d2c1dbc946d0e583bdab6b763ba2a802623ee0e0750f254a499bbc697cc3a392d97c98e18d91144578d25e1385953ee0db80291b124eef6a3365add5428faf7b7d37cd10201e4ab5078c502ac7cb94b8442a61dd39d523880e9dec54ec7bbd176d98928a38549d5e396caf7ecd51371c7ee1505f1bb19a4537da2534ed4c01716df278dabb0684bd9488cd99b9e94e9523391e041c30aeb354cf3c03fb408f69afadfa1cced4b4f564166ccc3b7cf84b0620b0c7091d9d99dce57586f5461da4c909e265bda3a10853c2f92889751ad717eb3beb04aafe10e2e6aade7b19626d327b06372b1979fb4fe643c958044ef1e47de4f676aa27ee7e1c2366678fadff899a15e7e485ded07981a53bad38003a5c1661ea3b2a26cccf41ef159017a93ddec5510f6d2e2dbf633ebbbb3d33b3101b5acdffe50093ba941b2f3ea765f555f9556abc6c60472e745ee33a5883485dea9ff985db764f396073139c38b7af9f4ec0f9b15b6f2ed55d43a39e42b8d22f09c8f304b1ebd9f186a8323cbb9bf6fc11e80ccc3deb637a833a1d6db5305dfcbc242e85724e0550665519be85b3311d131ed52869fd999f8b3dd106eaa689bbb54d3a911606907f3e58f69e36791f051371aef2d42712a27cba1579a384bbb6215885b762311cbc1b6ea0699376af10d4cc74d465880afb77577543028b3dc87a0b88053ed19dfb1b9a5e6c7a5d8d12d1186f0c4280a72c98741f92597bc9715dbe681bda4b06002a87bd3b2774eabe8bd39c21a03569826e9d8ee06daa6f947eac45d7b760184c486de22e0a9bef2b50ec6d23986aed3001cacceefafddd01805acad199998fa564224d0e4b84fa96b84903339df7a2d804fd3bda22e4c0ae2b99f5f44f9e2b42384d850ea4ef6ba3244b257b1971f19e9a268b1940377093d8220835f3289bfb123e5c857d54e13c30805fde0878cdb6ce1c9ead97860f0a3765746caae64af5c9b8f61acb8b66cbdc24df23e7be4977b492f9b2cf78a08568221b99a62e07427260031388fe3732225b9c3bf047a958c52871e13b995eb78e7bd2663922b12adc99a3e691bf777e396b6e63d4bab1d4494ecc387c484c5ebac953306037906ade4a4012763a17b87dd544ea9e9ff1f701e8a17dc45078d937e58e842d6e8a12a80dfd399a21e234d25f089b2cdcfb5ef0fd4ed89003d3321a6d7ac1d9dae7cb1bd794954c1ed609bd0e314862709463704e14390e1dcf5ae01f61f37ecf8da2c87a43b7ac6d2759548d03f93b125e9b57ee44bc98de57a1082b6a948b398c78266206d495600fccfcb969d9ea21f0c825615cfe768e91a3ee11e1763ea013ce612e90f028e9651e5ae9d4f8a52d6c026e6ceaf15519710a56cff4bb6d971d2beb6bfcbbe6c8b68581f73c13a0b5254a0a3e4f5d6c18abfc08647e14cfd5f4c7b552a032153ca0035159410ed3643e14aaa05673323f77801d85ed1ed475ff121d868f2fc9c214cbdb23cda507bd10d3bd8e0ec95c0112aaa6a5db411931f434192c804f3271cd1c308e1dd7dc9fb3b001335fbe01b86616421fe371743dd7e91303b3516dba064cad892594b10bb39157ca32f93e7bacafb6ba2b6fa53aa958a2c2bd2350bc3d4a7c2f3c484eae12f9c152372ff73d77852139360d3015517ae35fefc4402fe9bddd3e2ed8d13f7d99064a35960f0bd3c22747365ea70ec81561656bec0bee06c41168c261b2397f5ab0803a0b96715739812dbe341cf23649d4f637697b34c54d84cf6b53097fb8e5ddc747083b651f7143140a1b76831a6ca82cd71c2f3d122be03ad8dc2b64e35d4abbc06c61634d54a9aaa45fae77582a005cdfcf14fcf85d0eea7b553a6b946a08fa131f316c950f8de31c4fb3bce41a91202965ee768dfc0651949aef94be62974c418e77658c8563e9fc9389324c235626b4acd0b502af304c9f82656ed7463ce6c541763e19c0786e3da9b9162ce128e9b29de35916ae6cc5f771588690f068cabdd43f3a10fbebe6138b2884a7c9573d5a2559d67fc37f25a778fb62361656c6041240660a6c11fdd3b472b67b3c40dd938d368570b151fb23978c0d0a1a56e3078b7a450ec21ae1cb36b55b141d34cff18c01601fd7ce0c8df1ee4cdab9333d66296e438bedf9ba26c1cddc0ffd851813c660f98a89d0467cbb68b249f8317bc1adfa2191a33ee798c55604014a7bef983e69dc7427c896014e9c68ebb3ad925208341516d39ea175de5bcd60b92dee107080471b2a203b1d2eb3d4a2cac444f99c4d1a404a37693eeb703c4d28e429d2b08a5b33ee75b061a61c62da6f4b447b9d9fafa2b8ab7f08bdc34b4a221a01beddc653b91a3f08fd1831e799ca4167fdf062c93fc1d2827a7288bba2597113134d7f31cda6fe6260f345ca53966c4459d8007e2724bf4792ec859bb61750130a8d154d7efbcc45f6786cc8f253e9338c4fc2fdc8613f3c34ae22f5772751bc2669989b066e2661e79f7d8187943be8c4fab5cfb45df5f929ad4f78da2a8d086b2dda7b1cb9b8aa263dde8783d47a6d35ff40201bc464c2b3c342314c62a9a83b070ccc0f54fbeb043e99f17a31e127e9f6d82c09d491b1ff29e23512a21c86a5c2f2fed866c5290a02933febbb42f592d478ee3cd788f326966b215dd141a646d1f14bcd94cc878bd74910e3f8e6ced01dc66e72259308b2b15872688a1c56ef50e6305c268a77193683c6ddc3d2ccb5820bb6b1616300a1938fe6ee749e33da39518b3631b1529d84846d53a512242a01cd8124258011430f356eac4d4395b3dbaa5bbd779d749dbfbf30d0e4067d19026b78b683a2fb7cd33891c7ad3622ede429caa3f8730dc1be6425d21d6d7f4ed978b9e1ccdb294b60612b0cc1a1acd60c6838f05ecae22548bed7e76cfb0c86d5e69d3bb021d2cbc92f4fa03996cf15fb721b8cafbcf52cc5312de9635772c7b48d8078e85f4345ef2ed50d3b9c00a891ae5256f8fbf083e869cc36ffe2fe157ec2e9daf8793f3ab182208177124688e96f7c2805124bd0f7d81c148b808fc6bd95e1394cd23535a35f30e69e75acde15af8a78aa737a8e183525220ec1d62fcad36016d6af14fef49966f2d2af15b6742cbd1ea5cad572c9882ab9f7bb69793832a476082167ab4ba1fe54289e4e01327820158f5411ae0fe2e7fc7951d50072088851310024d91d8b5d5fb68284d74e259b9e71c5fad55d67e93f9983e5dbff265cb4de63512f88bc333b57db1896a16e44c1abaf8eab380b673abfc54b7b704ad9b4719bbc9b6ac544a9b5cd169fa2fa32b6b527505b3d2f2d517167a2b491568d98bd5dece8980e025637f42832a5e6b30a497df5fc1578ead3bb06f21659580e526b574ee93d18c99774ce67a095ddd5f0838b0a406d346ac82c3ccb653b160ba4dad379d368bec5013254aaa554abd865945b7c5d69c8aa32e5050ced22bea785f833d9c96bcdb4c3d05e55f03d8849d6d33fdc58b5f8ba0c2f605b59a5bd37542ca4a46e73ebfb11fd3803c5aa52405dd75248de714f9dfdb0344e66aba55c2e48fe5315b95e22225af0e821fce7f88cc018fbbda87f68564fb12d98931621dc3c9c55abf3c6a058bcfa07460ffc2a8c7af50dddb8c7826e9e46a5c113b1950d20c6410e33c961e5232e2988db55c472e1e46837fc64ba393c53fac500322795a6706871871595710acac1d98d57a29319fedc9bd49fe713f26a16a32b75800a1cdb21ac4016956219756f07da92e5a69f41de4f14d29574a7f7ddb4ad9fd327fbbd00c63c1c74732ac171559788239be33a98a48598702bae8eabf1a5b85a5e2c10226de009be35fa172dbe053909aecf53d767b597e3fa58b56010327f92bfddd6570fbdb6598946f4db92f95021e4823c9b303c3477909074bb4d7d2f663a9fe1d5e6320f83406a15ab06769cf5d63db0e592abe7db0b5d7d4f4ebe6f33c39a532cffcc7cf41d8b9e56f96da3ac32575da03a5ea1ae0f858bd6ffa36a503970fa3b052b5f0915307a39da25abe02c33a7e5532c841257cf9db1b57a66d3c0a02a1aa8cad461f4692318ae87e10806c29093c1a8fb6a77fb9ad08ae5c01e5bdfc15522756c8fee4123e24987efb2e7ce8cbafe2740847c93c7143cb57ea10bd653138b8ec2300fcdcfb727d53b13af5d0cb75f4600d27c929af76f1a9ba93389214b0a5db54b44ff1295f560436387cbfa0a8c539ad68cb2a06a87ba265ff3c266e739cc976ab997bb3cd8e9b8c32b3fa92ef7f880aa5e26f11b174d98813935da4f549505f700b622848867adc3875f25dfe7962f13282fff00c145e1df93e46bdca316df641b421d5c86145252163432f8b88c7b45a03eacc89bbbaa210f7ee081276b9327fc9991c2be02cced4a13c42f0fe06e926ae6cf3f01d1ec0dc8b55bce04f99cf3713381cd6b9f933b552fe5c25a970a1be264ae802ab75e0aaa1fa44cdf9d337155036b5f8402562a2488d1b1806fdeaabc6725cdf4811ad93e6c21e0bdce68c2b35c50e674290e0f6c91e409c3166b0a1d594f712c6bd6c023cfbaa9272f44208b85850fa88ba653d064244b83a38d89cd3c07fcd0d546dbd0aac09a4aab581720c69ee16b7009d385e569f05ab73124e8f9c82da0971a49d35b9f9aee815f6689b9c8a509baa2f451c0ecc8c083c6fddc424cf3866e5f21b062ccceee8bde67d12370c87b04c3d51ba654bf7569b20894656bfdf55532e8c200852f82390bbe173997a10d118ddfebbc492ec04e845bdafa0a942ac130d16a446775cde75abfbc8e9491323a8612e3ad2e7ae476a7fe21a0f23a8d0906d1fe13c3fbc7afce72afdf941a3f93ad323388374374e65c8666c6bf282e83f6bc4781304e77bac3a1bd18179ad976dca86aa29fad86b1ab108f25be00f5c99e848cff0fb4593f1fa589a065c5c991a7b598ff10670f8235e8726742da0900faa4708fe398613a8e1d1e960e32a52b4b6538a10875ed292c810b6570812d3443219ea7c37c42abc5547335dffbe3d455c03f2f18abeb933bc0b8557c29ed9227a15e6fbe2274a0e14e0baa7b39be19c87d59c7a59b4094e36609b6a483fbf41476a526f6cd6418c980109609ce918105d4d5607f2adbc703a48b08cdef9c32537569341aee3edb9e73f5636b5c129629ec507054eb59c530fa74242594ae12867e15534831eefb90fa9e7ecaedcc4ef26d75d32913d25a7fc898236aa04aa2fe5864272d3954754f40bee410a51ce203abfa57569d941373d35c7e8cce21a9435eee650f3fa6d61ab2557917e260b4ec6c794b5ea1816b25a9485756936b76b01980a2ce34453d35e4caedb0f62766a70644b9333f42f112e93ad29e99c027c06f705b37b37c20eebc2228a9f2c4df006242c6d86588f7c5c270e0f622bac84fa52989fbf7863aa26dd5d628df9a510efdc749dbd67c401542c05d2678802ecf010ee8db1b21fcbca883c03a736edc1bb9bed2a0a120ef63f29bd97fe9589c1f2c68c662675dfce9533ca6f2ca09d670fe26baed8fcc4082c9a72b558b2f5c1e0256839c219863ee2db4f7cb7eb1ff58cd37d1e1cfd3fad2624eb9175a5507a97c33894bc874d953dd79dcbf2f0ecc9089de83ff63547932c800702f82b612a39041b5c0a05558e96165374b21d1376f99696979b7437eb539133b9f4910c11e3f28d1135ce173f51e6bd2f14a96cdbdda18b28fff83044556d4b007a5fd924d0174c9f73ed789f8af672cee85c49577d1aaf9f8154f2a525dae98aae13e633be52c09255eed2ca01f63b717ba4287d1e104913844d48b31fb6f59ee9e175906bee453e3395819778be766eace0b80c185ab8bdf5950a5946ca4d57bcddecf6d95530454c6d7c94a60d9549d824ae34076478c54b46a0dbaf67c416effbea5aa2a548a14f5bf247ddd9e1b679c8091e43e799714afcb9ed5570301c7212d17a94d2607b7c2818d2283d02f53cf91bea550f946224e0511732258283814301be06185d13383fb53cfa21cdea7a98b89ea330e948503d929660f07bf6fb5f9296ab3594e6074cea9cc0fdac22b850b587b69f96ea91cf655db02bebbd5c4fa7dcfa3b8abbc3c2b9cc851ca9a5f44c53a10a30c0a4de1c4fdedfc5ca2327320800e8ce427d563bdedaf75ca76ba2f054812b6a96a3289813695707ba35b506c25acdcb3dac122f273ef4b38c50102abc1b1146a3ec824ecfb5fb86836ce5b9b2ba0729438b9447b979a52ae60d46553055c78a6bdd37c8b4a4945457988589f0c7515e40aca541ea2de02bbc878451d14be51c81194391f9353f91db87e2d2de86c6658c98a74a69da7774ef298fa9bfb25934a24357528523e0f3712d91527073c17e4a4426a53bc7668cacbcd8b1a54a002b766e2430415abd23031732ad191d56173425e3b75080e668003eef446922660c61b8e6d608d4ac32e077b5a85ff8a23ac89ddb1520a69bbe322eaa7bd415706f971bab7714bbc252441da1b1b895819df9ce3ced61ecbd82328ed8b2a8b1e98a393225e38b84c4a989c463f674a3d58e16fe2dbca405fd7f280af1b47867591258bc9d8fa0b1c57fd5fef8aacab0d292ddd4ddcb47b415e253046e69ac22182dfe828eb055bd6d6b04db20ed866849d185be1716731d2b24be44d16b47138d7d53ee696d6a007a15f5379e4f4f14a4f2fbe1383d6af5a179c8d1dfcb6fa775da87c0d6497a66611627e7f32b8643d92371290a640a6b26f69d7428d7d6ad34440736d9dca8b917c53bdd510c6cc03805635785b199364d9c19068f7a5e47d2c4ee0dde16f13cf8ca6e94c14bbb26def4d0df0f0d0ab6065a4516e352a218b2c0d9d2ed12a8187d0e9d730bdc4c618e4b65a1d5fdfb1741c7c3be16ffb483e7dc4a7f8cc378b3cca7533f41573a70fe875baf0f2e4788935d2c4cf7cb66fb3eb9e0b00054e6229ad42226ce911f38cab83d7d50371e6d4a6b2c7c7188d6138455eaa3f3c06750125d57820d27b18e163e0077cce7cae3ef4258291b6c42337bdbecdb5aaa2facf7537d79e5bab78755b8e059ed75bbdd1b4073d5e93cc8470f145c31c2fd66d42675d987144f81e02155fd6dca16d2ccdcaec2cfe8e64535159a3d9565c02c0352e6f077b6395dfe849e80144a3fcdaa532e91716155b68de6b9a2da80e543f11d1dddca1d389662c16a0a5a3430afd666e4bf12d05069f5acb022012d50d5b4b10da45c56a6d1291cee1e771a56a28b1bd69823e0f12bd52ee2d26e684a8a74bba86f846aa63d0def8f3b60cc7263aa2c0fe0c9bdd63af06c7f6d372105063dbb3b68e08af2bd12158c2e074e8b0f43b885041c6ec4cdb34d282e774ee31194a1f4469d4f384d6964ff9a60d73b5b8be104ac4dbdecdc7272c9699a148fa6432eef78c24859f1618e738f85a8b6df5555241a11c5e6a6333548a2ad51b5b4903e6d28dbbcef2e841787bf81ca4d097f5264dfb47a2f45d67735d7f30198f68bec989e899448a91534d26c01f207c4de2d9f6e1c2283094dc5a07149aa4c8ec5d03f9f6e872e6079128d04359f9825629827236b78a5d959a2c7bb12ebdb6d0faf5c94f936b8ea5a4d190b976af38dfc2b93880354fa3eb4e5779fcbd1538dae015ef3bba137392f60e5d6b22be484d3fcac93357cbb4e78af17865f24407fb29714aeb0596fa2eaf078102e008f34da5385ca11bd386d0da70771bca8e5f6d051d075657e237595e14713091c09cbe93f9effa0086335143b937b2ca800ccc7d61f79faed98c94e0d29aa5bf5012ffa6b6f7beffb119c8a940b262e2c1ee4dd515337d265779bda15885095ad445de627d6c2afa1a81526760ead6ed9483862a5c3b44c4707f10d76c730e5a6774e589ee6656d3da325c685b9faba467cdbda699ce459008fbad3c151b90db18817129a250439eb74a7574ffea393ec8215e6b48d447f58cd7ed17c0e16c5c37e76f345511e272863722791010f72b767f4889944b9738d90dfcd32246ede52a4e7e047d1bff375b428c6ba7e896a8ad9adc4f011067049779f8a591b98b2a8690a9adbf34fcca2db8c401d4dd274b13549f1e53a1c66f6f468098fdba6500730e0075426850fb08b035aec102b1ff967b0675a4534964b28f47921c9a99fa3a175e3b04f41ffad34b1b6f1b814bf9ccf2c9a38fbf39987013f3bdc3cf95976441e272def37e8e5488a71c48e8c76e808740bdc8752c8ad68044442d37e761fe196c66545250bdb54102fbb3bbf9017c2f4269463d29a5af0e6c49ac2bee252ff607b14c114a8220545f67401f5fc078c27d1adb69b9960df8b4979d78e82d22a0a469ea41f9f1477b5412071f1a257b3480a11439f515f25490902aa1c92b24fc4ccca0abd0c8560c2a5212a0d8f5dc27ea2e63d659cd13a7c1bf31283825777d851ec3d5e3d96487e3d636ee36f7de65f9ed8eeb91e6d18614d67c7b7231d714e4ce0b9ada5b12033651db77b41653702947e4946c5da8bc132dbb687fc0d2027aaf4dc3fa00a9ab5e17f09cfbe295cd7387dc01be79e28e0ed4c63a28cd278fa3944ea507c9abe8194c5ecb354e441bebb903013c2a12995a4b3f7961b3cf2ec7c8dd3f6e86c071ec0af4fe531b428484dd38cf3246d6c3f42242c68b29f761e092538397ac3a67a6cae1d8606f3352b923f8f878e830188f5d1164a005a2345e80e4f563c3193f2a9ea4bf4ae897c3f46d07bce5b8e7242d848f4e094ce6e57352d793eea6153434c0baddeac76adad4960f1ded11dd4956a6c5d3dc3912c5d1b023158c625057128a9cadf5d0c66c062cddebd1c7da5be466b1d8995ef8cec7e1cf6aade0d7debfd2203728d5abfb984692bb7047fa72106dc37cd34521f5ba63a4085146301d15ee8a5dbea90507eae3063b900303943ee43888e25ae37cc2c4a24abf29ed30293554b26e93b3cfd8a4c3730535904d1e6cd19818c852096dc28f0644a8d78679f9c520ce274da1373636334e16e43de4dcf7fa65400f6c30de7a36a560efa270b28e3f208d882f112130811f984634c1433d7b95d998a29c7497163cacf77f528edb875c6adfbf41ac19c8e1ea41ac91d28852a695ee77604996c694dcd1760d1ffd10d19e9b5d34a53679e5eddae7711fd5f4d7ed59b53a8228565eae3666bc10bd91fff85824bfd957d83300fdb601b5dc0dc54e587b97068066e6dac40060da4a031a1f0ea20256d9fdaae8665076efb2a83ec4e488120c63f4c8dbb0d864afa3f6e274ab0a3458acde1bb8ef204b9fe677969339d9828f35892addd58ab150426311216fb35af7cceff09376df7da8e68e54ae61cf207f53619c0d1852e631fd9c4ae517600f9319c88ab96e650771e92100f736b839fb8f97a6f42c759b7e729fe27f006f211113d47d6d49a2b6f04ae612d64ccc14d24d984f34b626c07ab4407df33855899946fe4e224c764b2c10c9fdd3dfa25bb09300413d6a2b276a1ca043d6d65dc304722bf81a72fc6d73aa37fb126f9117796edc0d70a0fafedb33525621c2d0f54b2d6aad70d90379381d8c39e7456b5f64d47db9fe4632b633f34b4f411be504b79f1b1ccb899771195d992210f78b1bac864f2ba54478b12ce6c1bd5ac1eef2f091a57363ef574d8b7f643a016a07a9c4e88667d80115668f4c58eaa7d6ff48fc7e373ed4a45602758b514ebc5a9e9a569dfcb777ab547b33383e264c142571fa9cf89dd5c4abea71aa8cd2e47774cd657a5b0a3004d682dd5580b816f30f23531920a057d78edc86e2697e3d8b7779a62324b941be9d89c67a05233403952fd83c51c6fcc84b780a494fb23511b971af936007745b08ec37b357295d12c8abdc9beaea246bdcf22b84ec081bd2a8bf54e96bc6f427966eb1023392c799701e0ba175cbfe0425385f1f5b969642d2b54b28e32310645c05ae89f37625d24c361cea5adfae8277d6d94309</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>java15</title>
     <url>/2021/08/30/java15/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -1567,29 +1548,6 @@ session是服务器为客户端创建的一个用来维护状态的对象
       </categories>
       <tags>
         <tag>反射</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java4</title>
-    <url>/2021/08/05/java4/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="65e8e1a9d9946d3b0665a7622baf6e050a7e739876812c5bfd4a19ef65a346f3">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ff5ecb57b14a80a719446b3c325a8f83451828d8c2576da46f81da9421d4b94482ab8f2f4a49332ecde381519f11a40a7ba3ac5706d9243ed30b6ec56fc9bae1a460651b908fbc61386640402f7abe857b27dbc1715b921ef061a15bad445d70647898b22b6180218f07cd408282728a4d0146a171308ecc43ae082de61e1d9a45a034aded5b3e8d7800c69fce3ecc08b92caabf0ec8f7476d950513c6a88107fd3ef7a27a9e8433549f65bd0dd72bb725c67c9dd4cce12edf17e9f2b1438d3b1f162ee1e425f2b884e8dafb56101fb66b92e116a76748a88c13993dfad69ece75d424134c761e0ac6a0e679d4665b4394965a84132dd0160f0e8cf112028bbbe4d3246d2070597fa3039d4ca334460a6e502ad4c1b07c24dd3e3d3efbfdfb5fec02f8fd4a4b1c7fac4f4c2235e177dda91eb8df608e964bec16bb8233881bf776f3c4abced30b5b6927c33ad3ab4a82e403284c42450990f8c75d9f6e7023ac1d7070d2cdf6eebf1cf5a9d0920b6a6b2b7af92add65b92d211faa52a74c6e0eabe19f95fe4029d3430ed176ec5c12532e9df3c3d30810087409e0741fef38e64bcecff5cc0310e2b6c65a8431e5c765ff513c829a4f58ca9e71af348ca25bf765039040d1ae222aa063a361b2546b16f72d8f16e0c685f1c7b21de8e414b2105f430583ef19976e325c41cebbddfc2f82e3df9696bd38525eb9eb4f199c718dfc0b28e25e947da2e8e696f4b4a2a231e6b3733db2e2d8b11b96e829f55e9435a29d792c3d56fbc7b80bed1205688795bef77c50f682c52e1980a09deb87826da1b5cd6483be454ef73b3e492ea3f787f27f81e8985e77166523f63fcce683f56dab47dae8627dcb7364ab4bc785cbb532a9308d81c4d1bd4c44a6a5da55ac920f1661d06dd9bbdafa7db5256c29d4e719c511da09a2e53c86c8468a565a80d741e14743157225515fe9359f7e79132ef65e18fb677c7dd713f76ecd8c7f8d4fb3a1fd2d1d40ce96cce7679022ec29ca74e8e5a9ba19248872febe45629ffe3d8b570efdd69d45b45c58f4dc6153aa0f92abbbef4bac54b447f3478d729428c18b68465feeaf5f5450b60798a89fcdca981ccd9d4236b32b2f1a6e5890646adcd9b32abb2feefd46aefd9d13444f7b2eb66105a9ee261cf186e53affa46128beb606eccd9950e92f36dae189118043193fa15bac6aaef9dbef0044222f39f043dc46628ae4a4bd23ed1ff9e1ccf1e8711dc6ac8c17dd41eb12e08959cd93a765bb4a01d8e70b4eed81a17273ea36497f8fd3b8fca7220df42e32e931d7d31d9f8f7bdf99782b44be1d11df0be6737c27594cc2cbfd288629483e6ebad2cb0f659459e1be49c257a618593b1402febb9b681954cfd36b4d394a47e0766dbc57a89eb67c3fffbe6ae0c5cc9309668d03a72bacb88376a8c1a6c26b20c42b1099e07b0722e7898232dd83f50061e88680fd6501a4cda0a343c2371d71ef4eb043e43cbb35b17328e2109d689aa807c2248f8feb2611ba0d30dc13aff043d9b5f46be68a3d54e4ccb6444b7b6aace2218b8866a5d9626c878985888c2f9eac1d954e19139ef565fdc6a0248b38e4969cf6c2fa435dd3dec10d284af8103d4d88351f4d554c48277ec45d2d16dbfcf3ace748a9a0374aa1a9a55100618d4b5d49f37a19443cb89cfacffd232d273cd4c83b167b3e0e8d19cfd0f1529e32a2e9ac13bbd5d1c27d821f033fc7dacecf8a7ab64df0ddceb2c13309012cc06eec36ffab588a62d5d7aaf0f761511022c780db64f768ff7275c80b2195b4efb3cdb6c46d3c2ca495bee2ec71542a5da5742ecee5fa18314b65f5181449509e27cf29e6c68914616c944b86bedf354b61d5f8759ba33db7a14a6da2e3827181ba8e90609ccbb471a7882122b68ef985b3a7f82fff805532e767be410d52be539a057c8c86e540960ed4146d1bde52b91842b05424d4d30ac20e23817400e0e5e770becf3bda2a6ce746f689c32240a3d5f4be344f54f5c9482a334689bec86ae84174054db9ef96cc617a3b783bc61c7d6f2d913e9630480f78dfaacc5a1b12f3c26df474723d69b203c7d696791c3db8a0bfba8a821e4db268340eb7dc2fa83de3cc1a6e35aaf666d1061a6c76c935864224d5832b9ccbb817a934eeee7a5117cf8912fd0e9d93f0d6dab12a07cf19681d7a48d8e9c4efb994d2466a212483a00a41f8f7cdae617887d2122de1661d7dfc6fb1d09737914f760c2f7060a90211c2e439b11006210fc614dcbc4aed49bf38fdbce8f019afd52cf1d4a9bcfa401ff0b5601754f6e8f7a163d0a84c870070e15804e4a6b3692a5507929c85b4c3ca735e08675656dff0412322ec9646b3dc2d3e720071b6ae00966d1508c584a739070bc65daa42a846dd52af3756ff5aefc500249318c3ebe114b813cab0365e780bf61e2407a60a7d7a04bc6ee71ad67d01cb3b8d3c72bbf1dd08d7c060af958797bfad3cdd112fe1a830b7dc3b5770c300b947ccc3afbd39e99224e1e673296c87cf5f492bacba05fd3db7755c514bea4260196e95644eaa1055f902ed3c16150a73fb45d2baa27e85d6693fed1e79f6a0488343790d335b411be484218e990ee1dc67c560d893cf195c9c975969e77c05fac116286984c53181de13566f48740d49b06b4661591a13a6d6f681367e1dcc1a44bde720e1dbe233b93bd79535d349f18f619668441158dfc6124ae69510737cef1de34aa7931f9ed9b95a3380e6f984e5351b9156ac1d935467a55bb57c1827d2026ca11603b97583a3ddbc88acfbd878ceff32995303e26927f2ee2e8eaf6ee892e6c8e3494f408e56de420afb4a4abc1814708f36b747739cf37fc2a6a55543fe0804ddee6bf141128ebad7b8d686b838ce6e98bc0d7cacf7af4fefa3517aadfcf87ef71d69e327e4b55962826f48b0e6c70fd14888aa109cd1ebb6ee38d7bc593858f0035f7092b30950404a876894580d05fa9ca17d803abe7699ee71e84fac54cf634fc5bf9fd5e94ad4452ec01ecec4d0ec24477ffc664d1605bd1e6ac14a2508e91c8610663a61fa23134bf6deae6f2506a54bc9a6e41b7f787426ef4efe521177a4693964c8df3df1a2322efdef2552bf78b8c686ad9394b24a3eb0dc9dfb5a0d6ef10cad2f0d2229aa9ca07482ce68d7aad850b97466c74a60dc01e1a791255e772c8b1dda6feed522adf3cbd40756e5a86e3566387eb6b5c00fcb4ee66afd5141b22806ed27b1612adb4e1f59bb457e34051e60f284f189367dac6f32fa68869a989edf3a0c6bbabde7d0a509d6651e7545e801098b1f64f463c0c72b61cda7de0e5723b9814b2c1ab07f4f562173656cefaf2d450f46ba6ccadae602f0bf041a30739fe0594940ee96903fe97d707000f92cf494d3b08612653354e5d557d92cdf474833dcdb9f4d0cc5e3e8e204eb970b1485a3d84e36c2a6aace6b39a0e8cbc7986f7a2de0749f217d46944c897ea9af7ea1496266a948c1546663435d7b3b1f8241c3726ea0e6551ee665c66616d22df580955691ec5d309416c7e2f3e8845dafae81556aa71b616c20d52b4a9bfefc51b585aab6ee5ac5c531b70140fee8327a9afb3237709e0d8e699881a162a19a2f314de794f86336679c65b96d37138520de36dd71a4205d8d99ed957b0b3e895c1faef35032ad48861e3c2fd8ab5c61923bb8a318ff073ab4580b8c041a4f2e86d158236829ae70891fd63d7a0080d890737e72f9055721c75c0fe43032b6401162686b712d9cec48ad3c1646808441dfffe15ea8caa2a9332a406c171550575242a22fe103b5811baa96526184bc0a68568cf292588f44d8e87efb8eaab1a463fa8a8d2e8f896f4d38e91a9e898fa0d1e839c110d8c16d0260b6c88dab285e6c6fc670f8d73dde21e85a56bc38e2c4803ac2e18839e88e2cc0aba2968ea7c6be77cce4efa38b8e67e6e2fc7c4d465c8b787b2c1991be4da2b63f238ee0ecdee672584ae05520703b5d050fc64f7fd1fe95d27715a0518695a77a76a2190d162e464bfe32be712c0296fcd6fd56f753262d62ff24d9e4319bd536e33ccc0f6c39c5b1196b6271f022e0521c3b983148ee50b985a85289077e452e053f212c4934315ee9fb250ece54f229aa572db8e724d9d8ab5248159e7939531ce23e9fb62e0a1b180e9505b893c746b68e8e3b2d1b238c8f329292725ce23d8de7006b81901aee12c784442c539175600a87837e1007c42ce89a82e0175fe2ac00970911ae320e9807de3dfbd3f919d9fbb0c2fd1a72fd3f26e58e61b6d89d67c8d536ae402a6dcf43e6e6a5a13af5b39558fba975e49f13bb1aef720635902928c920049796e939b0590482632f78400dae3d4b85f930d31c564dae3561e20ee1521977c48a22f7d593d8cfeaeeb4cee5491afcb21c919f15e9f52bf89e249a9c174f6826fe6015679fc5a2bc8a24f0d5959b4a67a31d608deae3901d7458d12ae74f3a485befe73345682bbd4df4330f18b34acb0f69fb128ade9536c8448cd5ce7fbf4def71b15d0e8174c36656c4e40540d05b2729496b76182c21996b58279f2aaa3d5d6cbc634370541ee3fd905b7923c99cc46a450c78d80e704466fb63574a30b98c8cef51ce2f7dfc9349b4a572e53cf6013f51520469d4c719e640c6743579b1a5177d3dfbc90bc92e16322035e8e7cd1a9e205b47d64fe1448edb706a910dd07432b1b201fcc706053d8dabd520cfd9dde9c8fee646844820224b099323c7283d854caebc4f7a4d992c4d4c089ae6c12eff21a477271b472ede7cb2808c128d50091ff7b1a41a05efbc3819497450c9687ba4b41bd49bb3fb1efda89f0729624fffa928e8eb50abc21355f6f2441591ff16d69ec496e70f575803f0c02b1d6f53f1491e0adf4999270e68092cc7248c17e36ba3db4e82878d4c6eb26e2732085d6fc35ae0d3fa79ca8607bb06bfd1717f0119d29d774737b0a484ec9e37ddadcb234a5fb90a377d0ecb487038bed6f73cd27df195a86d1ce8264766</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>抽象类</tag>
-        <tag>接口</tag>
       </tags>
   </entry>
   <entry>
@@ -1613,6 +1571,25 @@ session是服务器为客户端创建的一个用来维护状态的对象
       <tags>
         <tag>java基础</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>java14</title>
+    <url>/2021/08/17/java14/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="8d9ac2d57e7faaf49fe3091a90d9e3fca63ccc2b4a28428e5a528832013544ee">9d8b959681eab972fc20f2fbdc59450c156386fdc81f55326dc0bd7c03fd7afaa5d2c1dbc946d0e583bdab6b763ba2a802623ee0e0750f254a499bbc697cc3a392d97c98e18d91144578d25e1385953ee0db80291b124eef6a3365add5428faf7b7d37cd10201e4ab5078c502ac7cb94b8442a61dd39d523880e9dec54ec7bbd176d98928a38549d5e396caf7ecd51371c7ee1505f1bb19a4537da2534ed4c01716df278dabb0684bd9488cd99b9e94e9523391e041c30aeb354cf3c03fb408f69afadfa1cced4b4f564166ccc3b7cf84b0620b0c7091d9d99dce57586f5461da4c909e265bda3a10853c2f92889751ad717eb3beb04aafe10e2e6aade7b19626d327b06372b1979fb4fe643c958044ef1e47de4f676aa27ee7e1c2366678fadff899a15e7e485ded07981a53bad38003a5c1661ea3b2a26cccf41ef159017a93ddec5510f6d2e2dbf633ebbbb3d33b3101b5acdffe50093ba941b2f3ea765f555f9556abc6c60472e745ee33a5883485dea9ff985db764f396073139c38b7af9f4ec0f9b15b6f2ed55d43a39e42b8d22f09c8f304b1ebd9f186a8323cbb9bf6fc11e80ccc3deb637a833a1d6db5305dfcbc242e85724e0550665519be85b3311d131ed52869fd999f8b3dd106eaa689bbb54d3a911606907f3e58f69e36791f051371aef2d42712a27cba1579a384bbb6215885b762311cbc1b6ea0699376af10d4cc74d465880afb77577543028b3dc87a0b88053ed19dfb1b9a5e6c7a5d8d12d1186f0c4280a72c98741f92597bc9715dbe681bda4b06002a87bd3b2774eabe8bd39c21a03569826e9d8ee06daa6f947eac45d7b760184c486de22e0a9bef2b50ec6d23986aed3001cacceefafddd01805acad199998fa564224d0e4b84fa96b84903339df7a2d804fd3bda22e4c0ae2b99f5f44f9e2b42384d850ea4ef6ba3244b257b1971f19e9a268b1940377093d8220835f3289bfb123e5c857d54e13c30805fde0878cdb6ce1c9ead97860f0a3765746caae64af5c9b8f61acb8b66cbdc24df23e7be4977b492f9b2cf78a08568221b99a62e07427260031388fe3732225b9c3bf047a958c52871e13b995eb78e7bd2663922b12adc99a3e691bf777e396b6e63d4bab1d4494ecc387c484c5ebac953306037906ade4a4012763a17b87dd544ea9e9ff1f701e8a17dc45078d937e58e842d6e8a12a80dfd399a21e234d25f089b2cdcfb5ef0fd4ed89003d3321a6d7ac1d9dae7cb1bd794954c1ed609bd0e314862709463704e14390e1dcf5ae01f61f37ecf8da2c87a43b7ac6d2759548d03f93b125e9b57ee44bc98de57a1082b6a948b398c78266206d495600fccfcb969d9ea21f0c825615cfe768e91a3ee11e1763ea013ce612e90f028e9651e5ae9d4f8a52d6c026e6ceaf15519710a56cff4bb6d971d2beb6bfcbbe6c8b68581f73c13a0b5254a0a3e4f5d6c18abfc08647e14cfd5f4c7b552a032153ca0035159410ed3643e14aaa05673323f77801d85ed1ed475ff121d868f2fc9c214cbdb23cda507bd10d3bd8e0ec95c0112aaa6a5db411931f434192c804f3271cd1c308e1dd7dc9fb3b001335fbe01b86616421fe371743dd7e91303b3516dba064cad892594b10bb39157ca32f93e7bacafb6ba2b6fa53aa958a2c2bd2350bc3d4a7c2f3c484eae12f9c152372ff73d77852139360d3015517ae35fefc4402fe9bddd3e2ed8d13f7d99064a35960f0bd3c22747365ea70ec81561656bec0bee06c41168c261b2397f5ab0803a0b96715739812dbe341cf23649d4f637697b34c54d84cf6b53097fb8e5ddc747083b651f7143140a1b76831a6ca82cd71c2f3d122be03ad8dc2b64e35d4abbc06c61634d54a9aaa45fae77582a005cdfcf14fcf85d0eea7b553a6b946a08fa131f316c950f8de31c4fb3bce41a91202965ee768dfc0651949aef94be62974c418e77658c8563e9fc9389324c235626b4acd0b502af304c9f82656ed7463ce6c541763e19c0786e3da9b9162ce128e9b29de35916ae6cc5f771588690f068cabdd43f3a10fbebe6138b2884a7c9573d5a2559d67fc37f25a778fb62361656c6041240660a6c11fdd3b472b67b3c40dd938d368570b151fb23978c0d0a1a56e3078b7a450ec21ae1cb36b55b141d34cff18c01601fd7ce0c8df1ee4cdab9333d66296e438bedf9ba26c1cddc0ffd851813c660f98a89d0467cbb68b249f8317bc1adfa2191a33ee798c55604014a7bef983e69dc7427c896014e9c68ebb3ad925208341516d39ea175de5bcd60b92dee107080471b2a203b1d2eb3d4a2cac444f99c4d1a404a37693eeb703c4d28e429d2b08a5b33ee75b061a61c62da6f4b447b9d9fafa2b8ab7f08bdc34b4a221a01beddc653b91a3f08fd1831e799ca4167fdf062c93fc1d2827a7288bba2597113134d7f31cda6fe6260f345ca53966c4459d8007e2724bf4792ec859bb61750130a8d154d7efbcc45f6786cc8f253e9338c4fc2fdc8613f3c34ae22f5772751bc2669989b066e2661e79f7d8187943be8c4fab5cfb45df5f929ad4f78da2a8d086b2dda7b1cb9b8aa263dde8783d47a6d35ff40201bc464c2b3c342314c62a9a83b070ccc0f54fbeb043e99f17a31e127e9f6d82c09d491b1ff29e23512a21c86a5c2f2fed866c5290a02933febbb42f592d478ee3cd788f326966b215dd141a646d1f14bcd94cc878bd74910e3f8e6ced01dc66e72259308b2b15872688a1c56ef50e6305c268a77193683c6ddc3d2ccb5820bb6b1616300a1938fe6ee749e33da39518b3631b1529d84846d53a512242a01cd8124258011430f356eac4d4395b3dbaa5bbd779d749dbfbf30d0e4067d19026b78b683a2fb7cd33891c7ad3622ede429caa3f8730dc1be6425d21d6d7f4ed978b9e1ccdb294b60612b0cc1a1acd60c6838f05ecae22548bed7e76cfb0c86d5e69d3bb021d2cbc92f4fa03996cf15fb721b8cafbcf52cc5312de9635772c7b48d8078e85f4345ef2ed50d3b9c00a891ae5256f8fbf083e869cc36ffe2fe157ec2e9daf8793f3ab182208177124688e96f7c2805124bd0f7d81c148b808fc6bd95e1394cd23535a35f30e69e75acde15af8a78aa737a8e183525220ec1d62fcad36016d6af14fef49966f2d2af15b6742cbd1ea5cad572c9882ab9f7bb69793832a476082167ab4ba1fe54289e4e01327820158f5411ae0fe2e7fc7951d50072088851310024d91d8b5d5fb68284d74e259b9e71c5fad55d67e93f9983e5dbff265cb4de63512f88bc333b57db1896a16e44c1abaf8eab380b673abfc54b7b704ad9b4719bbc9b6ac544a9b5cd169fa2fa32b6b527505b3d2f2d517167a2b491568d98bd5dece8980e025637f42832a5e6b30a497df5fc1578ead3bb06f21659580e526b574ee93d18c99774ce67a095ddd5f0838b0a406d346ac82c3ccb653b160ba4dad379d368bec5013254aaa554abd865945b7c5d69c8aa32e5050ced22bea785f833d9c96bcdb4c3d05e55f03d8849d6d33fdc58b5f8ba0c2f605b59a5bd37542ca4a46e73ebfb11fd3803c5aa52405dd75248de714f9dfdb0344e66aba55c2e48fe5315b95e22225af0e821fce7f88cc018fbbda87f68564fb12d98931621dc3c9c55abf3c6a058bcfa07460ffc2a8c7af50dddb8c7826e9e46a5c113b1950d20c6410e33c961e5232e2988db55c472e1e46837fc64ba393c53fac500322795a6706871871595710acac1d98d57a29319fedc9bd49fe713f26a16a32b75800a1cdb21ac4016956219756f07da92e5a69f41de4f14d29574a7f7ddb4ad9fd327fbbd00c63c1c74732ac171559788239be33a98a48598702bae8eabf1a5b85a5e2c10226de009be35fa172dbe053909aecf53d767b597e3fa58b56010327f92bfddd6570fbdb6598946f4db92f95021e4823c9b303c3477909074bb4d7d2f663a9fe1d5e6320f83406a15ab06769cf5d63db0e592abe7db0b5d7d4f4ebe6f33c39a532cffcc7cf41d8b9e56f96da3ac32575da03a5ea1ae0f858bd6ffa36a503970fa3b052b5f0915307a39da25abe02c33a7e5532c841257cf9db1b57a66d3c0a02a1aa8cad461f4692318ae87e10806c29093c1a8fb6a77fb9ad08ae5c01e5bdfc15522756c8fee4123e24987efb2e7ce8cbafe2740847c93c7143cb57ea10bd653138b8ec2300fcdcfb727d53b13af5d0cb75f4600d27c929af76f1a9ba93389214b0a5db54b44ff1295f560436387cbfa0a8c539ad68cb2a06a87ba265ff3c266e739cc976ab997bb3cd8e9b8c32b3fa92ef7f880aa5e26f11b174d98813935da4f549505f700b622848867adc3875f25dfe7962f13282fff00c145e1df93e46bdca316df641b421d5c86145252163432f8b88c7b45a03eacc89bbbaa210f7ee081276b9327fc9991c2be02cced4a13c42f0fe06e926ae6cf3f01d1ec0dc8b55bce04f99cf3713381cd6b9f933b552fe5c25a970a1be264ae802ab75e0aaa1fa44cdf9d337155036b5f8402562a2488d1b1806fdeaabc6725cdf4811ad93e6c21e0bdce68c2b35c50e674290e0f6c91e409c3166b0a1d594f712c6bd6c023cfbaa9272f44208b85850fa88ba653d064244b83a38d89cd3c07fcd0d546dbd0aac09a4aab581720c69ee16b7009d385e569f05ab73124e8f9c82da0971a49d35b9f9aee815f6689b9c8a509baa2f451c0ecc8c083c6fddc424cf3866e5f21b062ccceee8bde67d12370c87b04c3d51ba654bf7569b20894656bfdf55532e8c200852f82390bbe173997a10d118ddfebbc492ec04e845bdafa0a942ac130d16a446775cde75abfbc8e9491323a8612e3ad2e7ae476a7fe21a0f23a8d0906d1fe13c3fbc7afce72afdf941a3f93ad323388374374e65c8666c6bf282e83f6bc4781304e77bac3a1bd18179ad976dca86aa29fad86b1ab108f25be00f5c99e848cff0fb4593f1fa589a065c5c991a7b598ff10670f8235e8726742da0900faa4708fe398613a8e1d1e960e32a52b4b6538a10875ed292c810b6570812d3443219ea7c37c42abc5547335dffbe3d455c03f2f18abeb933bc0b8557c29ed9227a15e6fbe2274a0e14e0baa7b39be19c87d59c7a59b4094e36609b6a483fbf41476a526f6cd6418c980109609ce918105d4d5607f2adbc703a48b08cdef9c32537569341aee3edb9e73f5636b5c129629ec507054eb59c530fa74242594ae12867e15534831eefb90fa9e7ecaedcc4ef26d75d32913d25a7fc898236aa04aa2fe5864272d3954754f40bee410a51ce203abfa57569d941373d35c7e8cce21a9435eee650f3fa6d61ab2557917e260b4ec6c794b5ea1816b25a9485756936b76b01980a2ce34453d35e4caedb0f62766a70644b9333f42f112e93ad29e99c027c06f705b37b37c20eebc2228a9f2c4df006242c6d86588f7c5c270e0f622bac84fa52989fbf7863aa26dd5d628df9a510efdc749dbd67c401542c05d2678802ecf010ee8db1b21fcbca883c03a736edc1bb9bed2a0a120ef63f29bd97fe9589c1f2c68c662675dfce9533ca6f2ca09d670fe26baed8fcc4082c9a72b558b2f5c1e0256839c219863ee2db4f7cb7eb1ff58cd37d1e1cfd3fad2624eb9175a5507a97c33894bc874d953dd79dcbf2f0ecc9089de83ff63547932c800702f82b612a39041b5c0a05558e96165374b21d1376f99696979b7437eb539133b9f4910c11e3f28d1135ce173f51e6bd2f14a96cdbdda18b28fff83044556d4b007a5fd924d0174c9f73ed789f8af672cee85c49577d1aaf9f8154f2a525dae98aae13e633be52c09255eed2ca01f63b717ba4287d1e104913844d48b31fb6f59ee9e175906bee453e3395819778be766eace0b80c185ab8bdf5950a5946ca4d57bcddecf6d95530454c6d7c94a60d9549d824ae34076478c54b46a0dbaf67c416effbea5aa2a548a14f5bf247ddd9e1b679c8091e43e799714afcb9ed5570301c7212d17a94d2607b7c2818d2283d02f53cf91bea550f946224e0511732258283814301be06185d13383fb53cfa21cdea7a98b89ea330e948503d929660f07bf6fb5f9296ab3594e6074cea9cc0fdac22b850b587b69f96ea91cf655db02bebbd5c4fa7dcfa3b8abbc3c2b9cc851ca9a5f44c53a10a30c0a4de1c4fdedfc5ca2327320800e8ce427d563bdedaf75ca76ba2f054812b6a96a3289813695707ba35b506c25acdcb3dac122f273ef4b38c50102abc1b1146a3ec824ecfb5fb86836ce5b9b2ba0729438b9447b979a52ae60d46553055c78a6bdd37c8b4a4945457988589f0c7515e40aca541ea2de02bbc878451d14be51c81194391f9353f91db87e2d2de86c6658c98a74a69da7774ef298fa9bfb25934a24357528523e0f3712d91527073c17e4a4426a53bc7668cacbcd8b1a54a002b766e2430415abd23031732ad191d56173425e3b75080e668003eef446922660c61b8e6d608d4ac32e077b5a85ff8a23ac89ddb1520a69bbe322eaa7bd415706f971bab7714bbc252441da1b1b895819df9ce3ced61ecbd82328ed8b2a8b1e98a393225e38b84c4a989c463f674a3d58e16fe2dbca405fd7f280af1b47867591258bc9d8fa0b1c57fd5fef8aacab0d292ddd4ddcb47b415e253046e69ac22182dfe828eb055bd6d6b04db20ed866849d185be1716731d2b24be44d16b47138d7d53ee696d6a007a15f5379e4f4f14a4f2fbe1383d6af5a179c8d1dfcb6fa775da87c0d6497a66611627e7f32b8643d92371290a640a6b26f69d7428d7d6ad34440736d9dca8b917c53bdd510c6cc03805635785b199364d9c19068f7a5e47d2c4ee0dde16f13cf8ca6e94c14bbb26def4d0df0f0d0ab6065a4516e352a218b2c0d9d2ed12a8187d0e9d730bdc4c618e4b65a1d5fdfb1741c7c3be16ffb483e7dc4a7f8cc378b3cca7533f41573a70fe875baf0f2e4788935d2c4cf7cb66fb3eb9e0b00054e6229ad42226ce911f38cab83d7d50371e6d4a6b2c7c7188d6138455eaa3f3c06750125d57820d27b18e163e0077cce7cae3ef4258291b6c42337bdbecdb5aaa2facf7537d79e5bab78755b8e059ed75bbdd1b4073d5e93cc8470f145c31c2fd66d42675d987144f81e02155fd6dca16d2ccdcaec2cfe8e64535159a3d9565c02c0352e6f077b6395dfe849e80144a3fcdaa532e91716155b68de6b9a2da80e543f11d1dddca1d389662c16a0a5a3430afd666e4bf12d05069f5acb022012d50d5b4b10da45c56a6d1291cee1e771a56a28b1bd69823e0f12bd52ee2d26e684a8a74bba86f846aa63d0def8f3b60cc7263aa2c0fe0c9bdd63af06c7f6d372105063dbb3b68e08af2bd12158c2e074e8b0f43b885041c6ec4cdb34d282e774ee31194a1f4469d4f384d6964ff9a60d73b5b8be104ac4dbdecdc7272c9699a148fa6432eef78c24859f1618e738f85a8b6df5555241a11c5e6a6333548a2ad51b5b4903e6d28dbbcef2e841787bf81ca4d097f5264dfb47a2f45d67735d7f30198f68bec989e899448a91534d26c01f207c4de2d9f6e1c2283094dc5a07149aa4c8ec5d03f9f6e872e6079128d04359f9825629827236b78a5d959a2c7bb12ebdb6d0faf5c94f936b8ea5a4d190b976af38dfc2b93880354fa3eb4e5779fcbd1538dae015ef3bba137392f60e5d6b22be484d3fcac93357cbb4e78af17865f24407fb29714aeb0596fa2eaf078102e008f34da5385ca11bd386d0da70771bca8e5f6d051d075657e237595e14713091c09cbe93f9effa0086335143b937b2ca800ccc7d61f79faed98c94e0d29aa5bf5012ffa6b6f7beffb119c8a940b262e2c1ee4dd515337d265779bda15885095ad445de627d6c2afa1a81526760ead6ed9483862a5c3b44c4707f10d76c730e5a6774e589ee6656d3da325c685b9faba467cdbda699ce459008fbad3c151b90db18817129a250439eb74a7574ffea393ec8215e6b48d447f58cd7ed17c0e16c5c37e76f345511e272863722791010f72b767f4889944b9738d90dfcd32246ede52a4e7e047d1bff375b428c6ba7e896a8ad9adc4f011067049779f8a591b98b2a8690a9adbf34fcca2db8c401d4dd274b13549f1e53a1c66f6f468098fdba6500730e0075426850fb08b035aec102b1ff967b0675a4534964b28f47921c9a99fa3a175e3b04f41ffad34b1b6f1b814bf9ccf2c9a38fbf39987013f3bdc3cf95976441e272def37e8e5488a71c48e8c76e808740bdc8752c8ad68044442d37e761fe196c66545250bdb54102fbb3bbf9017c2f4269463d29a5af0e6c49ac2bee252ff607b14c114a8220545f67401f5fc078c27d1adb69b9960df8b4979d78e82d22a0a469ea41f9f1477b5412071f1a257b3480a11439f515f25490902aa1c92b24fc4ccca0abd0c8560c2a5212a0d8f5dc27ea2e63d659cd13a7c1bf31283825777d851ec3d5e3d96487e3d636ee36f7de65f9ed8eeb91e6d18614d67c7b7231d714e4ce0b9ada5b12033651db77b41653702947e4946c5da8bc132dbb687fc0d2027aaf4dc3fa00a9ab5e17f09cfbe295cd7387dc01be79e28e0ed4c63a28cd278fa3944ea507c9abe8194c5ecb354e441bebb903013c2a12995a4b3f7961b3cf2ec7c8dd3f6e86c071ec0af4fe531b428484dd38cf3246d6c3f42242c68b29f761e092538397ac3a67a6cae1d8606f3352b923f8f878e830188f5d1164a005a2345e80e4f563c3193f2a9ea4bf4ae897c3f46d07bce5b8e7242d848f4e094ce6e57352d793eea6153434c0baddeac76adad4960f1ded11dd4956a6c5d3dc3912c5d1b023158c625057128a9cadf5d0c66c062cddebd1c7da5be466b1d8995ef8cec7e1cf6aade0d7debfd2203728d5abfb984692bb7047fa72106dc37cd34521f5ba63a4085146301d15ee8a5dbea90507eae3063b900303943ee43888e25ae37cc2c4a24abf29ed30293554b26e93b3cfd8a4c3730535904d1e6cd19818c852096dc28f0644a8d78679f9c520ce274da1373636334e16e43de4dcf7fa65400f6c30de7a36a560efa270b28e3f208d882f112130811f984634c1433d7b95d998a29c7497163cacf77f528edb875c6adfbf41ac19c8e1ea41ac91d28852a695ee77604996c694dcd1760d1ffd10d19e9b5d34a53679e5eddae7711fd5f4d7ed59b53a8228565eae3666bc10bd91fff85824bfd957d83300fdb601b5dc0dc54e587b97068066e6dac40060da4a031a1f0ea20256d9fdaae8665076efb2a83ec4e488120c63f4c8dbb0d864afa3f6e274ab0a3458acde1bb8ef204b9fe677969339d9828f35892addd58ab150426311216fb35af7cceff09376df7da8e68e54ae61cf207f53619c0d1852e631fd9c4ae517600f9319c88ab96e650771e92100f736b839fb8f97a6f42c759b7e729fe27f006f211113d47d6d49a2b6f04ae612d64ccc14d24d984f34b626c07ab4407df33855899946fe4e224c764b2c10c9fdd3dfa25bb09300413d6a2b276a1ca043d6d65dc304722bf81a72fc6d73aa37fb126f9117796edc0d70a0fafedb33525621c2d0f54b2d6aad70d90379381d8c39e7456b5f64d47db9fe4632b633f34b4f411be504b79f1b1ccb899771195d992210f78b1bac864f2ba54478b12ce6c1bd5ac1eef2f091a57363ef574d8b7f643a016a07a9c4e88667d80115668f4c58eaa7d6ff48fc7e373ed4a45602758b514ebc5a9e9a569dfcb777ab547b33383e264c142571fa9cf89dd5c4abea71aa8cd2e47774cd657a5b0a3004d682dd5580b816f30f23531920a057d78edc86e2697e3d8b7779a62324b941be9d89c67a05233403952fd83c51c6fcc84b780a494fb23511b971af936007745b08ec37b357295d12c8abdc9beaea246bdcf22b84ec081bd2a8bf54e96bc6f427966eb1023392c799701e0ba175cbfe0425385f1f5b969642d2b54b28e32310645c05ae89f37625d24c361cea5adfae8277d6d94309</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
   </entry>
   <entry>
     <title>java3</title>
@@ -1660,6 +1637,29 @@ session是服务器为客户端创建的一个用来维护状态的对象
         <tag>java常用类</tag>
         <tag>正则表达式</tag>
         <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java4</title>
+    <url>/2021/08/05/java4/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="65e8e1a9d9946d3b0665a7622baf6e050a7e739876812c5bfd4a19ef65a346f3">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ff5ecb57b14a80a719446b3c325a8f83451828d8c2576da46f81da9421d4b94482ab8f2f4a49332ecde381519f11a40a7ba3ac5706d9243ed30b6ec56fc9bae1a460651b908fbc61386640402f7abe857b27dbc1715b921ef061a15bad445d70647898b22b6180218f07cd408282728a4d0146a171308ecc43ae082de61e1d9a45a034aded5b3e8d7800c69fce3ecc08b92caabf0ec8f7476d950513c6a88107fd3ef7a27a9e8433549f65bd0dd72bb725c67c9dd4cce12edf17e9f2b1438d3b1f162ee1e425f2b884e8dafb56101fb66b92e116a76748a88c13993dfad69ece75d424134c761e0ac6a0e679d4665b4394965a84132dd0160f0e8cf112028bbbe4d3246d2070597fa3039d4ca334460a6e502ad4c1b07c24dd3e3d3efbfdfb5fec02f8fd4a4b1c7fac4f4c2235e177dda91eb8df608e964bec16bb8233881bf776f3c4abced30b5b6927c33ad3ab4a82e403284c42450990f8c75d9f6e7023ac1d7070d2cdf6eebf1cf5a9d0920b6a6b2b7af92add65b92d211faa52a74c6e0eabe19f95fe4029d3430ed176ec5c12532e9df3c3d30810087409e0741fef38e64bcecff5cc0310e2b6c65a8431e5c765ff513c829a4f58ca9e71af348ca25bf765039040d1ae222aa063a361b2546b16f72d8f16e0c685f1c7b21de8e414b2105f430583ef19976e325c41cebbddfc2f82e3df9696bd38525eb9eb4f199c718dfc0b28e25e947da2e8e696f4b4a2a231e6b3733db2e2d8b11b96e829f55e9435a29d792c3d56fbc7b80bed1205688795bef77c50f682c52e1980a09deb87826da1b5cd6483be454ef73b3e492ea3f787f27f81e8985e77166523f63fcce683f56dab47dae8627dcb7364ab4bc785cbb532a9308d81c4d1bd4c44a6a5da55ac920f1661d06dd9bbdafa7db5256c29d4e719c511da09a2e53c86c8468a565a80d741e14743157225515fe9359f7e79132ef65e18fb677c7dd713f76ecd8c7f8d4fb3a1fd2d1d40ce96cce7679022ec29ca74e8e5a9ba19248872febe45629ffe3d8b570efdd69d45b45c58f4dc6153aa0f92abbbef4bac54b447f3478d729428c18b68465feeaf5f5450b60798a89fcdca981ccd9d4236b32b2f1a6e5890646adcd9b32abb2feefd46aefd9d13444f7b2eb66105a9ee261cf186e53affa46128beb606eccd9950e92f36dae189118043193fa15bac6aaef9dbef0044222f39f043dc46628ae4a4bd23ed1ff9e1ccf1e8711dc6ac8c17dd41eb12e08959cd93a765bb4a01d8e70b4eed81a17273ea36497f8fd3b8fca7220df42e32e931d7d31d9f8f7bdf99782b44be1d11df0be6737c27594cc2cbfd288629483e6ebad2cb0f659459e1be49c257a618593b1402febb9b681954cfd36b4d394a47e0766dbc57a89eb67c3fffbe6ae0c5cc9309668d03a72bacb88376a8c1a6c26b20c42b1099e07b0722e7898232dd83f50061e88680fd6501a4cda0a343c2371d71ef4eb043e43cbb35b17328e2109d689aa807c2248f8feb2611ba0d30dc13aff043d9b5f46be68a3d54e4ccb6444b7b6aace2218b8866a5d9626c878985888c2f9eac1d954e19139ef565fdc6a0248b38e4969cf6c2fa435dd3dec10d284af8103d4d88351f4d554c48277ec45d2d16dbfcf3ace748a9a0374aa1a9a55100618d4b5d49f37a19443cb89cfacffd232d273cd4c83b167b3e0e8d19cfd0f1529e32a2e9ac13bbd5d1c27d821f033fc7dacecf8a7ab64df0ddceb2c13309012cc06eec36ffab588a62d5d7aaf0f761511022c780db64f768ff7275c80b2195b4efb3cdb6c46d3c2ca495bee2ec71542a5da5742ecee5fa18314b65f5181449509e27cf29e6c68914616c944b86bedf354b61d5f8759ba33db7a14a6da2e3827181ba8e90609ccbb471a7882122b68ef985b3a7f82fff805532e767be410d52be539a057c8c86e540960ed4146d1bde52b91842b05424d4d30ac20e23817400e0e5e770becf3bda2a6ce746f689c32240a3d5f4be344f54f5c9482a334689bec86ae84174054db9ef96cc617a3b783bc61c7d6f2d913e9630480f78dfaacc5a1b12f3c26df474723d69b203c7d696791c3db8a0bfba8a821e4db268340eb7dc2fa83de3cc1a6e35aaf666d1061a6c76c935864224d5832b9ccbb817a934eeee7a5117cf8912fd0e9d93f0d6dab12a07cf19681d7a48d8e9c4efb994d2466a212483a00a41f8f7cdae617887d2122de1661d7dfc6fb1d09737914f760c2f7060a90211c2e439b11006210fc614dcbc4aed49bf38fdbce8f019afd52cf1d4a9bcfa401ff0b5601754f6e8f7a163d0a84c870070e15804e4a6b3692a5507929c85b4c3ca735e08675656dff0412322ec9646b3dc2d3e720071b6ae00966d1508c584a739070bc65daa42a846dd52af3756ff5aefc500249318c3ebe114b813cab0365e780bf61e2407a60a7d7a04bc6ee71ad67d01cb3b8d3c72bbf1dd08d7c060af958797bfad3cdd112fe1a830b7dc3b5770c300b947ccc3afbd39e99224e1e673296c87cf5f492bacba05fd3db7755c514bea4260196e95644eaa1055f902ed3c16150a73fb45d2baa27e85d6693fed1e79f6a0488343790d335b411be484218e990ee1dc67c560d893cf195c9c975969e77c05fac116286984c53181de13566f48740d49b06b4661591a13a6d6f681367e1dcc1a44bde720e1dbe233b93bd79535d349f18f619668441158dfc6124ae69510737cef1de34aa7931f9ed9b95a3380e6f984e5351b9156ac1d935467a55bb57c1827d2026ca11603b97583a3ddbc88acfbd878ceff32995303e26927f2ee2e8eaf6ee892e6c8e3494f408e56de420afb4a4abc1814708f36b747739cf37fc2a6a55543fe0804ddee6bf141128ebad7b8d686b838ce6e98bc0d7cacf7af4fefa3517aadfcf87ef71d69e327e4b55962826f48b0e6c70fd14888aa109cd1ebb6ee38d7bc593858f0035f7092b30950404a876894580d05fa9ca17d803abe7699ee71e84fac54cf634fc5bf9fd5e94ad4452ec01ecec4d0ec24477ffc664d1605bd1e6ac14a2508e91c8610663a61fa23134bf6deae6f2506a54bc9a6e41b7f787426ef4efe521177a4693964c8df3df1a2322efdef2552bf78b8c686ad9394b24a3eb0dc9dfb5a0d6ef10cad2f0d2229aa9ca07482ce68d7aad850b97466c74a60dc01e1a791255e772c8b1dda6feed522adf3cbd40756e5a86e3566387eb6b5c00fcb4ee66afd5141b22806ed27b1612adb4e1f59bb457e34051e60f284f189367dac6f32fa68869a989edf3a0c6bbabde7d0a509d6651e7545e801098b1f64f463c0c72b61cda7de0e5723b9814b2c1ab07f4f562173656cefaf2d450f46ba6ccadae602f0bf041a30739fe0594940ee96903fe97d707000f92cf494d3b08612653354e5d557d92cdf474833dcdb9f4d0cc5e3e8e204eb970b1485a3d84e36c2a6aace6b39a0e8cbc7986f7a2de0749f217d46944c897ea9af7ea1496266a948c1546663435d7b3b1f8241c3726ea0e6551ee665c66616d22df580955691ec5d309416c7e2f3e8845dafae81556aa71b616c20d52b4a9bfefc51b585aab6ee5ac5c531b70140fee8327a9afb3237709e0d8e699881a162a19a2f314de794f86336679c65b96d37138520de36dd71a4205d8d99ed957b0b3e895c1faef35032ad48861e3c2fd8ab5c61923bb8a318ff073ab4580b8c041a4f2e86d158236829ae70891fd63d7a0080d890737e72f9055721c75c0fe43032b6401162686b712d9cec48ad3c1646808441dfffe15ea8caa2a9332a406c171550575242a22fe103b5811baa96526184bc0a68568cf292588f44d8e87efb8eaab1a463fa8a8d2e8f896f4d38e91a9e898fa0d1e839c110d8c16d0260b6c88dab285e6c6fc670f8d73dde21e85a56bc38e2c4803ac2e18839e88e2cc0aba2968ea7c6be77cce4efa38b8e67e6e2fc7c4d465c8b787b2c1991be4da2b63f238ee0ecdee672584ae05520703b5d050fc64f7fd1fe95d27715a0518695a77a76a2190d162e464bfe32be712c0296fcd6fd56f753262d62ff24d9e4319bd536e33ccc0f6c39c5b1196b6271f022e0521c3b983148ee50b985a85289077e452e053f212c4934315ee9fb250ece54f229aa572db8e724d9d8ab5248159e7939531ce23e9fb62e0a1b180e9505b893c746b68e8e3b2d1b238c8f329292725ce23d8de7006b81901aee12c784442c539175600a87837e1007c42ce89a82e0175fe2ac00970911ae320e9807de3dfbd3f919d9fbb0c2fd1a72fd3f26e58e61b6d89d67c8d536ae402a6dcf43e6e6a5a13af5b39558fba975e49f13bb1aef720635902928c920049796e939b0590482632f78400dae3d4b85f930d31c564dae3561e20ee1521977c48a22f7d593d8cfeaeeb4cee5491afcb21c919f15e9f52bf89e249a9c174f6826fe6015679fc5a2bc8a24f0d5959b4a67a31d608deae3901d7458d12ae74f3a485befe73345682bbd4df4330f18b34acb0f69fb128ade9536c8448cd5ce7fbf4def71b15d0e8174c36656c4e40540d05b2729496b76182c21996b58279f2aaa3d5d6cbc634370541ee3fd905b7923c99cc46a450c78d80e704466fb63574a30b98c8cef51ce2f7dfc9349b4a572e53cf6013f51520469d4c719e640c6743579b1a5177d3dfbc90bc92e16322035e8e7cd1a9e205b47d64fe1448edb706a910dd07432b1b201fcc706053d8dabd520cfd9dde9c8fee646844820224b099323c7283d854caebc4f7a4d992c4d4c089ae6c12eff21a477271b472ede7cb2808c128d50091ff7b1a41a05efbc3819497450c9687ba4b41bd49bb3fb1efda89f0729624fffa928e8eb50abc21355f6f2441591ff16d69ec496e70f575803f0c02b1d6f53f1491e0adf4999270e68092cc7248c17e36ba3db4e82878d4c6eb26e2732085d6fc35ae0d3fa79ca8607bb06bfd1717f0119d29d774737b0a484ec9e37ddadcb234a5fb90a377d0ecb487038bed6f73cd27df195a86d1ce8264766</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>抽象类</tag>
+        <tag>接口</tag>
       </tags>
   </entry>
   <entry>
@@ -1732,6 +1732,22 @@ session是服务器为客户端创建的一个用来维护状态的对象
       </tags>
   </entry>
   <entry>
+    <title>java编写快捷方式</title>
+    <url>/2021/08/17/java%E7%BC%96%E5%86%99%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="c26a6fe624da38808e2e5ed7659d174163d48bf0efb82c392d69d4a8ba6bf8fd">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ff1571a610907cedd1accc023c7f2311ca278598ee12a9b9ca14c62714ec7628d8aeeec9c199d1cecf37737984ba026619f74d72f00a44b848c623dc12406b88e7c7dad09633b00a8a6c756a9cc7432ac8e1ace13874c3282b95e4f5f8ad13f17ac3146213dfae8c8bdccf47a6d78999a8f041b22fb760d63c269ede03a21048b09fd4721258d77d8b983405fcb203072c4606fd2f03f6b10da2384ae7462d8d4b54815379c9dff322babe0de73d84199da237aeeb546b4aa731aa36dbfd8581aa15d18b7bc0ad1c5c549b401795acd5a06f66620254919f162da3aa3a56bf8cb210494985aae2343b744fff98298209a0e944e56f57ce70bcf6a3992632b711c25a59366fac835352c878e37a518550a510f6c01559085217a7b4e33dbb873712b8f23cb67291c17e9bc5bee7199165e878f63529ecbccaa39e8a3a4ddf5164e914746b416875f42b23ad64591de7d817de3588cecfb49d88fec58e2d9bf82cd22cf9227657f11e86830dfdf141e3529224ee2c856136d7f485dc6038f7f835ebd20e554f0c33582e7298a37c52e61141f5447e2fbbcc628da1320873f23ba37bf56f2d7f0b5ebc010de6a57c08423c217d9c5d3900685dd7a79bdcb40c2987982338940269794ac0f250348565ad1a06b32317dcdf5886d347b288a15aff33c136b097e4b1cb169134a98950e0f84af064e3640db7ebbcb061fe90f14f3f4d31a752f17ab5495af8e364f26b359da68fead0f50edb915138991491620876335e8c1bad9305379fd279bab7e5489fd332dc235872d5097d0498e102bff9ba20306148c9756deb2cd7dead8d048b7c88f4eceb88138f57f94a34e94cace39d7326196157d777b893fa6ebf470dd21956a40904dfe784b970e0b75f54dfed18f9947860d2a1406a06c297efc79c4bf43a8c1741d1f6a28ac0f02b63711b5b63dbd12582cd9098a2624c4beaae374930bf7d39b26eac7b1adf5b3144c1083df5e7f082115eb5fc5d1a22a7a811aaaefe318281b7fd2c405679afd64ad2b8bf3afdad142812bde6ca134185b027f97d754168</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+  </entry>
+  <entry>
     <title>java9</title>
     <url>/2021/08/16/java9/</url>
     <content><![CDATA[]]></content>
@@ -1751,22 +1767,6 @@ session是服务器为客户端创建的一个用来维护状态的对象
       <tags>
         <tag>狗血吐槽</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>java编写快捷方式</title>
-    <url>/2021/08/17/java%E7%BC%96%E5%86%99%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="02765a2f6e9a2ab565a07e3f2a52b89a6aee4645d811f1ec10ece26fae203e1a">9d8b959681eab972fc20f2fbdc59450cf70285c9209982251bc1b5dba29d30ff1571a610907cedd1accc023c7f2311ca278598ee12a9b9ca14c62714ec7628d8aeeec9c199d1cecf37737984ba026619f74d72f00a44b848c623dc12406b88e7c7dad09633b00a8a6c756a9cc7432ac8e1ace13874c3282b95e4f5f8ad13f17ac3146213dfae8c8bdccf47a6d78999a8f041b22fb760d63c269ede03a21048b09fd4721258d77d8b983405fcb203072c4606fd2f03f6b10da2384ae7462d8d4b54815379c9dff322babe0de73d84199da237aeeb546b4aa731aa36dbfd8581aa15d18b7bc0ad1c5c549b401795acd5a06f66620254919f162da3aa3a56bf8cb210494985aae2343b744fff98298209a0e944e56f57ce70bcf6a3992632b711c25a59366fac835352c878e37a518550a510f6c01559085217a7b4e33dbb873712b8f23cb67291c17e9bc5bee7199165e878f63529ecbccaa39e8a3a4ddf5164e914746b416875f42b23ad64591de7d817de3588cecfb49d88fec58e2d9bf82cd22cf9227657f11e86830dfdf141e3529224ee2c856136d7f485dc6038f7f835ebd20e554f0c33582e7298a37c52e61141f5447e2fbbcc628da1320873f23ba37bf56f2d7f0b5ebc010de6a57c08423c217d9c5d3900685dd7a79bdcb40c2987982338940269794ac0f250348565ad1a06b32317dcdf5886d347b288a15aff33c136b097e4b1cb169134a98950e0f84af064e3640db7ebbcb061fe90f14f3f4d31a752f17ab5495af8e364f26b359da68fead0f50edb915138991491620876335e8c1bad9305379fd279bab7e5489fd332dc235872d5097d0498e102bff9ba20306148c9756deb2cd7dead8d048b7c88f420f2995996e73ec7b6f8282b338dac44</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">你好这个课程的教学内容不允许外传，请见谅</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
   <entry>
     <title>搭建博客教程</title>
@@ -1936,13 +1936,61 @@ ok完结
 <li>   参数：替换后会自动添加单引号</li>
 </ol>
 <p>SQL语句中包含的参数值是传递过来的，在SQL语句中我们会通过#{}占位符进行占位，在SQL语句真正执行时，再将传递过来的值替换SQL语句中的占位符<br>其实#{}就是JDBC中的？,因此为了安全考虑，在执行时，会对传递过来的字符串和日期类型的值进行转义处理</p>
-<h2 id="占位符-1"><a href="#占位符-1" class="headerlink" title="${}占位符"></a>${}占位符</h2><p> 是SQL片段（字符串）进行占位，将传过来的SQL片段直接拼接在${}占位符所在的位置，不会进行任何转义，（由于是直接讲参数拼接在SQL语句中，因此可能会引发SQL注入攻击问题）<br>②    需要注意：使用${}占位符为SQL语句片段占位时，即使一个占位符，也需要传一个参数，需要将参数先封装再传递<br>③    如果在传递的时候不是要给参数值，而是一个SQL片段会怎么样？</p>
+<h2 id="占位符-1"><a href="#占位符-1" class="headerlink" title="${}占位符"></a>${}占位符</h2><p> 1.是SQL片段（字符串）进行占位，将传过来的SQL片段直接拼接在${}占位符所在的位置，不会进行任何转义，（由于是直接讲参数拼接在SQL语句中，因此可能会引发SQL注入攻击问题）<br> 2.需要注意：使用${}占位符为SQL语句片段占位时，即使一个占位符，也需要传一个参数，需要将参数先封装再传递<br> 3.如果在传递的时候不是要给参数值，而是一个SQL片段会怎么样？</p>
 <ol>
 <li>   例如在查询的时候，想动态传递查询的列<br>a.    Select #{<strong><strong>} from emp;<br>b.    此时传递过来的应该是一个SQL片段，不同于参数值，如果此时还用#{},也会像上面一样被转义处理 select ‘id,name,job’ from emp。这就不是我们希望看到的<br>c.    如果不想让传过来的SQL片段被转义处理，而是直接拼接在SQL语句中，那么这里可以使用${}，比如：select ${</strong></strong>} from emp, 拼接之后就是 select id,name,job from emp</li>
 <li>   注意：在传递${}对应的值时，即使只有一个参数，也需要将值存储map中</li>
-<li>   大多数情况下还是使用#{}占位符，而${}多用途SQL片段进行占位<br>8、Mapper接口开发<br>(1)    以上是通过SqlSession对象调用方法进行增删改查操作，方法中需要闯入的第一个参数是一个字符串，该值对应的内容就是 namespace+id，通过这种方式，找到Mapper文件映射的SQL语句并执行<br>(2)    这种方式由于传入的是字符串，很容易发生字符串拼写错误，且编译时，不会提示<br>(3)    所以才有这种跟简单的方式，也是企业中最常用的方式，使用mapper接口开发<br>(4)    注意：<br>①    创建一个接口，接口的全限定类名和mapper文件的namespace值要相同<br>②    Mapper文件每条要执行的sql语句，在接口中要添加一个对应的方法，并且接口中的方法名和SQL标签的id值要相同<br>③    Mapper接口方法接受的参数类型，和mapper.xml中定义的sql的接受的参数类型要相同<br>④    接口方法的返回值类型和SQL标签上的resultType即返回值类型相同（如果方法返回值是集合，resultType只需要制定集合中的泛型）<br>9、如何进行Mapper接口开发<br>10、动态SQL<br>(1)    让SQL语句更灵活<br>(2)    常见的标签<br>①    SQL标签：用来提取SQL片段<br>②    Include标签：应用制定的SQL片段<br>③    If标签：用来做判断<br>④    Where标签：用来标识过滤条件<br>⑤    Set标签：用来在update语句中设置新的值<br>⑥    Foreach标签：用来完成循环结构</li>
+<li>   大多数情况下还是使用#{}占位符，而${}多用途SQL片段进行占位<h1 id="Mapper接口开发"><a href="#Mapper接口开发" class="headerlink" title="Mapper接口开发"></a>Mapper接口开发</h1>(1)    以上是通过SqlSession对象调用方法进行增删改查操作，方法中需要传入的第一个参数是一个字符串，该值对应的内容就是 namespace.id，通过这种方式，找到Mapper文件映射的SQL语句并执行<br>(2)    这种方式由于传入的是字符串，很容易发生字符串拼写错误，且编译时，不会提示<br>(3)    所以才有种更简单的方式，也是企业中最常用的方式，使用mapper接口开发<br>(4)    注意：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 创建一个接口，接口的全限定类名和mapper文件的namespace值要相同</span><br><span class="line">2. Mapper文件每条要执行的sql语句，在接口中要添加一个对应的方法，并且接口中的方法名和SQL标签的id值要相同</span><br><span class="line">3. Mapper接口方法接受的参数类型，和mapper.xml中定义的sql的接受的参数类型要相同</span><br><span class="line">4. 接口方法的返回值类型和SQL标签上的resultType即返回值类型相同（如果方法返回值是集合，resultType只需要制定集合中的泛型）</span><br></pre></td></tr></table></figure>
+<h1 id="Mapper接口开发的程序"><a href="#Mapper接口开发的程序" class="headerlink" title="Mapper接口开发的程序"></a>Mapper接口开发的程序</h1></li>
 </ol>
-]]></content>
+<details>
+<summary>EmpMapper</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!--xml声明--&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;!--2.3.4xml约束--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  不同Mapper文件的namespace值应该保证唯一</span><br><span class="line">  在程序中通过[ namespace + id ]定位到要执行哪一条SQL语句</span><br><span class="line"> --&gt;</span><br><span class="line">&lt;mapper namespace=&quot;cn.itpc.dao.EmpMapper&quot;&gt;</span><br><span class="line">    &lt;!--    namespace是名称组件不能重复--&gt;</span><br><span class="line">    &lt;!--  通过select，insert，update，delete标签声明要执行的SQL  --&gt;</span><br><span class="line">    &lt;!--   查询emp表中所有员工信息</span><br><span class="line">           resultType指定查询的结果将会封装到什么类型</span><br><span class="line">           即使最终返回的结果是集合，resultType也只需要知道你给结合中的泛型即可--&gt;</span><br><span class="line"> &lt;select id=&quot;findById&quot; resultType=&quot;cn.itpc.pojo.Emp&quot;&gt;</span><br><span class="line">     select * from emp where id=#&#123;id&#125;</span><br><span class="line"> &lt;/select&gt;</span><br><span class="line">    &lt;select id=&quot;findAll&quot; resultType=&quot;cn.itpc.pojo.Emp&quot;&gt;</span><br><span class="line">        select *</span><br><span class="line">        from emp;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">    &lt;update id=&quot;Insert&quot;&gt;</span><br><span class="line">        insert into emp values (13,&quot;米津玄师&quot;,&quot;歌手&quot;,5000)</span><br><span class="line">    &lt;/update&gt;</span><br><span class="line"></span><br><span class="line">    &lt;update id=&quot;delete&quot;&gt;</span><br><span class="line">        delete from emp where id=10</span><br><span class="line">    &lt;/update&gt;</span><br><span class="line"></span><br><span class="line">    &lt;update id=&quot;update&quot;&gt;</span><br><span class="line">        update emp set job=&quot;商人&quot;,salary=500000 where name =&quot;马云&quot;</span><br><span class="line">    &lt;/update&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+<details>
+<summary>EmpMapper</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.itpc.dao;</span><br><span class="line"></span><br><span class="line">import cn.itpc.pojo.Emp;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public interface EmpMapper &#123;</span><br><span class="line">//    根据id查查询员工信息</span><br><span class="line">    public Emp findById(Integer id);</span><br><span class="line"></span><br><span class="line">    public List&lt;Emp&gt; findAll();</span><br><span class="line"></span><br><span class="line">    public void Insert();</span><br><span class="line"></span><br><span class="line">    public  void delete();</span><br><span class="line"></span><br><span class="line">    public void update();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+<details>
+<summary>TestMyBatisInf</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class TestMyBatisInf &#123;</span><br><span class="line">    @Test</span><br><span class="line">//    根据id查询数据</span><br><span class="line">    public void testFindById() throws IOException &#123;</span><br><span class="line">        InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">        SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">        SqlSession session = fac.openSession();</span><br><span class="line">//        获取mapper接口对象</span><br><span class="line">        EmpMapper mapper=session.getMapper(EmpMapper.class);</span><br><span class="line">//    调用接口对象的方法进行查询</span><br><span class="line">        Emp e=mapper.findById(2);</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">//    查询全部数据</span><br><span class="line">    public void testFindAll() throws IOException &#123;</span><br><span class="line">        InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">        SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">        SqlSession session = fac.openSession();</span><br><span class="line">        EmpMapper mapper=session.getMapper(EmpMapper.class);</span><br><span class="line">        List&lt;Emp&gt; list=mapper.findAll();</span><br><span class="line">        for (Emp e:list)&#123;</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">//    新增数据</span><br><span class="line">    public void testUpdate() throws IOException &#123;</span><br><span class="line">        InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">        SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">        SqlSession session = fac.openSession();</span><br><span class="line">        EmpMapper mapper=session.getMapper(EmpMapper.class);</span><br><span class="line">        mapper.Insert();</span><br><span class="line">        session.commit();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">//    删除数据</span><br><span class="line">    public void testDelete()throws IOException &#123;</span><br><span class="line">        InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">        SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">        SqlSession session = fac.openSession();</span><br><span class="line">        EmpMapper mapper=session.getMapper(EmpMapper.class);</span><br><span class="line">        mapper.delete();</span><br><span class="line">        session.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">//更改数据</span><br><span class="line">    public void testUpdate2()throws IOException &#123;</span><br><span class="line">    InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">    SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">    SqlSession session = fac.openSession();</span><br><span class="line">    EmpMapper mapper = session.getMapper(EmpMapper.class);</span><br><span class="line">    mapper.update();</span><br><span class="line">    session.commit();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+</details>
+# 动态SQL实现
+(1)    让SQL语句更灵活
+(2)    常见的标签
+    SQL标签：用来提取SQL片段
+    Include标签：应用制定的SQL片段
+    If标签：用来做判断
+    Where标签：用来标识过滤条件
+    Set标签：用来在update语句中设置新的值
+    Foreach标签：用来完成循环结构
+
+<ul>
+<li>动态SQL实现代码（飞完整）</li>
+<li>实现了两个功能</li>
+</ul>
+<details>
+<summary>EmpMapper2.xml</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">   &lt;!--动态SQL    --&gt;</span><br><span class="line">    &lt;!--    1、动态SQL标签，用来提取相同的SQL--&gt;</span><br><span class="line">    &lt;sql id=&quot;cols&quot;&gt;</span><br><span class="line">        id,name,job,salary</span><br><span class="line">    &lt;/sql&gt;</span><br><span class="line">    &lt;select id=&quot;findAll2&quot; resultType=&quot;cn.itpc.pojo.Emp&quot;&gt;</span><br><span class="line">        select</span><br><span class="line">-- 引用指定的SQL片段</span><br><span class="line">        &lt;include refid=&quot;cols&quot;/&gt;</span><br><span class="line">from emp</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--    where标签--&gt;</span><br><span class="line">&lt;!--按照name标准--&gt;</span><br><span class="line">    &lt;select id=&quot;findByName&quot; resultType=&quot;cn.itpc.pojo.Emp&quot;&gt;</span><br><span class="line">        select</span><br><span class="line">&lt;include refid=&quot;cols&quot;/&gt;</span><br><span class="line">from emp</span><br><span class="line">&lt;if test=&quot;_parameter!=null&quot;&gt;-- if标签用来做判断，满足条件才执行SQL，test属性用来写判断条件</span><br><span class="line">    &lt;where&gt;-- where 标签</span><br><span class="line">        name =#&#123;name&#125;</span><br><span class="line">    &lt;/where&gt;</span><br><span class="line">&lt;/if&gt;</span><br><span class="line">&lt;!--或是这样写</span><br><span class="line">&lt;where&gt;</span><br><span class="line">    &lt;if test=&quot;name!=null&quot;&gt;</span><br><span class="line">        name=#&#123;name&#125;</span><br><span class="line">    &lt;/if&gt;</span><br><span class="line">&lt;/where&gt;</span><br><span class="line">--&gt;</span><br><span class="line">    &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+<details>
+<summary>EmpMapper2.java</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public List&lt;Emp&gt; findAll2();//查询全部数据</span><br><span class="line"></span><br><span class="line">public Emp findByName(String name);//根据名字查询数据</span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+<details>
+<summary>MyBatisInf</summary>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Test</span><br><span class="line">    public void findAll2() throws IOException &#123;</span><br><span class="line">    InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">    SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">    SqlSession session = fac.openSession();</span><br><span class="line">    EmpMapper mapper = session.getMapper(EmpMapper.class);</span><br><span class="line">    List&lt;Emp&gt; list=mapper.findAll2();</span><br><span class="line">    for (Emp e:list)&#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">    public void findByName() throws IOException &#123;</span><br><span class="line">    InputStream in = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">    SqlSessionFactory fac = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">    SqlSession session = fac.openSession();</span><br><span class="line">    EmpMapper mapper = session.getMapper(EmpMapper.class);</span><br><span class="line">    Emp e=mapper.findByName(&quot;张飞&quot;);</span><br><span class="line">    System.out.println(e);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</details>]]></content>
       <categories>
         <category>java进阶课程</category>
       </categories>
