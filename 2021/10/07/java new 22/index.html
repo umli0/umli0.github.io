@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="SpringBoot|">
+<meta property="og:type" content="article">
+<meta property="og:title" content="22-SpringBoot">
+<meta property="og:url" content="https://umli0.github.io/2021/10/07/java%20new%2022/index.html">
+<meta property="og:site_name" content="黒猫的博客">
+<meta property="og:description" content="SpringBoot|">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/25b9623f61144da09b5bd5306a7ab0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4b7a852796d04d18825cb3e698b9e1f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d3cfd3368a604861ab3c59d1f2c0fea5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a3a45771e7954b07b33543a6a0f249c7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3a29bae14d2141b9862b09fda7f3fc16.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7b27ff6155d04a64a0d921fb407d1fc0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1940daccbb844b969386b4d5769124f7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/03504df3bb5a4ba4adeb7389f7d7f416.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/49865bcf832846df88d622e892cf00fb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c7e674996ef64d9786b68e151fd897a7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3907d2d72d584916988%E2%91%A3%E6%9D%A1%E4%BB%B6%E6%9E%84%E9%80%A0%E5%99%A8-orderByef2e970dea1e2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6d40b3ffa7214755bda0baafffc5fd45.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/94275de091854eec8008fb86013f940e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bfdf848a0742464ab93d20cfcdb1d7c2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2021-10-07T03:11:11.000Z">
+<meta property="article:modified_time" content="2021-10-11T15:44:14.225Z">
+<meta property="article:author" content="黒猫">
+<meta property="article:tag" content="SpringBoot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/25b9623f61144da09b5bd5306a7ab0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+
+<link rel="canonical" href="https://umli0.github.io/2021/10/07/java%20new%2022/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>22-SpringBoot | 黒猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">黒猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2021/10/07/java%20new%2022/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpeg">
+      <meta itemprop="name" content="黒猫">
+      <meta itemprop="description" content="活在当下 为所当为 顺其自然">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          22-SpringBoot
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-07 11:11:11" itemprop="dateCreated datePublished" datetime="2021-10-07T11:11:11+08:00">2021-10-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-11 23:44:14" itemprop="dateModified" datetime="2021-10-11T23:44:14+08:00">2021-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">java进阶课程</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">SpringBoot|</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="创建SpringBoot项目"><a href="#创建SpringBoot项目" class="headerlink" title="创建SpringBoot项目"></a>创建SpringBoot项目</h1><h2 id="根据插件新建项目"><a href="#根据插件新建项目" class="headerlink" title="根据插件新建项目"></a>根据插件新建项目</h2><p><img src="https://img-blog.csdnimg.cn/25b9623f61144da09b5bd5306a7ab0bc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/4b7a852796d04d18825cb3e698b9e1f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<hr>
+<h1 id="创建项目后，创建java文件报错"><a href="#创建项目后，创建java文件报错" class="headerlink" title="创建项目后，创建java文件报错"></a>创建项目后，创建java文件报错</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Unable to parse template &quot;Class&quot; Error message:Selected class file name &#x27;xxx&#x27; mapped to not java file type &#x27;File type auto-detected by file content&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>查了网上的答案，说是把 setting–editor–File type–text的类型改掉，但是没找到那个模板<br>最后就是改了个名字就能正常创建…(这算解决问题吗)</p>
+<p>然后我还发现一个方法，在setting–editor–File type–java中加入’xxx.java’，之前那一项就会是java类了</p>
+<h1 id="java文件夹无蓝色"><a href="#java文件夹无蓝色" class="headerlink" title="java文件夹无蓝色"></a>java文件夹无蓝色</h1><p>右键–Mark Directory as –Test Source Root</p>
+<h1 id="pom-xml显示Ignored"><a href="#pom-xml显示Ignored" class="headerlink" title="pom.xml显示Ignored"></a>pom.xml显示Ignored</h1><p>解决方法<br>Settings–Build Execution,Deployment–Build Tools – Maven –Ignored Files 取消</p>
+<p><img src="https://img-blog.csdnimg.cn/d3cfd3368a604861ab3c59d1f2c0fea5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h1 id="项目模块无蓝色（maven项目）"><a href="#项目模块无蓝色（maven项目）" class="headerlink" title="项目模块无蓝色（maven项目）"></a>项目模块无蓝色（maven项目）</h1><p>在旁边的maven中添加项目</p>
+<h1 id="启动类启动报错"><a href="#启动类启动报错" class="headerlink" title="启动类启动报错"></a>启动类启动报错</h1><p><code>o.s.boot.SpringApplication               : Application run failed</code></p>
+<h2 id="Parent标签的作用"><a href="#Parent标签的作用" class="headerlink" title="Parent标签的作用"></a>Parent标签的作用</h2><p>1)定位：SpringBoot主要的作用整合SSM，使得框架的使用更加简化<br>    原则：开箱即用<br>    parent主要的作用：<br>        1、SpringBoot在内部兼容了当下几乎所有的第三方框架<br>        2、SpringBoot官网已经将所有兼容的版本进行了定义（几乎解决了版本冲突的问题）以后几乎不用写版本号<br>        概括：parent标签中管理其他的项目版本信息</p>
+<p> 2）项目maven的基本信息<br>        坐标：1、组ID（groupId），公司域名的倒写<br>             2、项目名称（artifactId） 名称不能重复 不能数字开头<br>             3、项目的版本（version）<br>        坐标的意义：<br>            1、主要用来管理/区分项目<br>            2、项目打包的路径是坐标的位置</p>
+<p>3）<code>&lt;build&gt;</code>   springBoot 项目与Maven整合的一个插件，可以通过插件 执行项目打包/测试/文档生成等操作<br>    注意：该插件不能省略<br>    项目发布时，java -jar ****.jar </p>
+<h1 id="SpringBoot高级用法"><a href="#SpringBoot高级用法" class="headerlink" title="SpringBoot高级用法"></a>SpringBoot高级用法</h1><h2 id="关于配置文件语法说明"><a href="#关于配置文件语法说明" class="headerlink" title="关于配置文件语法说明"></a>关于配置文件语法说明</h2><p> (1)Properties语法说明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#数据结构：KEY-VALUE</span><br><span class="line">#数据类型：String类型/Number类型</span><br><span class="line">#语法：    1、key-value使用 =号 连接</span><br><span class="line">#         2、不需要添加多余的 “” 号</span><br><span class="line">#         3、pro文件在IDEA中的编码格式UTF-8</span><br><span class="line">#            pro文件在被程序读取时，默认采用ISO-8859-1格式，中文必定乱码</span><br><span class="line">#         4、key=value不要出现多余的空格</span><br><span class="line">server.port=8090</span><br></pre></td></tr></table></figure>
+
+<p>(2)yml语法说明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#数据结构：key-value</span><br><span class="line">#数据类型：String/Number</span><br><span class="line">#语法：</span><br><span class="line">#      1、key:（空格）value</span><br><span class="line">#      2、key与key之间有层级关系，注意缩进</span><br><span class="line">#      3、字符编码都采用UTF-8</span><br><span class="line">#      4、可读性较pro文件，更加友好</span><br><span class="line">server:</span><br><span class="line">  port: 8090</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性赋值"><a href="#属性赋值" class="headerlink" title="属性赋值"></a>属性赋值</h2><p>(1)业务要求<br>如果将数据直接写死到.Java文件中,如果需要求开，则重新编译打包，不方便。如何优化，用配配置文件<br><img src="https://img-blog.csdnimg.cn/a3a45771e7954b07b33543a6a0f249c7.png"></p>
+<hr>
+<p>(2)Yml为属性赋值<br>编辑YML配置文件；说明：spring负责管理YML文件中的数据<br><img src="https://img-blog.csdnimg.cn/3a29bae14d2141b9862b09fda7f3fc16.png"></p>
+<p>(3)Controller为属性赋值<br><img src="https://img-blog.csdnimg.cn/7b27ff6155d04a64a0d921fb407d1fc0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<p>(4)编辑pro配置文件<br><img src="https://img-blog.csdnimg.cn/1940daccbb844b969386b4d5769124f7.png"></p>
+<h2 id="程序的热部署"><a href="#程序的热部署" class="headerlink" title="程序的热部署"></a>程序的热部署</h2><p>(1)开发阶段:码农编码环节，只对开发阶段有效</p>
+<p>(2)生产阶段：甲方将项目实际上线使用<br>1)添加jar包<br>a.</p>
+<p>(3)SpringBoot高级用法<br> Lombok插件<br>1)添加jar包<br>2)如何使用<br>a.通过程序自动生成实验对象的get/set/toString/equals/hashCode等方法，<br>b.链式加载原理：重启了POJO的set方法，返回当前对象</p>
+<p>(4)关于Lombok面试问题（初级）<br> 问题：lombok的使用需要在IDE中提前安置插件！！！如果项目在LInux系统中部署发布，是否需要提前安装插件<br>1)答案：不需要<br>2)原因：lombok插件编译期有效（编译期：由.java文件编译为.class文件），在打包之前，class文件中已经包含了set/get等方法，所以项目打包之后可以直接运行，无需安装插件</p>
+<h2 id="SpringBoot整合MyBatis"><a href="#SpringBoot整合MyBatis" class="headerlink" title="SpringBoot整合MyBatis"></a>SpringBoot整合MyBatis</h2><p>(1)导入数据库<br>(2)检查数据库是否可用<br>(3)使用客户端工具<br>(4)整合MyBatis</p>
+<p>编写pom.xml文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--      引入数据库驱动  --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">&lt;!--    springBoot数据库连接   --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">&lt;!--        spring整合mybatis 暂时--&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.2.0&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>(5)关于数据源配置<br>    <img src="https://img-blog.csdnimg.cn/03504df3bb5a4ba4adeb7389f7d7f416.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>②Url：jdbc:mysql://localhost:3306/yonghedb?<br>1)serverTimezone=GMT%2B8&amp; 设置时区<br>2)useUnicode=true&amp;characterEncoding=utf8&amp;是否使用unicode编码及字符集设定<br>3)autoReconnect=true&amp; 是否自动重连<br>4)allowMultiQueries=true 是否允许批量操作<br>③配置Mybatis信息<br>（6）Spring容器管理Mapper接口<br>（7）@SpringBootTest<br>①该注解是SpringBoot程序为了简化后端代码测试提供了专门的测试API<br>②关键点：测试时，需要Spring容器管理对象，同时将测试的对象获取之后进行测试<br>③注意事项：测试注解只能在测试包中进行<br>SpringBoot案例练习<br>1、myBatis sql操作（插入3条数据）<br>(1)根据id=1 查询车辆信息<br>(2)根据name=‘BMW’查询数据<br>(3)利用模糊查询，查找name包含‘B’的数据<br>(4)查询car表中根据价格排序的数据 desc<br>(5)根据name和color组合条件查询<br>(6)查询id = 1,3,5,7的数据<br>4、MyBatisPlus<br>(1)简介<br>是一个MyBatis的增强工具，在MyBatis的基础上只做增强不做改变，为简化开发，提高效率而生 简称MP<br>(2)什么是MP<br>①无侵入：只做增强，不做改变，引入它不会对现有工程产生影响<br>②损耗小：启动即自动注入基本CURD（增删改查）,性能基本无损耗，直接面向对象操作，内置通用的Mapper、通用的Service，仅仅通过少量配置即可实现单表大部分CURD操作，更有强大的条件构造器，满足各类使用需求<br>③支持Lambda形式调用：通过Lambda表达式，方便的编写各类查询那条件，无需再担心字段拼错<br>④支持自动主键生成：支持多大4中主键策略<br>⑤支持自定义全局通用操作：支持全局通用方法注入<br>⑥内置代码生成器：采用代码或者maven插件快速生成Mapper，model，service，Controller<br>⑦内置分页插件：基于MyBatis物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于List查询<br>⑧内置性能分析插件：可输出sql语句以及其执行时间，建议开发测试时，启用该功能，<br>⑨内置全局拦截插件：提供全表delete、update操作只能分析阻断，也可自定义拦截规则，预防误操作<br>(3)入门案例<br>①导包<br>②配置对象关系映射<br>③配置mapper<br>④测试<br>(4)MP实现原理<br>①用户执行User对象入库操作，userMapper.insert(user)<br>②由于接口方法中需要传递泛型对象，则根据用户配置查找对应的泛型对象<br>③根据用户的接口获取Mapper接口的父级接口 BaseMapper，根据BaseMapper中的泛型对象，获取信息User.class类型<br>④根据User.class动态获取@Tablename(“***”)绑定与之对应的字段，至此对象与表完成了映射<br>⑤根据上述的映射关系，动态的拼接sql语句<br>⑥MP将动态生成的sql交给MyBatis执行最终实现数据入库操作<br>(5)MP用法<br>①根据ID查询数据</p>
+<p>②条件构造器-对象封装<br><img src="https://img-blog.csdnimg.cn/49865bcf832846df88d622e892cf00fb.png"><br>②条件构造器-对象封装<br><img src="https://img-blog.csdnimg.cn/c7e674996ef64d9786b68e151fd897a7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>③条件构造器-like关键字<br><img src="https://img-blog.csdnimg.cn/3907d2d72d584916988%E2%91%A3%E6%9D%A1%E4%BB%B6%E6%9E%84%E9%80%A0%E5%99%A8-orderByef2e970dea1e2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>④条件构造器-orderBy</p>
+<p><img src="https://img-blog.csdnimg.cn/6d40b3ffa7214755bda0baafffc5fd45.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>⑤条件构造器-in关键字</p>
+<p>⑥条件构造器-动态sql<br><img src="https://img-blog.csdnimg.cn/94275de091854eec8008fb86013f940e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"><br>⑦MP的更新操作<br><img src="https://img-blog.csdnimg.cn/bfdf848a0742464ab93d20cfcdb1d7c2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/06/java%20new%2021-2/" rel="prev" title="day21-SpringBoot">
+      <i class="fa fa-chevron-left"></i> day21-SpringBoot
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/07/java%20new%2023/" rel="next" title="23-SpringBoot">
+      23-SpringBoot <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BASpringBoot%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">创建SpringBoot项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E6%8F%92%E4%BB%B6%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text">根据插件新建项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E5%90%8E%EF%BC%8C%E5%88%9B%E5%BB%BAjava%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99"><span class="nav-number">2.</span> <span class="nav-text">创建项目后，创建java文件报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%A0%E8%93%9D%E8%89%B2"><span class="nav-number">3.</span> <span class="nav-text">java文件夹无蓝色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pom-xml%E6%98%BE%E7%A4%BAIgnored"><span class="nav-number">4.</span> <span class="nav-text">pom.xml显示Ignored</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%A8%A1%E5%9D%97%E6%97%A0%E8%93%9D%E8%89%B2%EF%BC%88maven%E9%A1%B9%E7%9B%AE%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">项目模块无蓝色（maven项目）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99"><span class="nav-number">6.</span> <span class="nav-text">启动类启动报错</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Parent%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">6.1.</span> <span class="nav-text">Parent标签的作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">SpringBoot高级用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E"><span class="nav-number">7.1.</span> <span class="nav-text">关于配置文件语法说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="nav-number">7.2.</span> <span class="nav-text">属性赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%83%AD%E9%83%A8%E7%BD%B2"><span class="nav-number">7.3.</span> <span class="nav-text">程序的热部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot%E6%95%B4%E5%90%88MyBatis"><span class="nav-number">7.4.</span> <span class="nav-text">SpringBoot整合MyBatis</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黒猫"
+      src="/images/1.jpeg">
+  <p class="site-author-name" itemprop="name">黒猫</p>
+  <div class="site-description" itemprop="description">活在当下 为所当为 顺其自然</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
