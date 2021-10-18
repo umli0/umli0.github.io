@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="对于某公司的大数据开发工程师职位的面试前复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="interview">
+<meta property="og:url" content="https://umli0.github.io/2021/10/18/interview/index.html">
+<meta property="og:site_name" content="黒猫的博客">
+<meta property="og:description" content="对于某公司的大数据开发工程师职位的面试前复习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/42f65eaf1cb144f98dc15675c4e72270.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2021-10-18T07:04:37.000Z">
+<meta property="article:modified_time" content="2021-10-18T18:58:46.309Z">
+<meta property="article:author" content="黒猫">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/42f65eaf1cb144f98dc15675c4e72270.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16">
+
+<link rel="canonical" href="https://umli0.github.io/2021/10/18/interview/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>interview | 黒猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">黒猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2021/10/18/interview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/5.jpg">
+      <meta itemprop="name" content="黒猫">
+      <meta itemprop="description" content="活在当下 为所当为 顺其自然">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          interview
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-18 15:04:37" itemprop="dateCreated datePublished" datetime="2021-10-18T15:04:37+08:00">2021-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-19 02:58:46" itemprop="dateModified" datetime="2021-10-19T02:58:46+08:00">2021-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">对于某公司的大数据开发工程师职位的面试前复习</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="java运行机制"><a href="#java运行机制" class="headerlink" title="java运行机制"></a>java运行机制</h1><p>java是编译型语言与解释型语言的结合体</p>
+<ol>
+<li><p>首先采用通用的java编译器将java源程序编译成为与平台无关的字节码文件（class文件）</p>
+</li>
+<li><p>然后由java虚拟机（JVM）对字节码文件解释执行。就变成了特定平台的机器码</p>
+</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/42f65eaf1cb144f98dc15675c4e72270.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pyo55Sx55Sx,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><p>Java Virtual Machine（Java虚拟机）<br>引入Java语言虚拟机后，Java语言在不同平台上运行时不需要重新编译。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/643564" title="以下部分内容转载自曾江">以下内容转载自曾江</a><br>（1）JVM是Java字节码执行的引擎，为java程序的执行提供必要的支持，还能优化java字节码，使之转换成效率更高的机器指令。程序员编写的程序最终都要在JVM上执行，JVM中类的装载是由类加载器（ClassLoader）和它的子类来实现的。</p>
+<p>（2）ClassLoader是java运行时一个重要的系统组件，负责在运行时查找和装入类文件的类。</p>
+<p>（3）JVM屏蔽了与具体操作系统平台相关的信息，从而实现了java程序只需生成在JVM上运行的字节码文件（class文件），就可以在多种平台上不加修改地运行。不同平台对应着不同的JVM，在执行字节码时，JVM负责将每一条要执行的字节码送给解释器，解释器再将其翻译成特定平台环境的机器指令并执行。java语言最重要的特点就是跨平台运行，使用JVM就是为了支持与操作系统无关，实现跨平台运行。</p>
+<h2 id="ClassLoader"><a href="#ClassLoader" class="headerlink" title="ClassLoader"></a>ClassLoader</h2><p>（1）是JVM实现的一部分，包括bootstrapclassloader（启动类加载器）</p>
+<p>（2）<br>ClassLoader在JVM运行的时候加载java核心的API，通过java程序实现两个ClassLoader:</p>
+<p>ExtClassLoader，它的作用是用来加载java的扩展API，也就是lib\ext类；</p>
+<p>AppClassLoader，用来加载用户机器上CLASSPATH设置目录中的Class.</p>
+<p>（3）ClassLoader加载流程：当运行一个程序的时候，JVM启动，运行bootstrapclassloader，该ClassLoader加载java核心API，然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class.</p>
+<h2 id="JVM的问题"><a href="#JVM的问题" class="headerlink" title="JVM的问题"></a>JVM的问题</h2><p>描述一下JVM加载class文件的原理机制?<br>JVM中类的装载是由ClassLoader和它的子类来实现的,Java ClassLoader 是一个重要的Java运行时系统组件。它负责在运行时查找和装入类文件的类。 </p>
+<h1 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK JRE JVM"></a>JDK JRE JVM</h1><h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JavaRuntimeEnvironment，java运行时环境，它是java程序运行所必须的环境集合，主要由java虚拟机、java平台核心类和若干支持文件组成。其不包含开发工具、编译器、调试器以及其他工具。</p>
+<p>在执行java程序的时候，操作系统会按照下面顺序寻找JRE环境。</p>
+<p>（1）先查找当前目录下有没有JRE</p>
+<p>（2）再查找父目录下有没有JRE</p>
+<p>（3）接着在环境变量PATH制定的路径中查找JRE</p>
+<p>（4）注册表查看CurrentVersion的键值指向哪个JRE</p>
+<p>JRE自带的基础类库主要在JRE\LIB\rt.jar文件中。在程序运行时，JRE由ClassLoader(类加载器)负责查找和加载程序引用到的基类库和其他类库。基础类库，Classloader会自动到rt.jar的位置；其他的类库，ClassLoader在环境变量CLASSPATH制定的路径中搜索。</p>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是Java Development Kit，简称java开发工具包。</p>
+<p>JDK是java的核心。它包括java运行环境、一堆java工具盒java基础的类库（rt.jar）。</p>
+<p>JDK包含JRE的全部内容外，还包含开发者用以编译、调试和运行java程序的工具。</p>
+<h2 id="JDK、JRE、JVM之间的关系"><a href="#JDK、JRE、JVM之间的关系" class="headerlink" title="JDK、JRE、JVM之间的关系"></a>JDK、JRE、JVM之间的关系</h2><p>JDK、JRE、JVM之间是包含关系。范围由大到小依次为JDK、JRE、JVM。</p>
+<h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p>先写入内存，才能进行读写输出</p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255945227202752" title="以下部分内容来自廖雪峰">以下部分内容来自廖雪峰</a><br>IO是指Input/Output，即输入和输出<br>以内存为中心：</p>
+<p>Input指从外部读入数据到内存，例如，把文件从磁盘读取到内存，从网络读取数据到内存等等。</p>
+<p>Output指把数据从内存输出到外部，例如，把数据从内存写入到文件，把数据从内存输出到网络等等。<br><a href="https://umli0.github.io/2021/08/10/java7/" title="IO">IO流</a></p>
+<p>建议看成 输出路口 和输入路口 文件对象<br>输入流对象f1 文件内容将输入内存，所以是将f1的内容导入，<br>输出流对象f2 文件内容由内存输出 f2展示输出内容，是将内容导入f2</p>
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p><a href="https://umli0.github.io/2021/08/11/java8/" title="线程">线程</a></p>
+<h2 id="多线程的问题"><a href="#多线程的问题" class="headerlink" title="多线程的问题"></a>多线程的问题</h2><p>java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？ </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">有两种实现方法</span><br><span class="line">（1） 继承Thread类，重写run方法。 开启线程用start()方法。： start（）方法是Thread类中的方法。</span><br><span class="line"></span><br><span class="line">（2） 实现Runnable接口中run方法。 通过Thread 类 构造方法，将该对象加入到线程中，通过start方法开开启线程。</span><br><span class="line">注意：当线程的run方法执行结束后，该线程自然消亡。</span><br><span class="line"></span><br><span class="line">用synchronized关键字修饰同步方法 </span><br><span class="line"></span><br><span class="line">反对使用stop()，是因为它不安全,它会解除由线程获取的所有锁定，而且如果对象处于一种不连贯状态，那么其他线程能在那种状态下检查和修改它们。</span><br><span class="line"></span><br><span class="line">当某个线程的suspend()方法被调用时，该线程会被挂起。如果该线程占有了锁，则它不会释放锁。即，线程在挂起的状态下还持有锁。</span><br><span class="line"></span><br><span class="line">除非被&quot;挂起&quot;的线程恢复运行。对任何线程来说，如果它们想恢复目标线程，同时又试图使用任何一个锁定的资源，就会造成死锁。所以不应该使用suspend()，而应在自己的Thread类中置入一个标志，指出线程应该活动还是挂起。若标志指出线程应该挂起，便用wait()命其进入等待状态。若标志指出线程应当恢复，则用一个notify()重新启动线程</span><br></pre></td></tr></table></figure>
+
+<p>sleep() 和 wait() 有什么区别? </p>
+<p>同步和异步有何异同，在什么情况下分别使用他们？举例说明。</p>
+<p>多线程有几种实现方法?同步有几种实现方法? </p>
+<p>启动一个线程是用run()还是start()? . </p>
+<p>当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法? </p>
+<p>当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法? </p>
+<p>简述synchronized和ja</p>
+<p>设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。写出程序。 </p>
+<p>子线程循环10次，接着主线程循环100，接着又回到子线程循环10次，接着再回到主线程又循环100，如此循环50次，请写出程序</p>
+<p>….有超多线程问题，自己看</p>
+<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><p>并发也是属于线程部分的问题<br>并发：是指在某个时间段内，多任务交替的执行任务。当有多个线程在操作时，把CPU运行时间划分成若干个时间段,再将时间段分配给各个线程执行。 在一个时间段的线程代码运行时，其它线程处于挂起状。</p>
+<p>并行：是指同一时刻同时处理多任务的能力。当有多个线程在操作时，cpu同时处理这些线程请求的能力。</p>
+<h1 id="java中的网络指网络编程"><a href="#java中的网络指网络编程" class="headerlink" title="java中的网络指网络编程"></a>java中的网络指网络编程</h1><p>TCP,UDP之类的</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><h1 id="封装抽象"><a href="#封装抽象" class="headerlink" title="封装抽象"></a>封装抽象</h1><hr>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/TD1900/articles/12087970.html">数据库语法</a></p>
+<p><a target="_blank" rel="noopener" href="https://database.51cto.com/art/201804/570381.htm">数据库的构建</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/pengpeng/article/details/80072358">数据库优化</a></p>
+<h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p><a href="https://umli0.github.io/2021/09/17/java%20new%2015/">Spring博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cyhzzu/p/6644981.html">spring ioc和aop原理</a></p>
+<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><p><a href="https://umli0.github.io/2021/10/06/java%20new%2021-2/">SpringBoot博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yuzongtao/article/details/84295732">Spring boot</a></p>
+<h2 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1666060">刘文正-SpringCloud</a></p>
+<h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><p><a href="https://umli0.github.io/2021/09/27/java%20new%2018/">Mybatis博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/w_q_q_/article/details/79032062">Mybatis面试题</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/w_q_q_/article/details/79032062">Mybatis面试题</a></p>
+<h1 id="操作系统的基础知识和Linux命令"><a href="#操作系统的基础知识和Linux命令" class="headerlink" title="操作系统的基础知识和Linux命令"></a>操作系统的基础知识和Linux命令</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mukekeheart/p/5731833.html">操作系统基础知识整理</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51943976/article/details/113811139">Linux操作系统命令</a></p>
+<h1 id="Java基础部分"><a href="#Java基础部分" class="headerlink" title="Java基础部分"></a>Java基础部分</h1><p>基础部分的顺序：基本语法，类相关的语法，内部类的语法，继承相关的语法，异常的语法，线程的语法，集合的语法，io 的语法，虚拟机方面的语法。</p>
+<p>今天晚上，至少搞定以上内容</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/15/java-new-27/" rel="prev" title="java new 27">
+      <i class="fa fa-chevron-left"></i> java new 27
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">java运行机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM"><span class="nav-number">2.</span> <span class="nav-text">JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ClassLoader"><span class="nav-number">2.1.</span> <span class="nav-text">ClassLoader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">JVM的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK-JRE-JVM"><span class="nav-number">3.</span> <span class="nav-text">JDK JRE JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JRE"><span class="nav-number">3.1.</span> <span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK"><span class="nav-number">3.2.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK%E3%80%81JRE%E3%80%81JVM%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.3.</span> <span class="nav-text">JDK、JRE、JVM之间的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO"><span class="nav-number">4.</span> <span class="nav-text">IO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text">多线程的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91"><span class="nav-number">6.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8C%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text">java中的网络指网络编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">8.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">9.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E6%8A%BD%E8%B1%A1"><span class="nav-number">10.</span> <span class="nav-text">封装抽象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">11.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6"><span class="nav-number">12.</span> <span class="nav-text">框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">12.1.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot"><span class="nav-number">12.2.</span> <span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud"><span class="nav-number">12.3.</span> <span class="nav-text">SpringCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis"><span class="nav-number">12.4.</span> <span class="nav-text">Mybatis</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%92%8CLinux%E5%91%BD%E4%BB%A4"><span class="nav-number">13.</span> <span class="nav-text">操作系统的基础知识和Linux命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="nav-number">14.</span> <span class="nav-text">Java基础部分</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黒猫"
+      src="/images/5.jpg">
+  <p class="site-author-name" itemprop="name">黒猫</p>
+  <div class="site-description" itemprop="description">活在当下 为所当为 顺其自然</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
