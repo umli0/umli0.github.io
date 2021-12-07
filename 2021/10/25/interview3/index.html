@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="SpringBoot|JSON|AJAX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目知识点归纳2">
+<meta property="og:url" content="https://umli0.github.io/2021/10/25/interview3/index.html">
+<meta property="og:site_name" content="黒猫的博客">
+<meta property="og:description" content="SpringBoot|JSON|AJAX">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-25T07:27:27.000Z">
+<meta property="article:modified_time" content="2021-10-27T02:57:45.672Z">
+<meta property="article:author" content="黒猫">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="JSON">
+<meta property="article:tag" content="AJAX">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://umli0.github.io/2021/10/25/interview3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>项目知识点归纳2 | 黒猫的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">黒猫的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个中二病的学习日记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2021/10/25/interview3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/5.jpg">
+      <meta itemprop="name" content="黒猫">
+      <meta itemprop="description" content="活在当下 为所当为 顺其自然">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒猫的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          项目知识点归纳2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-25 15:27:27" itemprop="dateCreated datePublished" datetime="2021-10-25T15:27:27+08:00">2021-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-27 10:57:45" itemprop="dateModified" datetime="2021-10-27T10:57:45+08:00">2021-10-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">SpringBoot|JSON|AJAX</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JSON（javaScript Objct Notation），是一种轻量级数据交换格式</p>
+<h2 id="JSON格式"><a href="#JSON格式" class="headerlink" title="JSON格式"></a>JSON格式</h2><p>Object格式，Array格式，嵌套格式<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51943976/article/details/120968280" title="JSON">含JSON例子</a></p>
+<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><p>AJAX –用JavaScript执行异步网络请求。<br>AJAX 是一种用于创建快速动态网页的技术。</p>
+<p>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+<p>AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。</p>
+<p>AJAX 通过在后台与服务器进行少量数据交换，使网页实现异步更新。这意味着可以在不重载整个页面的情况下，对网页的某些部分进行更新。</p>
+<p>传统的网页（不使用 AJAX）如果需要更新内容，必须重载整个页面。</p>
+<h2 id="同步请求和异步请求"><a href="#同步请求和异步请求" class="headerlink" title="同步请求和异步请求"></a>同步请求和异步请求</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mm1030533738/article/details/81200640?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-1.no_search_link&spm=1001.2101.3001.4242.2" title="阿懵">阿懵</a><br><strong>同步请求</strong><br>发送方发出数据后，等接收方发回响应以后才发下一个数据包的通讯方式。用户填写所有信息后，提交给服务器，等待服务器的回应（检验数据），是一次性的。信息错误又要重新填写！</p>
+<p><strong>异步请求</strong><br>发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式。当用户填写完一条信息后，该信息会自动向服务器提交，然后服务器响应客户端，在此过程中，用户依然在填写表格的信息，即向服务器请求多次，节省了用户的时间，提高了用户的体验。</p>
+<h2 id="AJAX的用法"><a href="#AJAX的用法" class="headerlink" title="AJAX的用法"></a>AJAX的用法</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kitor/p/11291609.html" title="手握钢叉的猹">手握钢叉的猹</a></p>
+<h3 id="Ajax的标准写法"><a href="#Ajax的标准写法" class="headerlink" title="Ajax的标准写法"></a>Ajax的标准写法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url:&quot;http://www.xxx&quot;,//请求的url地址</span><br><span class="line">    dataType:&quot;json&quot;,//返回的格式为json</span><br><span class="line">    async:true,//请求是否异步，默认true异步，这是ajax的特性</span><br><span class="line">    data:&#123;&quot;id&quot;:&quot;value&quot;&#125;,//参数值</span><br><span class="line">    type:&quot;GET&quot;,//请求的方式</span><br><span class="line">    beforeSend:function()&#123;&#125;,//请求前的处理</span><br><span class="line">    success:function(req)&#123;&#125;,//请求成功的处理</span><br><span class="line">    complete:function()&#123;&#125;,//请求完成的处理</span><br><span class="line">    error:function()&#123;&#125;//请求出错的处理</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过远程-HTTP-GET-请求载入信息"><a href="#通过远程-HTTP-GET-请求载入信息" class="headerlink" title="通过远程 HTTP GET 请求载入信息"></a>通过远程 HTTP GET 请求载入信息</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/jquery/jquery-ajax-get-post.html">jQuery - AJAX get() 和 post() 方法</a><br>jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST 请求从服务器请求数据</p>
+<p>两种在客户端和服务器端进行请求-响应的常用方法是：GET 和 POST。</p>
+<p>GET - 从指定的资源请求数据<br>POST - 向指定的资源提交要处理的数据</p>
+<p>GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据。</p>
+<p>POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。</p>
+<p>故ajax的请求地址是获取该地址服务器的数据</p>
+<p>这是一个简单的 GET 请求功能以取代复杂 .ajax。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用.ajax。</p>
+<p>$.get() 方法通过 HTTP GET 请求从服务器上请求数据。</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$.get(&quot;请求地址&quot;, JSON值,</span><br><span class="line">  function(data)&#123; //请求成功后调用的回调函数</span><br><span class="line">    alert(&quot;Data Loaded: &quot; + data);</span><br><span class="line">  &#125;); </span><br></pre></td></tr></table></figure>
+
+<h3 id="ajax与后台进行数据交互的几种常用方式"><a href="#ajax与后台进行数据交互的几种常用方式" class="headerlink" title="ajax与后台进行数据交互的几种常用方式"></a>ajax与后台进行数据交互的几种常用方式</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Marydon20170307/p/12612921.html" title="Marydon">Marydon</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+              <a href="/tags/JSON/" rel="tag"># JSON</a>
+              <a href="/tags/AJAX/" rel="tag"># AJAX</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/22/interview2/" rel="prev" title="项目知识点归纳">
+      <i class="fa fa-chevron-left"></i> 项目知识点归纳
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/06/%E9%94%99%E9%A2%98%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="next" title="java刷题">
+      java刷题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">1.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">JSON格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AJAX"><span class="nav-number">2.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%92%8C%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82"><span class="nav-number">2.1.</span> <span class="nav-text">同步请求和异步请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">AJAX的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax%E7%9A%84%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">Ajax的标准写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E8%BF%9C%E7%A8%8B-HTTP-GET-%E8%AF%B7%E6%B1%82%E8%BD%BD%E5%85%A5%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.2.</span> <span class="nav-text">通过远程 HTTP GET 请求载入信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ajax%E4%B8%8E%E5%90%8E%E5%8F%B0%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.3.</span> <span class="nav-text">ajax与后台进行数据交互的几种常用方式</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黒猫"
+      src="/images/5.jpg">
+  <p class="site-author-name" itemprop="name">黒猫</p>
+  <div class="site-description" itemprop="description">活在当下 为所当为 顺其自然</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黒猫</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
