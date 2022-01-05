@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/girl32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/girl16.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="更换背景|改变透明度|更改网站图标|修改字体|增加链接|next美化框架">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-06T08:26:35.000Z">
-<meta property="article:modified_time" content="2022-01-03T15:47:13.595Z">
+<meta property="article:modified_time" content="2022-01-05T19:36:49.671Z">
 <meta property="article:author" content="柚子">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-03 23:47:13" itemprop="dateModified" datetime="2022-01-03T23:47:13+08:00">2022-01-03</time>
+                <time title="修改时间：2022-01-06 03:36:49" itemprop="dateModified" datetime="2022-01-06T03:36:49+08:00">2022-01-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,6 +244,20 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
             </span>
             <div class="post-description">更换背景|改变透明度|更改网站图标|修改字体|增加链接|next美化框架</div>
 
@@ -256,7 +270,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="更换背景"><a href="#更换背景" class="headerlink" title="更换背景"></a>更换背景</h1><h2 id="1-hexo的根目录下-source-data-styles-styl"><a href="#1-hexo的根目录下-source-data-styles-styl" class="headerlink" title="1.  hexo的根目录下\source\_data\styles.styl"></a>1.  <code>hexo的根目录下\source\_data\styles.styl</code></h2><p>如果没有就自己创建一个（不是next主题的根目录）</p>
+        <blockquote>
+<p>修改原理<br> 主题配置文件<code>_config.yml</code> 中有一个关键词 custom_file_path，在这里可以设置自定义的的样式文件的路径。利用自定义的样式文件覆盖掉默认样式。</p>
+</blockquote>
+<p>如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line">  #head: source/_data/head.swig</span><br><span class="line">  #header: source/_data/header.swig</span><br><span class="line">  #sidebar: source/_data/sidebar.swig</span><br><span class="line">  #postMeta: source/_data/post-meta.swig</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">  #footer: source/_data/footer.swig</span><br><span class="line">  #bodyEnd: source/_data/body-end.swig</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  style: source/_data/styles.styl </span><br><span class="line">//此处设置自定义的样式文件为source/_data下的styles.styl文件</span><br><span class="line">//在该文件中定义样式，就会覆盖掉默认样式</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="更换背景"><a href="#更换背景" class="headerlink" title="更换背景"></a>更换背景</h1><h2 id="1-hexo的根目录下-source-data-styles-styl"><a href="#1-hexo的根目录下-source-data-styles-styl" class="headerlink" title="1.  hexo的根目录下\source\_data\styles.styl"></a>1.  <code>hexo的根目录下\source\_data\styles.styl</code></h2><p>如果没有就自己创建一个（不是next主题的根目录）</p>
 <h2 id="2-next目录下-config-yml取消注释"><a href="#2-next目录下-config-yml取消注释" class="headerlink" title="2.next目录下_config.yml取消注释"></a>2.next目录下_config.yml取消注释</h2><pre>
 custom_file_path:
   #head: source/_data/head.swig
@@ -385,12 +408,79 @@ links:
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true                          # 启用不蒜子</span><br><span class="line">  total_visitors: true                  # 网站总访客数</span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: true                     # 网站总浏览数</span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: true                      # 文章浏览数</span><br><span class="line">  post_views_icon: fa fa-eye</span><br></pre></td></tr></table></figure>
 
 <p>看看人家写的啥，再看看自己写的啥破玩意，真是菜到极致了我<br><a target="_blank" rel="noopener" href="https://josh-gao.top/posts/b158f1b4.html" title="Hexo-NexT 折腾就完事儿了">Hexo-NexT 折腾就完事儿了</a></p>
+<h1 id="标签云设置"><a href="#标签云设置" class="headerlink" title="标签云设置"></a>标签云设置</h1><p>参考：<a target="_blank" rel="noopener" href="https://qinjiyue.gitee.io/p/19088/" title="iyue&#39;s Blog--Hexo 博客建立标签云 hexo-tag-cloud 及效果展示">iyue’s Blog–Hexo 博客建立标签云 hexo-tag-cloud 及效果展示</a></p>
+<ol>
+<li><p>下载插件<br>使用命令行下载插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-cloud@^2.0.* --save</span><br></pre></td></tr></table></figure></li>
+<li><p>配置插件<br>在主题文件夹找到文件 <code>theme/next/layout/_macro/sidebar.swig</code></p>
+</li>
+</ol>
+<p>添加代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if site.tags.length &gt; 1 %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcloud.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcanvas.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;div class=&quot;widget-wrap&quot;&gt;</span><br><span class="line">    &lt;h3 class=&quot;widget-title&quot;&gt;标签云&lt;/h3&gt;</span><br><span class="line">    &lt;div id=&quot;myCanvasContainer&quot; class=&quot;widget tagcloud&quot;&gt;</span><br><span class="line">        &lt;canvas width=&quot;250&quot; height=&quot;250&quot; id=&quot;resCanvas&quot; style=&quot;width=100%&quot;&gt;</span><br><span class="line">            &#123;&#123; list_tags() &#125;&#125;</span><br><span class="line">        &lt;/canvas&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加代码的位置（就是在差不多结尾的位置）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">      &#123;%- endif %&#125;  </span><br><span class="line">	</span><br><span class="line">-----添加的代码-----</span><br><span class="line"></span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">  &lt;/aside&gt;</span><br><span class="line">  &lt;div id=&quot;sidebar-dimmer&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>主题配置<br>在主题的<code>_config.yml</code>配置文件最后添加如下配置<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># hexo-tag-cloud</span><br><span class="line">tag_cloud:</span><br><span class="line">    textFont: Trebuchet MS, Helvetica</span><br><span class="line">    textColor: &#x27;#333&#x27;</span><br><span class="line">    textHeight: 25</span><br><span class="line">    outlineColor: &#x27;#E2E1D1&#x27;</span><br><span class="line">    maxSpeed: 0.1</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>4.然后就好了，自己查看效果</p>
+<h1 id="增加阅读时间，和文本字数"><a href="#增加阅读时间，和文本字数" class="headerlink" title="增加阅读时间，和文本字数"></a>增加阅读时间，和文本字数</h1><p>参考：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7000547315756826638" title="Next -4- 增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译">Next -4- 增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译</a></p>
+<ol>
+<li><p>命令行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>站点配置文件<br>文件末尾添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true                # 文章字数统计</span><br><span class="line">  time: true                   # 文章阅读时长</span><br><span class="line">  total_symbols: true          # 站点总字数统计</span><br><span class="line">  total_time: true             # 站点总阅读时长</span><br><span class="line">  exclude_codeblock: false     # 排除代码字数统计</span><br></pre></td></tr></table></figure></li>
+<li><p>主题站点配置文件修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true  # 是否换行显示 字数统计 及 阅读时长</span><br><span class="line">  item_text_post: true  # 文章 字数统计 阅读时长 使用图标 还是 文本表示</span><br><span class="line">  item_text_total: true # 博客底部统计 字数统计 阅读时长 使用图标 还是 文本表示</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="美化侧边栏（实际上是丑的受不了了😃）"><a href="#美化侧边栏（实际上是丑的受不了了😃）" class="headerlink" title="美化侧边栏（实际上是丑的受不了了😃）"></a>美化侧边栏（实际上是丑的受不了了😃）</h1><p>一直有个黑色边边不知道咋弄掉，应该说，不知道咋来的。<br>然后可以插入图片，在主题栏<br>选定该文件<code>博客根目录\source\_data\styles.styl</code>，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.site-meta &#123;</span><br><span class="line"> padding: 0px 0; </span><br><span class="line"> //background-image: url(/images/cloud.jpg); 设置图片</span><br><span class="line"> background-repeat: no-repeat;</span><br><span class="line"> background-attachment: local;//设置local会随着移动而移动</span><br><span class="line"> background-position: center;</span><br><span class="line"> background-size: 100% 100%;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>可以设计主题栏的颜色和高度等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 主标题栏位背景颜色美化</span><br><span class="line">.site-meta &#123;</span><br><span class="line">  //background-image: linear-gradient(200deg,#227bd4,#e4a0a3) !important;</span><br><span class="line">  //background: #fff;</span><br><span class="line"> // background-image: linear-gradient(90deg, #4263c1 0, #ef4ec5 25%, #b255f3 50%, #4eb2ef 75%, #8466ab 100%);</span><br><span class="line">height:193px;//设置上面主标题栏的高度</span><br><span class="line">可以设计主题栏的高度</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是还是别设计了，越设计越丑，还是黑色最顺眼</p>
+<h1 id="侧边栏的主题字体和副主题字体"><a href="#侧边栏的主题字体和副主题字体" class="headerlink" title="侧边栏的主题字体和副主题字体"></a>侧边栏的主题字体和副主题字体</h1><p>选定该文件<code>博客根目录\source\_data\styles.styl</code>，可以改变字体颜色和大小和位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//主标题颜色</span><br><span class="line">.brand&#123;</span><br><span class="line"> margin-top: 40px;//改变字体和上面的线的距离</span><br><span class="line">color: #fffff;</span><br><span class="line">font-size: 20px; //改变字体大小</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//副标题颜色</span><br><span class="line">.site-subtitle &#123;</span><br><span class="line">    font-size: 15px;</span><br><span class="line">    color: #fffff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="修改博文内链接样式"><a href="#修改博文内链接样式" class="headerlink" title="修改博文内链接样式"></a>修改博文内链接样式</h1><p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106060640" title="https://zhuanlan.zhihu.com/p/106060640">枫叶–个人博客第8篇——优化主题（持续更新）</a><br>博文内链接颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.post-body p a&#123;</span><br><span class="line">     color: #0593d3; #链接颜色</span><br><span class="line">     border-bottom: none;  #链接有无下划线</span><br><span class="line">     &amp;:hover &#123;</span><br><span class="line">       color: #0477ab; #鼠标触动到后颜色</span><br><span class="line">       text-decoration: underline; #鼠标触到后有无下划线</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="选定的字段变色"><a href="#选定的字段变色" class="headerlink" title="选定的字段变色"></a>选定的字段变色</h1><p>之前鼠标一点上去就是死亡荧光绿（(￣_￣|||)）</p>
+<p>选定该文件<code>博客根目录\source\_data\styles.styl</code>，<br>改变颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">::selection &#123;</span><br><span class="line">  background-color: #e4c6d0;// 鼠标选择的段落色</span><br><span class="line">  color: #555;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="美化滚动条"><a href="#美化滚动条" class="headerlink" title="美化滚动条"></a>美化滚动条</h1><p>在选定该文件<code>博客根目录\source\_data\styles.styl</code>，<br>增加如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//滚动条美化</span><br><span class="line">//设置滚动条的样式</span><br><span class="line">::-webkit-scrollbar &#123;</span><br><span class="line">      width: 5px;</span><br><span class="line">      height: 5px;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//滚动槽</span><br><span class="line">::-webkit-scrollbar-track &#123;</span><br><span class="line">      background: #eee;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//滚动条滑块</span><br><span class="line">::-webkit-scrollbar-thumb &#123;</span><br><span class="line">      border-radius: 5px;</span><br><span class="line">        background-color: #ccc;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">::-webkit-scrollbar-thumb:hover &#123;</span><br><span class="line">      background-color:#50616d ;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改内容区宽度"><a href="#修改内容区宽度" class="headerlink" title="修改内容区宽度"></a>修改内容区宽度</h1><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/csdnSR/article/details/78300820" title="sluggishpj--修改hexo的主题nexT中的Pisces主题宽度">sluggishpj–修改hexo的主题nexT中的Pisces主题宽度</a><br>依旧在在选定该文件<code>博客根目录\source\_data\styles.styl</code>，<br>增加代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">header&#123; width: 90% !important; &#125;</span><br><span class="line">header.post-header &#123;</span><br><span class="line">  width: auto !important;</span><br><span class="line">&#125;</span><br><span class="line">.container .main-inner &#123; width: 90%; &#125;</span><br><span class="line">.content-wrap &#123; width: calc(100% - 350px); &#125;</span><br><span class="line"></span><br><span class="line">.header &#123;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    width: auto !important;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    width: auto !important;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.container .main-inner &#123;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    width: auto !important;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    width: auto !important;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.content-wrap &#123;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    width: 100% !important;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    width: 100% !important;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="之后的更改"><a href="#之后的更改" class="headerlink" title="之后的更改"></a>之后的更改</h1><p>之后如果还要改博客可以参考的有<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/LyShark/p/11834144.html" title=" lyshark--Hexo之Next主题美化代码">lyshark–Hexo之Next主题美化代码</a></p>
+<p><a target="_blank" rel="noopener" href="https://marmalade.vip/nextthemebeautify3.html" title="Hexo+NexT(v7.72)博客主题美化，打造“超炫”网站（三）---文章样式美化">Hexo+NexT(v7.72)博客主题美化，打造“超炫”网站（三）—文章样式美化</a></p>
 
     </div>
 
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>柚子
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://umli0.github.io/2021/08/06/hexo%E5%8D%9A%E5%AE%A2%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE2/" title="hexo博客后续配置2">https://umli0.github.io/2021/08/06/hexo博客后续配置2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -468,7 +558,7 @@ links:
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">更换背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-hexo%E7%9A%84%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B-source-data-styles-styl"><span class="nav-number">1.1.</span> <span class="nav-text">1.  hexo的根目录下\source\_data\styles.styl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-next%E7%9B%AE%E5%BD%95%E4%B8%8B-config-yml%E5%8F%96%E6%B6%88%E6%B3%A8%E9%87%8A"><span class="nav-number">1.2.</span> <span class="nav-text">2.next目录下_config.yml取消注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%84%B6%E5%90%8E%E5%9C%A8styles-styl%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0"><span class="nav-number">1.3.</span> <span class="nav-text">3.然后在styles.styl的文件中添加</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E5%8F%98%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">改变透明度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">2.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-styles"><span class="nav-number">2.2.</span> <span class="nav-text">2.styles</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87"><span class="nav-number">3.</span> <span class="nav-text">更改网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93"><span class="nav-number">4.</span> <span class="nav-text">修改字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%9B%B4%E6%94%B9"><span class="nav-number">5.</span> <span class="nav-text">侧边栏更改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">增加链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next%E6%A1%86%E6%9E%B6%E7%BE%8E%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">next框架美化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0"><span class="nav-number">8.</span> <span class="nav-text">将代码折叠</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E8%AE%A1%E6%95%B0"><span class="nav-number">9.</span> <span class="nav-text">博客计数</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">更换背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-hexo%E7%9A%84%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B-source-data-styles-styl"><span class="nav-number">1.1.</span> <span class="nav-text">1.  hexo的根目录下\source\_data\styles.styl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-next%E7%9B%AE%E5%BD%95%E4%B8%8B-config-yml%E5%8F%96%E6%B6%88%E6%B3%A8%E9%87%8A"><span class="nav-number">1.2.</span> <span class="nav-text">2.next目录下_config.yml取消注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%84%B6%E5%90%8E%E5%9C%A8styles-styl%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0"><span class="nav-number">1.3.</span> <span class="nav-text">3.然后在styles.styl的文件中添加</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E5%8F%98%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">改变透明度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">2.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-styles"><span class="nav-number">2.2.</span> <span class="nav-text">2.styles</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87"><span class="nav-number">3.</span> <span class="nav-text">更改网站图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93"><span class="nav-number">4.</span> <span class="nav-text">修改字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%9B%B4%E6%94%B9"><span class="nav-number">5.</span> <span class="nav-text">侧边栏更改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">增加链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next%E6%A1%86%E6%9E%B6%E7%BE%8E%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">next框架美化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0"><span class="nav-number">8.</span> <span class="nav-text">将代码折叠</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E8%AE%A1%E6%95%B0"><span class="nav-number">9.</span> <span class="nav-text">博客计数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E4%BA%91%E8%AE%BE%E7%BD%AE"><span class="nav-number">10.</span> <span class="nav-text">标签云设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E9%98%85%E8%AF%BB%E6%97%B6%E9%97%B4%EF%BC%8C%E5%92%8C%E6%96%87%E6%9C%AC%E5%AD%97%E6%95%B0"><span class="nav-number">11.</span> <span class="nav-text">增加阅读时间，和文本字数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E4%BE%A7%E8%BE%B9%E6%A0%8F%EF%BC%88%E5%AE%9E%E9%99%85%E4%B8%8A%E6%98%AF%E4%B8%91%E7%9A%84%E5%8F%97%E4%B8%8D%E4%BA%86%E4%BA%86%F0%9F%98%83%EF%BC%89"><span class="nav-number">12.</span> <span class="nav-text">美化侧边栏（实际上是丑的受不了了😃）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E4%B8%BB%E9%A2%98%E5%AD%97%E4%BD%93%E5%92%8C%E5%89%AF%E4%B8%BB%E9%A2%98%E5%AD%97%E4%BD%93"><span class="nav-number">13.</span> <span class="nav-text">侧边栏的主题字体和副主题字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8D%9A%E6%96%87%E5%86%85%E9%93%BE%E6%8E%A5%E6%A0%B7%E5%BC%8F"><span class="nav-number">14.</span> <span class="nav-text">修改博文内链接样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E5%AE%9A%E7%9A%84%E5%AD%97%E6%AE%B5%E5%8F%98%E8%89%B2"><span class="nav-number">15.</span> <span class="nav-text">选定的字段变色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E6%BB%9A%E5%8A%A8%E6%9D%A1"><span class="nav-number">16.</span> <span class="nav-text">美化滚动条</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9%E5%8C%BA%E5%AE%BD%E5%BA%A6"><span class="nav-number">17.</span> <span class="nav-text">修改内容区宽度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%8B%E5%90%8E%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-number">18.</span> <span class="nav-text">之后的更改</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -502,11 +592,16 @@ links:
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:qycalt@163.com" title="E-Mail → mailto:qycalt@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      链接
+    <div class="links-of-blogroll-title">
+      
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
@@ -520,7 +615,31 @@ links:
 
       </div>
 
+    
+	
+	
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+   
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/" rel="tag">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax03-Jquery/" rel="tag">Ajax03-Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GC%E5%92%8CJVM/" rel="tag">GC和JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpServletrequest%E4%B8%8EHttpServletResponse/" rel="tag">HttpServletrequest与HttpServletResponse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis-Plus/" rel="tag">MyBatis Plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP-IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">hexo 博客搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">html基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%A4%8D%E4%B9%A0/" rel="tag">java复习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%B8%B8%E7%94%A8%E7%B1%BB/" rel="tag">java常用类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jstl%E6%A0%87%E7%AD%BE/" rel="tag">jstl标签</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E7%94%BB%E5%8A%9F%E8%83%BDanimate/" rel="tag">动画功能animate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%BE%8B%E5%8C%96/" rel="tag">实例化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E5%B8%B8/" rel="tag">异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" rel="tag">抽象类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" rel="tag">构造方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8B%97%E8%A1%80%E5%90%90%E6%A7%BD/" rel="tag">狗血吐槽</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/" rel="tag">输入输出流</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/" rel="tag">过滤器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/" rel="tag">选择器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">重定向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">3</span></li></ul>
+        </canvas>
     </div>
+</div>
+
+
+
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=512358200&auto=1&height=66">
+</iframe>
+</div>
+
+	
+	
+	
+	</div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
@@ -543,6 +662,18 @@ links:
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">柚子</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">207k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:08</span>
 </div>
 
 <!--

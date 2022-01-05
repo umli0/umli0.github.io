@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #3cb9d7;
+  background: #ffc60d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1991,6 +1991,21 @@ pre .javascript .function {
 #qr p {
   text-align: center;
 }
+.post-copyright {
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  list-style: none;
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+}
+.post-body p a {
+  color: #2e4e7e;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #a1afc9;
+  text-decoration: underline;
+}
 .category-all-page .category-all-title {
   text-align: center;
 }
@@ -2467,6 +2482,10 @@ ul.breadcrumb li + li:last-child {
   border-bottom-color: #fc6423;
 }
 .sidebar {
+  background: url("/images/22.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background: var(--body-bg-color);
   box-shadow: none;
   margin-top: 100%;
@@ -2577,13 +2596,9 @@ body {
   background-color: #fff;
 }
 .header-inner {
-  box-shadow: 1px 1px 8px 2px rgba(179,22,132,0.15);
-  border: solid #4d94c4 2px;
   border-radius: 15px;
-  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1), 0 2px 4px 0px rgba(0,0,0,0.1);
-  margin-top: 10px;
+  margin-top: 15px;
   width: 270px !important;
-  background: rgba(255,255,255,0.8);
 }
 .header-inner:hover {
   transition-property: all;
@@ -2663,7 +2678,7 @@ body {
 .content-wrap {
   width: calc(90% - 200px);
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .content-wrap {
     padding: 8px;
     width: 100%;
@@ -2700,13 +2715,13 @@ code {
   font-weight: 500;
 }
 hr {
-  background-color: #86dca3;
+  background-color: #425066;
 }
 .posts-expand .post-body img {
   border: 1px #6f42c1;
 }
 ::selection {
-  background-color: #59ff83;
+  background-color: #b0a4e3;
   color: #555;
 }
 .posts-expand .home .post-title {
@@ -2784,40 +2799,19 @@ p {
   height: 0px;
   background: #fc6423;
 }
-/*
-***
-  滚动条美化
-**
-*/
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
-::-webkit-scrollbar-button {
-  width: 0;
-  height: 0;
-}
-::-webkit-scrollbar-button:start:increment,
-::-webkit-scrollbar-button:end:decrement {
-  display: none;
-}
-::-webkit-scrollbar-corner {
-  display: block;
+::-webkit-scrollbar-track {
+  background: #eee;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  background-color: #ccc;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(127,184,238,0.5);
-}
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-thumb {
-  border-right: 1px solid transparent;
-  border-left: 1px solid transparent;
-}
-::-webkit-scrollbar-button:start {
-  width: 10px;
-  height: 10px;
+  background-color: #50616d;
 }
 /*
 ***
@@ -2869,10 +2863,67 @@ p {
 .posts-collapse .post-title span.exturl {
   font-size: small;
 }
-.site-meta {
-  background-image: linear-gradient(200deg, #227bd4, #e4a0a3) !important;
-  background: #fff;
-}
 .tag-cloud-tags a:before {
   content: "🔖";
+}
+.site-meta {
+  height: 193px;
+}
+header {
+  width: 90% !important;
+}
+header.post-header {
+  width: auto !important;
+}
+.container .main-inner {
+  width: 90%;
+}
+.content-wrap {
+  width: calc(100% - 350px);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header {
+    width: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    width: auto !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .main-inner {
+    width: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .container .main-inner {
+    width: auto !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .content-wrap {
+    width: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100% !important;
+  }
+}
+.site-meta {
+  padding: 0px 0;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.brand {
+  margin-top: 40px;
+  color: #fff f;
+  font-size: 20px;
+}
+.site-subtitle {
+  font-size: 15px;
+  color: #fff f;
 }
