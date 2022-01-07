@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffc60d;
+  background: #dec1f2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2598,7 +2598,7 @@ body {
 .header-inner {
   border-radius: 15px;
   margin-top: 15px;
-  width: 270px !important;
+  width: 200px !important;
 }
 .header-inner:hover {
   transition-property: all;
