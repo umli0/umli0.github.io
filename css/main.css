@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2488b3;
+  background: #8653ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2598,7 +2598,7 @@ body {
 .header-inner {
   border-radius: 15px;
   margin-top: 15px;
-  width: 230px !important;
+  width: 270px !important;
 }
 .header-inner:hover {
   transition-property: all;
@@ -2611,7 +2611,7 @@ body {
   border-radius: 15px;
   position: absolute;
   overflow: hidden;
-  width: 230px;
+  width: 270px;
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1), 0 2px 4px 0px rgba(0,0,0,0.1);
   background: rgba(255,255,255,0.8);
 }
@@ -2921,7 +2921,7 @@ header.post-header {
 .brand {
   margin-top: 40px;
   color: #fff f;
-  font-size: 20px;
+  font-size: 40px;
 }
 .site-subtitle {
   font-size: 15px;
