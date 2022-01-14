@@ -1384,13 +1384,13 @@
       
         <tags>
             
+            <tag> 接口 </tag>
+            
             <tag> 异常 </tag>
             
             <tag> 数据结构 </tag>
             
             <tag> 集合 </tag>
-            
-            <tag> 接口 </tag>
             
         </tags>
       
@@ -1465,9 +1465,9 @@
       
         <tags>
             
-            <tag> 接口 </tag>
-            
             <tag> 抽象类 </tag>
+            
+            <tag> 接口 </tag>
             
         </tags>
       
