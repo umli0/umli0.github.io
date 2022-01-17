@@ -27,11 +27,13 @@
 <meta property="og:site_name" content="ᑌᗰᒪI0">
 <meta property="og:description" content="小迪网络安全第七节学习笔记">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c8106021a2ec4e068bedb5d653e8ffd2.png">
 <meta property="article:published_time" content="2022-01-09T11:04:56.000Z">
-<meta property="article:modified_time" content="2022-01-14T11:55:08.822Z">
+<meta property="article:modified_time" content="2022-01-16T16:01:34.564Z">
 <meta property="article:author" content="柚子">
 <meta property="article:tag" content="web安全">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/c8106021a2ec4e068bedb5d653e8ffd2.png">
 
 <link rel="canonical" href="https://umli0.github.io/2022/01/09/web-sec7/">
 
@@ -225,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-14 19:55:08" itemprop="dateModified" datetime="2022-01-14T19:55:08+08:00">2022-01-14</time>
+                <time title="修改时间：2022-01-17 00:01:34" itemprop="dateModified" datetime="2022-01-17T00:01:34+08:00">2022-01-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
             <div class="post-description">小迪网络安全第七节学习笔记</div>
 
@@ -270,7 +272,72 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <blockquote>
+<h1 id="CDN介绍"><a href="#CDN介绍" class="headerlink" title="CDN介绍"></a>CDN介绍</h1></blockquote>
+<p>CDN的全称是Content Delivery Network，内容分发网络，<br>通过在网络各处放置节点服务器，在现有的互联网基础上构建一层智能虚拟网络，实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。<code>使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率</code>。但在安全测试过程中，若存在CDN服务，将会影响到后续的安全测试过程</p>
+<blockquote>
+<h1 id="判断是否存在CDN"><a href="#判断是否存在CDN" class="headerlink" title="判断是否存在CDN"></a>判断是否存在CDN</h1></blockquote>
+<p>CDN需要代价，一般小企业大概率不会有CDN服务，但还是要判断是否有CDN服务</p>
+<details>
+<summary> 1. Ping目标主域 </summary>
+
+<p>通常通过ping目标主域，观察域名的解析情况，以此来判断其是否使用了CDN</p>
+<p><img src="https://img-blog.csdnimg.cn/c8106021a2ec4e068bedb5d653e8ffd2.png"></p>
+<center><p> 图不是自己的 </p></center>
+域名解析情况会有区别，第一个和第二个是有CDN的，第三个是没的。前面两个有的，解析时，前面都出现了一大串字符
+
+<p>操作方法： <code>ping 域名</code></p>
+</details>
+
+<details>
+<summary> 2.全国ping </summary>
+
+<p>在线网址 ：<br><a target="_blank" rel="noopener" href="http://ping.chinaz.com/https://ping.aizhan.com/">http://ping.chinaz.com/https://ping.aizhan.com/</a><br><a target="_blank" rel="noopener" href="https://www.17ce.com/">https://www.17ce.com/</a><br><a target="_blank" rel="noopener" href="https://tools.ipip.net/newping.php">https://tools.ipip.net/newping.php</a></p>
+<p>如果无CDN时 你ping这个域名，返回的ip都相同<br>有CDN时，会返回多个不同的ip，说明存在CDN</p>
+<p>操作方法： 输入要ping的域名</p>
+</details>
+
+<details>
+<summary>3. Nslookup </summary>
+
+<p>不同DNS解析域名，发现解析结果不一，则很有可能存在CDN服务</p>
+<p>操作方法： 命令行执行<code>nslookup 域名</code></p>
+</details>
+
+
+
+
+<blockquote>
+<h1 id="寻找真实的ip"><a href="#寻找真实的ip" class="headerlink" title="寻找真实的ip"></a>寻找真实的ip</h1><p>如果存在CDN服务，需要一些方法绕过CDN去查找真实ip</p>
+</blockquote>
+<h2 id="子域名查询"><a href="#子域名查询" class="headerlink" title="子域名查询"></a>子域名查询</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ol>
+<li><p><code>gobuster</code>进行查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gobuster dns -d 域名 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -i -t 30 -r 114.114.114.114</span><br><span class="line"></span><br><span class="line">dns 指定使用DNS探测模式</span><br><span class="line">-d 指定主域名</span><br><span class="line">-w 指定字典文件</span><br><span class="line">-i 显示域名对应的IP地址</span><br><span class="line">-t 指定线程数</span><br><span class="line">-r 指定DNS服务器</span><br></pre></td></tr></table></figure></li>
+<li><p>在线工具扫描</p>
+</li>
+</ol>
+<details>
+<summary> 查询工具网址 </summary>
+
+<p>DNS查询：<a target="_blank" rel="noopener" href="https://dnsdb.io/zh-cn/">https://dnsdb.io/zh-cn/</a></p>
+<p>微步在线：<a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a></p>
+<p>在线域名信息查询：<a target="_blank" rel="noopener" href="http://toolbar.netcraft.com/site_report?url=">http://toolbar.netcraft.com/site_report?url=</a><br>DNS、IP等查询：<a target="_blank" rel="noopener" href="http://viewdns.info/">http://viewdns.info/</a></p>
+<p>CDN查询IP：<a target="_blank" rel="noopener" href="https://tools.ipip.net/cdn.php">https://tools.ipip.net/cdn.php</a></p>
+<p>SecurityTrails平台： <a target="_blank" rel="noopener" href="https://securitytrails.com/domain/www.baidu.com/history/a">https://securitytrails.com/domain/www.baidu.com/history/a</a></p>
+<p>在线子域名二级域名查询：<a target="_blank" rel="noopener" href="http://tools.bugscaner.com/subdomain/">http://tools.bugscaner.com/subdomain/</a></p>
+</details>
+
+<h3 id="方法原理"><a href="#方法原理" class="headerlink" title="方法原理"></a>方法原理</h3><p>搭建CDN要钱，所以一般只对访问量大的主站做CDN，子站不会，可以通过查找子域名来查找网站的真实IP，一般情况下，子站跟主站在同一个C段内</p>
+<h2 id="邮箱系统"><a href="#邮箱系统" class="headerlink" title="邮箱系统"></a>邮箱系统</h2><p>很多公司都会有邮箱服务器，但是邮箱系统一般不会做CDN。通过利用目标网站的邮箱注册、找回密码或者RSS订阅等功能，让对方邮件服务器给我们发送的邮件（目标是自己的邮件服务器），查看邮件、寻找邮件头中的邮件服务器域名IP，来判断对方的IP地址。</p>
+<p>操作方法： 通过利用目标网站的邮箱注册、找回密码或者RSS订阅等功能，让对方邮件服务器给我们发送的邮件，然后查看邮件发来的服务器的ip</p>
+<h2 id="国外请求"><a href="#国外请求" class="headerlink" title="国外请求"></a>国外请求</h2><p>有些网址，因为国外的用户不多，所以不把CDN部署在国外，所以从国外访问国内的网站就可能直接访问的就是主站的真实ip地址。</p>
+<p>操作方法： 通过国外代理访问国内网址，或者通过国外的DNS解析<br>在线网址：<a target="_blank" rel="noopener" href="https://tools.ipip.net/cdn.php">https://tools.ipip.net/cdn.php</a></p>
+<h2 id="遗留文件，扫描全网"><a href="#遗留文件，扫描全网" class="headerlink" title="遗留文件，扫描全网"></a>遗留文件，扫描全网</h2><blockquote>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1></blockquote>
+<p>SamXara–信息收集——CDN绕过技术: <a target="_blank" rel="noopener" href="https://www.yuque.com/samxara/swro13/3ef42b570344884965976c4ba98fe63e">https://www.yuque.com/samxara/swro13/3ef42b570344884965976c4ba98fe63e</a></p>
+<p>Yangsir34– 渗透测试信息收集之CDN判断: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Yang34/p/12727390.html">https://www.cnblogs.com/Yang34/p/12727390.html</a></p>
+<p>判断目标是否存在CDN：<a target="_blank" rel="noopener" href="https://qftm.github.io/Information_Collection_Handbook/real_ip/cdn_check.html">https://qftm.github.io/Information_Collection_Handbook/real_ip/cdn_check.html</a></p>
+
     </div>
 
     
@@ -370,6 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CDN%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">CDN介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8CDN"><span class="nav-number">2.</span> <span class="nav-text">判断是否存在CDN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%9C%9F%E5%AE%9E%E7%9A%84ip"><span class="nav-number">3.</span> <span class="nav-text">寻找真实的ip</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.1.</span> <span class="nav-text">子域名查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%8E%9F%E7%90%86"><span class="nav-number">3.1.2.</span> <span class="nav-text">方法原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%AE%E7%AE%B1%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.2.</span> <span class="nav-text">邮箱系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BD%E5%A4%96%E8%AF%B7%E6%B1%82"><span class="nav-number">3.3.</span> <span class="nav-text">国外请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%97%E7%95%99%E6%96%87%E4%BB%B6%EF%BC%8C%E6%89%AB%E6%8F%8F%E5%85%A8%E7%BD%91"><span class="nav-number">3.4.</span> <span class="nav-text">遗留文件，扫描全网</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -385,20 +453,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -435,7 +503,7 @@
    
     <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/" rel="tag">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax03-Jquery/" rel="tag">Ajax03-Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis-Plus/" rel="tag">MyBatis Plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP-IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">html基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%A4%8D%E4%B9%A0/" rel="tag">java复习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/" rel="tag">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%BE%8B%E5%8C%96/" rel="tag">实例化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E5%B8%B8/" rel="tag">异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" rel="tag">抽象类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" rel="tag">构造方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8B%97%E8%A1%80%E5%90%90%E6%A7%BD/" rel="tag">狗血吐槽</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/" rel="tag">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax03-Jquery/" rel="tag">Ajax03-Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis-Plus/" rel="tag">MyBatis Plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP-IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">html基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java-</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%A4%8D%E4%B9%A0/" rel="tag">java复习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/" rel="tag">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%BE%8B%E5%8C%96/" rel="tag">实例化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E5%B8%B8/" rel="tag">异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" rel="tag">抽象类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" rel="tag">构造方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8B%97%E8%A1%80%E5%90%90%E6%A7%BD/" rel="tag">狗血吐槽</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">2</span></li></ul>
         </canvas>
     </div>
 </div>
@@ -478,13 +546,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">219k</span>
+    <span title="站点总字数">221k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:19</span>
+    <span title="站点阅读时长">3:21</span>
 </div>
 
 <!--
