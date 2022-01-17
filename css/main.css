@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4a5d17;
+  background: #e5dbff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2927,4 +2927,13 @@ header.post-header {
 .site-subtitle {
   font-size: 15px;
   color: #fff f;
+}
+blockquote {
+  padding: 0 15px;
+  color: #000;
+  font-family: cursive;
+  background-color: #f3f6f7;
+}
+hr {
+  background-color: #86dca3;
 }
