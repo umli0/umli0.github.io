@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff132a;
+  background: #daffb3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2703,7 +2703,7 @@ body {
  */
 .post-body {
   color: #333;
-  font-size: 1em;
+  font-size: 10px;
 }
 code {
   padding: 2px 4px;
