@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e5dbff;
+  background: #1c940a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2931,7 +2931,7 @@ header.post-header {
 blockquote {
   padding: 0 15px;
   color: #000;
-  font-family: cursive;
+  font-family: serif;
   background-color: #f3f6f7;
 }
 hr {
