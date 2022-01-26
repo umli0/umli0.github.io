@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/girl32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/girl16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Extra-light 200:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"umli0.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":40,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="小迪网络安全第十二节学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WEB漏洞——SQL注入之简要SQL注入">
+<meta property="og:url" content="https://umli0.github.io/2022/01/22/web-sec12/index.html">
+<meta property="og:site_name" content="ᑌᗰᒪI0">
+<meta property="og:description" content="小迪网络安全第十二节学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-21T16:09:54.000Z">
+<meta property="article:modified_time" content="2022-01-21T19:52:36.298Z">
+<meta property="article:author" content="柚子">
+<meta property="article:tag" content="web安全">
+<meta property="article:tag" content="SQL注入">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://umli0.github.io/2022/01/22/web-sec12/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>WEB漏洞——SQL注入之简要SQL注入 | ᑌᗰᒪI0</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ᑌᗰᒪI0</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://umli0.github.io/2022/01/22/web-sec12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/5.jpg">
+      <meta itemprop="name" content="柚子">
+      <meta itemprop="description" content="哦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ᑌᗰᒪI0">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WEB漏洞——SQL注入之简要SQL注入
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-22 00:09:54 / 修改时间：03:52:36" itemprop="dateCreated datePublished" datetime="2022-01-22T00:09:54+08:00">2022-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B0%8F%E8%BF%AA%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">小迪安全</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+            <div class="post-description">小迪网络安全第十二节学习笔记</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="9cc296eb77bfe9493ef49b2817e3f1fc5ac291f4a559b58e926a5cb11bda0052">9d8b959681eab972fc20f2fbdc59450ca5145a4b40637dcc6bc3598a5fc891ff364241fcc99ca012a0b5d8df22d042ddb2722cb4b81f1e6cd95c3e4a08c8cf73d4f3aaa5b6e7bee6f0ee89cf6411809dae11b7e2171aa5c327f2a847c0b68e4445958abe312ec42f768c3a0464a2a1cd3b269cbb89bc2941ee409f5c2869405dbb4cfb283a903546bf2e0b4921b119e3e63b67dc727e1f9bbf4431668b3e00b5028ff8fc971e9e709a07d2f7d67b36b42790fb80a181f93de170e64e2e4eebd52169e469b976c29fb27b04f02ef5908259cfaf65a6e912852aa735798c796c2c0107c2091a4560bc1d5283a0d452bc4dc2d012ea06ae8367959d0450c096b84240e4b3c4d938cbd774c0692ab39d7c9daf8d5b71d882bcaa16091ca02269053ea7cbcb97f7ed1cc81993dfa20d9ce5d3790298b4e5bfb69866feb2df53df77bb2cee1345aecd66f7aa19486a659cb7c084cf06f1072e014fbfe4c85c34006c5d5f7504243ac40e47b09f4d7f82abd817cd80a11ccb1e00ec89f930dcff9b1aec12003b3202a95090eb35ddd75ca247361d2a742ba68a7197d69436c565567cb2a7133e6ca5d6d3d8d46e6a06b5b6f6abb8efce502d3bbdf159ffed2561a96f22e5ca48686b23074b395814038f58f870e8b76d3274536e60f8edf1f87e389d7c87e7ef398622040bc4d5dab2d0d86b6728f045e28631e9e9b29d03c17526b98f1cdaa93357c812605c52d2f5f93da5ec59d9549047dbef554ef18fef5844b4de04644652f4db10e0e99298abc4eebb86c8dc8f04f4bb33a32275d368cf61ff048beb80c2a7c95e37bfaa678d2bdefce253445dc7a7741f68309628f320a93f6cfb9981ce981238bb4c10e8724629a1a207a4d8ee3e4fafec6e91eed0874835964c6900b6c50fc9aaa8c92e6f96835250db647d29f5d0c52e9f7e4d129d3d0699777aad9c6dd4b34aa25815816df0b0cff0269c8ffb9585a7a5cd96b608b7440b70b825c24a8ef51800bed2f146968705f6226f0fea6a7d9518c0cde9b4bd952b97a0c0a6ec6a41207a452a6678a293b5d9dc49269ff53466e2d87b84d6fb654dd5bcbfe88d03f2ec816d833325aa40d7d5ab2a6ac4aaf8a038bfe740c8ce898aed5de7e0e97c4168a9aea083de5ecccc007750f9d5991aff4ded9b2597574dfc969a7ebf16b7c87bd4105c53ef609576669f78e52b58e3fecc66f8a2eba470cf391813bcf771edca0850d1e0ac4560c3a473406e560d2717abfddd501d2118786649bee4236d205aecf478280c2dd3534c63c97efe5445ef16d025fce8faa316331ca8034b250a0f521cc67e3086f1a70ee16a4766a4c24f3a2d2aa50161ca678257e460124299af6daa8fbfe1526167de96cb5c456b6f267e26653c7f6556a611d2518733a9f54ed6f275367aa162b2405b97c28589fefd5af381afd72fe11e45229442f3d99775b1d16415c1740c0ae62626fdf14d4653ef2a62670a726dbb27615ca7218d8fe12ef9e776021ca79b82c0c10ae05557bc1a89c39e5904dcfd3bc7bbb6c41f00a0be57abadacad29730d46328bbdf6d6774a0bb51cec77b05e5503caddfb14c96d1c95d6d50e46904afc3e03f6c787fdfdfa081947d82a1976c8fee947b38b73edba549dd0b7896869b8d139e6bbba6c3b5a8ac440b23c4f370fb4c36e1e099121dac5ebaa21d088bed84ccb40be773d3964a4193dd9eeb6ef84bf7ce5f6a73460789f65252be509f9118a85a70a66307e615c2980f12638c2cb35ab4d950e18c755a75879cd9e69bd3af5caff594ce3e4310360e8dfe88e7a05ca2d31c0a2ff9ebc0a998a4004a0c1f058e4f34a900ad44dc2229448278fee6613f02e64ed3588f56509f655a52fecb69a38ba27e0162bb2604f797322931c1ba7706a00fa4fa3b0d30991ce49f6406c5c7d42fc5bdc6a8abb267cbd91abc4b771e6023a09692ff0cb4de66fe0363edf827a2eed8335f245e93f819895eb340ed74fdd95deddd3f9922e0b349d1cd20da3f0ade1bdfa786ba6deb28f4bce0c28177ee5665c4357479754bcbc8bc715f70674db450ee89e053b650c4e06b5f8bbac057f40ce617952e91dfae9683d5f854acf265e6777989d06fee721b81ae5cf318b98c729cb329708e194ef1661684de109295e7da615511c612e83d92112071fa08082b3a58fa687edcf733e5476e77447686da573043fc798e42edf618325393d7d89ad2e13815fe6fcda586e823b9b60aec31f0febe2a97da85e6372f4355babd4cce8dfc75b915b9b8173a3ffa55f603c57e69d91b9a2ddea72daee606dbfab44109272faa414bf9e15aee8dc98620bcf6fd209b5e21382966a2f6e34bae29fe773c87efc6a3eaf8c7b54318e7abce08c464cf0172a27f44f5e51b2e5cc9c4efe33465b4978672f606977864118c7caf57882e1f3e49110efcb2f2ad3cff240cd7a82729cf6d8e3c4244e8eb117757bd00bf381953a36c312adb7031abf1c123f6e9ef7131eb3a28f77dc9b4845b737ed1b3d13a0ba63873c6f1e9059920d8fe56b83b976a328a0d8b331d1460500556f42f2186d1a5c34fc19bd42ec0cfa7f35faaab48ce3eba7bfc54dca0149cf0f4e9be3f782b32c9b1f15c49ef188af9a1f1182cb4f218fe6b774039197d1a89ec5e5d0cf2f269c2799aaea83d3807d097812e7378112af0ee5d8014938293f3bb549a503aca1b73e25ba508bbcd07f2cf874834a36f369af80366d2985165b68d6827dee29069ff4f9b3142e9dfe56b077d4f27e29301d225a5bc5d245073abda0f153e86e86b5d014bc85b29d99796d57a89c3b5f24354d4f1d9d44b4e290312ffb9ca08a25f5d8d02457d428e83a3c850fcea9819aae82d230d75444384dcd861f71521e66665767bfe995e4bef272c2b19e4bf2c86062195da59e52cd00471be75facb8e64cd3080d4af008f747772e9fad335be8e85428d6c7a98bcb64514c62f03d5010c3eaa435bd7b98a0c17d0f2747718070692a1b69ce60bd437e01d6a322b6dfde68686a01f94d974cea33b415e168d8313115eb2baca03206397e46378bd60eb1ff1c7ae9f7bcdcbf2daf78359d97244c746dda59ef6e8dcfc11f9d4d39d91705c6517fa76f5a22a866f29568e45fa5666fda709430d6ebd15a53af7c244f33c42e6ff4d97375b2e624de39c35c15ca432b651f12e45568dbae15557d07aef9799d5d2fcdd538289cac032f8b05a71740c6fc8f0627ddde365cad8086cfac26850d00a8023927e26fbe5b38a333a96ba4cf96465f2747dd471e43d1a30f6e9377623da404a9fb7ce4e6a76f2533c730e1af3e75c197643f6e3dd3a22382d66d50518e7adbde1e27e4609b3371c1de0d036fdd6ee50888a9813e0a52a043ec81e0fcc635a23f1dd2033a500b23b188748be8b2949000205a80603cf430dc303f3ee899ae7bef8115eb5f50527c984dfa24cdb6c7c7ffdeeaafa508b0a6cc33c0ec497ce18022c6f348917c23bfbc2825680425950252849087538d4a0ae15e94d0ad7f1cff16bac4ce03346c1f491dc8335e34eb7bd458626a3b78841620b7c55f6fcf39eb1dd14a98f90c2a7e12ce0e7007204a8d5557c876f12a3f2a1ca2c8f144566c9f2370d9027291e5a3d5443a97408477345e589b5744317800dc75667e0b5f1d4d88867ea5815a87ff19a013d1944c836c03426598b643cb453b12394ac48bf178260c1f13bd6740d12d3e8cee1dcbd1feb40bfd110e801e849c7b3a3c5c6e197c56c32233567c79ba795ff086015ad30d6ebbdce2a230653491eb7b50e00802daa24e0b3532ea9842e5bea74430270538d9a475d1a7cc38defa8f3c89cd8e637d8495c5cbdc30fbc91b3e9008cddac83d57038a4791f2a2c5e34088f55906cac9b6ab1ab2555cd0f1dd92e917e9a3f41244bc309ab647a41c16b3a0b246be8f1865eb1a0e5cc5ef6bf48e694339ee7237e7833dddafabfeb15c26c28cbfa94479129a3c2cdb4a91221718ef3ca09a108337bc37e75e11bfa26f7626e2789eac27fa7febd19d7ff02cfb18d2c093a97ef6699f2deaf6bdab5a76cdecf029dba8a5254fefe43ec3a579a991f3617bd5a5d4c9c0831c5908cb4451ed05eb92dcd4ea97e9dacef02807fda50865d12fd7208860acc735b8771d40427603931ca6c6457d802c3173d5b795f594b2b9b420d0344d11b352cf6335f3cbfd8b4ff12313d5a1842b5e1581ba9d7860112295ea2f61b7b7655b632f7aedc55cc3af73cb90a6f1fd2f1de0a6815fafe8e1775f2092e9f22f236310053543c4145eb2f1a1972b4db14d8b3e8e8c5012a2c803f5c1de282f7cdca26c4e9047d37ebe325c8d001449d9a98f51282578ad3459ad9096d78a6f7892eba45c028fbc84ce22921ed58a62f6aaddbb227aa9961874459c80c14058b68f749fa9756c5473fc552791acc4f730e9e9a76b829eb7f1f8f32a2b88583ed1b561017326b3bbec7d7ce7896be2e9cd5c6b915787ff004b273ce9752d60b3e0fca2a3e4f7cb87010dced337a7292397f9798b923dcbaab920103251d97e5e21d88248d45cde2f4847f82ff7f5102bea9c92cb81a071fe1a909855b541f71a22b6c1083a16dcc11816c0efeaf821e216849d81206f9c8d596174d952563cdcaa5afbd77556aeda4e563bddef129a54c967cac37223c03c0fa9afaa568fbc9b7307209e3d34aa03fbb77a7a638ad7885674c7e52858eeca471c3de1422573ae4525257ccfa90422d18fd69760d6516b8089655f640812ea46768b74336021458e3880e17ff37a2f0dfc39675b3d838f324349151f9cb2e8fc6f2eb1abc1f8f2256444b6507b8eaa1afeb0c8485e5410dc6d97b598607bd39d527d4debbdb100f9348760aa516f8d9c7653c5fa2f079a8312b6a04c0d96b687f9f41cbade6dd46945d657e8773d3b315b7b397a765d7289be741e656bb91d72e6ccbdb699b3ea22db42fc624ad60ba4e88d99fd910360afbe015de4367d90437754940da2d1b6fe62b03334e5a79ea853559c5d593260f5ced792355d8fa97bb68e1d5977f86067fcdff6141ea3f2dea7523bcec396f960a3a57e79bcca3e22cbbe7718c0c6072ebc974aa521db1de125fbff20300dd51565f2e9b6f61f1c797d08cb17480f299acb1ea947f4e1198ce523f29ace34a3b758ec57be6bc6b45af1efdb56d1e37f1771ec36565548a877c3774584128d6ceb15b544df2c8967a5d53ccf64d9ce5a12c07a8308ce795aaa1edd08753968fefbd0f647182f708bd161e7829be4ade321d6cc507e2f875bf8426bc6b245aed0d1f3f21e160b80cdb8ce96bb6f3cf98bada16634b327d66efbd0ebdf6c79bf32bd3bc6591e49b784c096bf4e80b614ce46aea15ff7ca434263183eab5fb41a2c05508da7db0c38ba88936b7fd98ab79bcd383517b3effe686c2abbbd83a49de13407ca7dedb65e5eafce4c2f23bf564b0486179492c30811b4853d566c8eda1abb32912c5162df781fb24388218a9011d42f3029f98b90604a5670a043df6b777e39f5929c10c87dc3b35d1a257c36dc81ca61eec2da5b06315d45ac71c2f024866063adbeabe491647076dd325311c0037befaf1be3724ee531b479213b28389c8806373bf16bd2949aa06186d0a78d3d319c9c5bde47bfb708d85962d72f84bf7927427818fe6a39993038f3a3e5f1b4bd2c02d9c27a5c3032e057d342ddb1658256dd50099c6bb93cb22d03e3938ec261b0b99851c360949e66c37d6e699e14deb3319406e69a881d2ee7061452d6b4b9e5c2ad36c9cdaca376057e90efd8d48a7cf3820cc03a42d8880141cd52056c06ba954d65c7e88ce3d1b6749a6c2c1e92d8d29050a841ceab6361c3bc5f160ddea2409e1ff427844bc6fe69f45ef9932d415771a4744ea69ca914520e14f5fd84917cc70c74c2e2a3d03dbda864b5eb31d30a1b6c56ff5796e96ee62c02d8d6af71ce322db7582022e5fa86e0e6890ae86c4a7068317e73215f26cf84dd5855ed405a6502954d3b2e63d9ce7f33937034824b86c6fd13fd22368cf2f644f80bb3f015c3bc43eb778244ea7f5f86fc5f1d31e97f231001a8220fff0383347e436c1bac0e4a3221c301ca964e0ba9ec88525e1c98390035fe7e6c5fd3a08de61ee17a0bd9df011fda9979fc8b1acca547c17f5108908b1099dbdf1b4edcf1d6a2c310829e9278e34e904197c6a8fbb1cca2b96466aed3ec31f3bcf001a1742f1bc70b9fed34d064854fd8f8685ba9a1feb075c815b822692b147158a0c7ddb60b2eab5697a040a55067091d45e6304f92967092a00535cb6cd6e5472dd04467a15bff31540b94050aa2cfb4b6d77c22df58424fbcb3a049bc391ebcc6404c162b2e4f475ab3e7dd60de0f1e6a358f76f27e5d95547bf76939c8e05762a37bbd51b40801b75b75523aaa67c88fe209f89098283ea38194b084ed98777e1ed2dc62c98aafc29fac07c027b48461ef599b62080215efcc8c85f9b61bbce503bc1c066402684cc9e9e91cf496933782e6b765ff58d3579e1374afb9484f60b42bc7a152965f5621d53584a7f9070ca2a40248a6</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">还在施工中...</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>柚子
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://umli0.github.io/2022/01/22/web-sec12/" title="WEB漏洞——SQL注入之简要SQL注入">https://umli0.github.io/2022/01/22/web-sec12/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag"># web安全</a>
+              <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" rel="tag"># SQL注入</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/21/web-sec11/" rel="prev" title="WEB漏洞——SQL注入之必懂知识点">
+      <i class="fa fa-chevron-left"></i> WEB漏洞——SQL注入之必懂知识点
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/22/web-sec13/" rel="next" title="WEB漏洞——SQL注入之MYSQL注入">
+      WEB漏洞——SQL注入之MYSQL注入 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">SQL注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E4%BA%A7%E7%94%9F%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">SQL注入产生原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">SQL注入的分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">4.</span> <span class="nav-text">SQL注入的危害</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MYSQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">MYSQL数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">6.</span> <span class="nav-text">如何判断注入点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8"><span class="nav-number">7.</span> <span class="nav-text">SQL注入利用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="柚子"
+      src="/images/5.jpg">
+  <p class="site-author-name" itemprop="name">柚子</p>
+  <div class="site-description" itemprop="description">哦</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:qycalt@163.com" title="E-Mail → mailto:qycalt@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/m0_51943976" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_51943976" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/umli0" title="https:&#x2F;&#x2F;github.com&#x2F;umli0" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    
+	
+	
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+   
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/" rel="tag">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax03-Jquery/" rel="tag">Ajax03-Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git-github/" rel="tag">Git & github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis-Plus/" rel="tag">MyBatis Plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E6%B3%A8%E5%85%A5/" rel="tag">SQL注入</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/" rel="tag">TCP-IP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/" rel="tag">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">html基础知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java-</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%A4%8D%E4%B9%A0/" rel="tag">java复习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/" rel="tag">music</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%BE%8B%E5%8C%96/" rel="tag">实例化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E5%B8%B8/" rel="tag">异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" rel="tag">抽象类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3/" rel="tag">接口</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" rel="tag">构造方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8B%97%E8%A1%80%E5%90%90%E6%A7%BD/" rel="tag">狗血吐槽</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag">网络编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">面向对象</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">2</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
+
+
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=512358200&auto=1&height=66">
+</iframe>
+</div>
+
+	
+	
+	
+	</div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">柚子</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">241k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:39</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
