@@ -1200,7 +1200,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #70d2da;
+  background: #a60953;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2940,14 +2940,14 @@ hr {
 .post-body h2 {
   font-size: 23px;
   font-weight: bold;
-  background-color: #31a2e4;
+  background-color: #f0f8ff;
   border-radius: 20px;
   color: #f9f9f9;
   padding-left: 8px;
   text-shadow: 1px 1px 1px #000;
 }
 .post-body h3 {
-  background: #2b6600;
+  background: #fffaf0;
   box-shadow: 0 0 0 1px #5f5a4b, 1px 1px 6px 1px rgba(10,10,0,0.5);
   color: #fff;
   font-family: "微软雅黑", "宋体", "黑体", Arial;
